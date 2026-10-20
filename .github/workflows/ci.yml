@@ -1,4 +1,4 @@
-name: CI/CD Pipeline - Astro Build & Validation
+name: CI/CD Pipeline - Astro Build
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 jobs:
-  validate-and-build:
-    name: Build & Lint Validation
+  build:
+    name: Build Verification
     runs-on: ubuntu-latest
 
     steps:
@@ -19,10 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Astro Type & Structure Check
+      - name: Build Astro Site
         run: npm run build
