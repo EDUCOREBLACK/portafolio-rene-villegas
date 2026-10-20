@@ -1,29 +1,47 @@
 ---
 interface Props {
 	title: string;
+	description?: string;
 }
-const { title } = Astro.props;
+
+const { 
+  title, 
+  description = "Portal Profesional de René Villegas Carreño - Ingeniero en TI, Infraestructura Crítica y Automatización" 
+} = Astro.props;
+
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 ---
 
 <!doctype html>
-<html lang="es" class="bg-brand-dark text-brand-text scroll-smooth">
+<html lang="es" class="bg-brand-bg text-brand-text scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Portal Profesional de René Villegas - Especialista en Data Centers y Automatización TI" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
 	</head>
-	<body class="min-h-screen flex flex-col bg-brand-dark">
+	<body class="min-h-screen flex flex-col bg-brand-bg text-brand-text">
 		<Navbar />
 		<div class="flex-1">
 			<slot />
 		</div>
-		<footer class="border-t border-slate-800/80 py-10 text-center text-xs text-slate-500 font-mono">
-			<p class="mb-2">Diseñado para alto rendimiento y continuidad operacional.</p>
-			<p>© {new Date().getFullYear()} René Villegas Carreño. Desplegado en Vercel.</p>
+		<footer class="border-t border-brand-border py-12 text-center text-xs text-brand-muted font-mono">
+			<div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+				<p>© {new Date().getFullYear()} René Villegas Carreño. Todos los derechos reservados.</p>
+				<div class="flex items-center gap-6">
+					<a href="https://github.com/EDUCOREBLACK" target="_blank" rel="noopener noreferrer" class="hover:text-brand-text transition-colors">
+						GitHub
+					</a>
+					<a href="https://www.linkedin.com/in/rene-eduardo-villegas-carreño-471a94140" target="_blank" rel="noopener noreferrer" class="hover:text-brand-text transition-colors">
+						LinkedIn
+					</a>
+					<a href="/cv-rene-villegas.pdf" download="Curriculum_Vitae_Rene_Villegas.pdf" class="hover:text-brand-accent transition-colors">
+						Descargar CV (PDF)
+					</a>
+				</div>
+			</div>
 		</footer>
 	</body>
 </html>

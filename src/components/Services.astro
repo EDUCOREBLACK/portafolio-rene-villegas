@@ -1,36 +1,60 @@
 ---
+const services = [
+  {
+    number: "01",
+    title: "Continuidad Operacional & DRP",
+    description: "Diseño y ejecución de planes de contingencia, gestión de servicios bajo marco ITIL y normativas ISO 27001 para garantizar disponibilidad 24/7 en plataformas críticas.",
+    tags: ["ITIL", "ISO 27001", "Planes DRP", "Alta Disponibilidad", "SOPs"]
+  },
+  {
+    number: "02",
+    title: "Infraestructura & Centros de Datos",
+    description: "Supervisión técnica de salas de cómputo de alta densidad, gestión de capacidad de energía y climatización, diagnóstico de hardware y conectividad de fibra óptica.",
+    tags: ["Data Centers", "Hardware Cómputo", "Fibra Óptica", "Climatización", "Capacidad"]
+  },
+  {
+    number: "03",
+    title: "Automatización, Datos & IA",
+    description: "Desarrollo de scripts y pipelines de datos para auditorías de infraestructura, conciliación de inventarios tecnológicos, reportes en Power BI y flujos asistidos con IA.",
+    tags: ["Python", "SQL Relacional", "Bash Scripting", "Power BI", "IA Aplicada"]
+  }
+];
 ---
-<section id="servicios" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-800/80">
-  <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-3">
-    <span class="text-brand-accent font-mono text-xl">01.</span> Servicios y Consultorías Técnicas
-  </h2>
-  
+
+<section id="servicios" class="max-w-5xl mx-auto px-6 py-20 border-t border-brand-border">
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+    <div>
+      <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Especialidades</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-brand-text">Servicios & Áreas Técnicas</h2>
+    </div>
+    <p class="text-sm text-brand-muted max-w-md">
+      Enfoque integral orientado a la resiliencia operativa, eficiencia técnica y automatización de procesos.
+    </p>
+  </div>
+
   <div class="grid md:grid-cols-3 gap-6">
-    <!-- Servicio 1 -->
-    <div class="bg-brand-card p-8 rounded-xl border border-slate-800 hover:border-brand-accent/50 hover:-translate-y-1 transition-all duration-300 shadow-lg group">
-      <div class="text-brand-accent text-4xl mb-4 group-hover:scale-110 transition-transform">⚡</div>
-      <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">Automatización y Datos</h3>
-      <p class="text-slate-400 text-sm leading-relaxed">
-        Desarrollo de scripts en Python/Bash, consultas SQL optimizadas y flujos integrados con IA para control de inventarios, auditorías y dashboards en Power BI.
-      </p>
-    </div>
+    {services.map((service) => (
+      <div class="bg-brand-card p-6 sm:p-8 rounded-xl border border-brand-border hover:border-brand-borderHover hover:bg-brand-cardHover transition-all duration-200 flex flex-col justify-between group">
+        <div>
+          <span class="text-xs font-mono text-brand-muted block mb-4 group-hover:text-brand-accent transition-colors">
+            /{service.number}
+          </span>
+          <h3 class="text-lg font-bold text-brand-text mb-3">
+            {service.title}
+          </h3>
+          <p class="text-sm text-brand-muted leading-relaxed mb-6">
+            {service.description}
+          </p>
+        </div>
 
-    <!-- Servicio 2 -->
-    <div class="bg-brand-card p-8 rounded-xl border border-slate-800 hover:border-brand-accent/50 hover:-translate-y-1 transition-all duration-300 shadow-lg group">
-      <div class="text-brand-accent text-4xl mb-4 group-hover:scale-110 transition-transform">🛡️</div>
-      <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">Continuidad y DRP</h3>
-      <p class="text-slate-400 text-sm leading-relaxed">
-        Diseño de planes de recuperación ante desastres (DRP), ejecución de solicitudes de cambio (RFC bajo ITIL v4) y preparación para auditorías ISO 27001.
-      </p>
-    </div>
-
-    <!-- Servicio 3 -->
-    <div class="bg-brand-card p-8 rounded-xl border border-slate-800 hover:border-brand-accent/50 hover:-translate-y-1 transition-all duration-300 shadow-lg group">
-      <div class="text-brand-accent text-4xl mb-4 group-hover:scale-110 transition-transform">📦</div>
-      <h3 class="text-xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">Infraestructura Data Center</h3>
-      <p class="text-slate-400 text-sm leading-relaxed">
-        Cubicación de espacio de colocation, gestión de capacidad de energía y climatización, y soporte técnico avanzado Break-Fix en servidores de alta densidad.
-      </p>
-    </div>
+        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-brand-border/60">
+          {service.tags.map((tag) => (
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-bg text-brand-muted border border-brand-border">
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    ))}
   </div>
 </section>

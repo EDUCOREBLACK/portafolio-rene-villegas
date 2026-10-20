@@ -1,58 +1,125 @@
 ---
 const experiences = [
   {
-    role: "Especialista Senior de Operaciones Data Center & Continuidad",
-    company: "Telefónica Tech",
-    period: "Trayectoria Destacada",
-    description: "Gestión y supervisión de infraestructuras críticas 24/7 en Data Centers Tier III/IV. Liderazgo en respuesta a incidentes de alta severidad, ejecución de RFCs bajo ITIL v4, cumplimiento de normativas ISO 27001 y planes de contingencia DRP.",
-    skills: ["Data Center Tier III/IV", "ITIL v4", "ISO 27001", "SLA 99.999%", "DRP", "Break-Fix Hardware"]
+    role: "Especialista de Infraestructura TI & Continuidad Operacional",
+    domain: "Centros de Datos de Misión Crítica",
+    period: "2024 — Presente",
+    description: "Supervisión técnica y resguardo de continuidad 24/7 en múltiples centros de datos estratégicos. Aseguramiento de alta disponibilidad en plataformas corporativas de gran escala (banca, retail y gobierno). Gestión operativa bajo marco ITIL, normas ISO 27001 y planes de contingencia DRP. Automatización de auditorías y conciliación de inventarios mediante scripts en Python y SQL relacional.",
+    technologies: ["Python", "SQL Avanzado", "Linux", "ITIL", "ISO 27001", "Planes DRP", "APIs", "Power BI"]
   },
   {
-    role: "Ingeniero de Infraestructura & Soporte Misión Crítica",
-    company: "NEC",
-    period: "Trayectoria Destacada",
-    description: "Atención especializada de soporte Break-Fix en servidores de alta densidad, almacenamiento SAN/NAS y equipamiento de telecomunicaciones. Ejecución de cubicación de energía, climatización y cableado estructurado.",
-    skills: ["Servidores Alta Densidad", "SAN / NAS", "Cubicación Eléctrica", "HVAC / Clima", "Incident Management"]
+    role: "Líder de Operaciones & Soporte de Infraestructura TI",
+    domain: "Entornos de Cómputo de Alta Densidad",
+    period: "2021 — 2024",
+    description: "Liderazgo de turnos de operación técnica 24/7. Diagnóstico avanzado y reemplazo de componentes de hardware crítico en servidores blade y modulares. Supervisión de tendidos de fibra óptica de alta densidad y peinado según normas de sala limpia. Coordinación de simulaciones de continuidad operacional y control riguroso de activos tecnológicos.",
+    technologies: ["Servidores Blade & Modulares", "Fibra Óptica (MPO/LC)", "ITIL", "Auditorías de Infraestructura", "Docker", "Gestión de Activos"]
   },
   {
-    role: "Consultor TI & Automatización de Procesos",
-    company: "Proyectos Independientes & Consultoría",
-    period: "Continuo",
-    description: "Desarrollo e implementación de flujos automatizados para optimizar operaciones de TI. Creación de pipelines de datos y reportes analíticos para auditorías e inventarios automáticos.",
-    skills: ["Python", "SQL", "Bash Scripting", "Power BI", "AI Workflows", "API Integrations"]
+    role: "Ingeniero de Operaciones & Conectividad Crítica",
+    domain: "Operación de Sala Blanca & Telecomunicaciones",
+    period: "2017 — 2021",
+    description: "Operación técnica bajo estrictos acuerdos de nivel de servicio (SLA 99.999%). Instalación, rackeo y cableado estructurado de conmutadores y enrutadores corporativos. Monitoreo continuo de condiciones ambientales, consumo energético y temperatura para prevención de fallas térmicas.",
+    technologies: ["Equipamiento de Red", "Cubicación Eléctrica", "SLA 99.999%", "Monitoreo Ambiental", "Gestión de Incidentes"]
+  },
+  {
+    role: "Analista de Sistemas & Automatización Operativa",
+    domain: "Software Corporativo & Bases de Datos",
+    period: "2014 — 2017",
+    description: "Desarrollo y soporte de plataformas internas para gestión y control de inventarios. Optimización y estructuración de bases de datos relacionales. Implementación de esquemas de monitoreo proactivo para detección temprana de fallas en entornos Linux y Windows Server.",
+    technologies: ["SQL Server", "MySQL", "Linux / Windows Server", "Monitoreo Proactivo", "Scripts de Automatización"]
+  }
+];
+
+const education = [
+  {
+    degree: "Ingeniería en Tecnologías de la Información y Telecomunicaciones",
+    institution: "Universidad San Sebastián",
+    status: "Titulado"
+  },
+  {
+    degree: "Analista de Sistemas",
+    institution: "Instituto Tecnológico de Chile (ITC)",
+    status: "Titulado"
+  },
+  {
+    degree: "Técnico Nivel Medio en Electrónica",
+    institution: "Liceo Politécnico San Luis",
+    status: "Titulado"
   }
 ];
 ---
 
-<section id="experiencia" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-800/80">
-  <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-3">
-    <span class="text-brand-accent font-mono text-xl">02.</span> Trayectoria & Experiencia Crítica
-  </h2>
+<section id="experiencia" class="max-w-5xl mx-auto px-6 py-20 border-t border-brand-border">
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+    <div>
+      <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Trayectoria</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-brand-text">Experiencia & Tecnologías</h2>
+    </div>
+    <div class="flex items-center gap-3">
+      <a 
+        href="/cv-rene-villegas.pdf" 
+        download="Curriculum_Vitae_Rene_Villegas.pdf"
+        class="inline-flex items-center gap-2 text-xs font-mono text-brand-accent hover:underline"
+      >
+        <span>Descargar CV completo (PDF)</span>
+        <span>→</span>
+      </a>
+    </div>
+  </div>
 
-  <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-slate-800">
+  <!-- Timeline Cards -->
+  <div class="space-y-6 mb-16">
     {experiences.map((exp) => (
-      <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 items-start group">
-        <div class="w-full bg-brand-card p-6 md:p-8 rounded-xl border border-slate-800 hover:border-slate-700 transition-all shadow-md">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-            <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">
-              {exp.role} <span class="text-brand-accent font-normal">@ {exp.company}</span>
+      <div class="bg-brand-card p-6 sm:p-8 rounded-xl border border-brand-border hover:border-brand-borderHover transition-all duration-200">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
+          <div>
+            <h3 class="text-lg font-bold text-brand-text">
+              {exp.role}
             </h3>
-            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 w-fit">
-              {exp.period}
+            <p class="text-xs font-mono text-brand-muted">
+              {exp.domain}
+            </p>
+          </div>
+          <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-bg text-brand-muted border border-brand-border self-start sm:self-auto">
+            {exp.period}
+          </span>
+        </div>
+
+        <p class="text-sm text-brand-muted leading-relaxed mb-5">
+          {exp.description}
+        </p>
+
+        <div class="flex flex-wrap gap-1.5">
+          {exp.technologies.map((tech) => (
+            <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-brand-bg text-brand-text/90 border border-brand-border">
+              {tech}
             </span>
-          </div>
-          <p class="text-slate-400 text-sm leading-relaxed mb-5">
-            {exp.description}
-          </p>
-          <div class="flex flex-wrap gap-2">
-            {exp.skills.map(skill => (
-              <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900/80 text-brand-accent/90 border border-slate-800">
-                {skill}
-              </span>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
     ))}
+  </div>
+
+  <!-- Formación Académica -->
+  <div>
+    <h3 class="text-lg font-bold text-brand-text mb-6 flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+      Formación Académica
+    </h3>
+    <div class="grid md:grid-cols-3 gap-4">
+      {education.map((item) => (
+        <div class="bg-brand-card p-5 rounded-xl border border-brand-border">
+          <span class="text-[11px] font-mono text-brand-accent block mb-1">
+            {item.status}
+          </span>
+          <h4 class="text-sm font-semibold text-brand-text mb-1">
+            {item.degree}
+          </h4>
+          <p class="text-xs text-brand-muted">
+            {item.institution}
+          </p>
+        </div>
+      ))}
+    </div>
   </div>
 </section>

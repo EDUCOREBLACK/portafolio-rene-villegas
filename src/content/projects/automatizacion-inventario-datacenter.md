@@ -9,9 +9,9 @@ date: "2026"
 
 ## Resumen del Proyecto
 
-Desarrollo de una solución que automatizó la auditoría de activos en más de 200 racks de servidores. 
+Desarrollo e implementación de una solución automatizada para la conciliación de activos tecnológicos y auditorías de capacidad en entornos de misión crítica.
 
 ### Resultados Clave:
-- **Reducción de tiempos de auditoría en un 70%**.
-- Conciliación automática entre el sistema DCIM y el inventario contable.
-- Detección temprana de discrepancias en puertos de red y capacidad eléctrica.
+- **Reducción de tiempos de auditoría en un 70%** mediante extracción y procesamiento programado.
+- Conciliación automática entre los sistemas de gestión de infraestructura y el inventario corporativo.
+- Paneles analíticos en Power BI para control de capacidad de energía, climatización y puertos de red.
