@@ -1,0 +1,29 @@
+---
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+---
+
+<!doctype html>
+<html lang="es" class="bg-brand-dark text-brand-text scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portal Profesional de René Villegas - Especialista en Data Centers y Automatización TI" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen flex flex-col bg-brand-dark">
+		<Navbar />
+		<div class="flex-1">
+			<slot />
+		</div>
+		<footer class="border-t border-slate-800/80 py-10 text-center text-xs text-slate-500 font-mono">
+			<p class="mb-2">Diseñado para alto rendimiento y continuidad operacional.</p>
+			<p>© {new Date().getFullYear()} René Villegas Carreño. Desplegado en Vercel.</p>
+		</footer>
+	</body>
+</html>
