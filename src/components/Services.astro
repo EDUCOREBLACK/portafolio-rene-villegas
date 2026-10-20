@@ -33,39 +33,39 @@ const services = [
 ];
 ---
 
-<section id="servicios" class="max-w-5xl mx-auto px-6 py-20 border-t border-brand-border">
-  <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<section id="servicios" class="max-w-5xl mx-auto px-6 py-16 border-t border-cloud-border">
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
     <div>
-      <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Servicios Técnicos & Consultoría</p>
-      <h2 class="text-2xl sm:text-3xl font-bold text-brand-text">Soluciones TI Integrales</h2>
+      <p class="text-xs font-mono uppercase tracking-widest text-cloud-azure mb-2">Servicios Técnicos & Consultoría</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-cloud-text">Soluciones TI Integrales</h2>
     </div>
-    <p class="text-sm text-brand-muted max-w-md">
-      Servicios especializados orientados tanto a infraestructura física de misión crítica como a software, automatización con IA y soporte corporativo.
+    <p class="text-xs sm:text-sm text-cloud-muted max-w-md">
+      Servicios especializados orientados a infraestructura física de misión crítica, desarrollo de software, automatización con IA y soporte corporativo.
     </p>
   </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
     {services.map((service, index) => (
-      <div class={`bg-brand-card p-6 sm:p-7 rounded-xl border border-brand-border hover:border-brand-borderHover hover:bg-brand-cardHover transition-all duration-200 flex flex-col justify-between group ${index === 0 ? 'lg:col-span-1' : ''}`}>
+      <div class={`bg-cloud-card p-6 rounded-xl border border-cloud-border hover:border-cloud-azure/50 hover:bg-cloud-cardHover transition-all duration-200 flex flex-col justify-between group ${index === 0 ? 'lg:col-span-1' : ''}`}>
         <div>
           <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-mono text-brand-accent font-semibold">
+            <span class="text-xs font-mono text-cloud-azure font-semibold">
               /{service.number}
             </span>
-            <span class="w-1.5 h-1.5 rounded-full bg-brand-border group-hover:bg-brand-accent transition-colors"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cloud-border group-hover:bg-cloud-azure transition-colors"></span>
           </div>
           
-          <h3 class="text-lg font-bold text-brand-text mb-3 group-hover:text-white transition-colors">
+          <h3 class="text-base font-bold text-cloud-text mb-2.5 group-hover:text-cloud-azure transition-colors">
             {service.title}
           </h3>
-          <p class="text-xs sm:text-sm text-brand-muted leading-relaxed mb-6">
+          <p class="text-xs text-cloud-muted leading-relaxed mb-5">
             {service.description}
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-brand-border/60">
+        <div class="flex flex-wrap gap-1.5 pt-3.5 border-t border-cloud-border/60">
           {service.tags.map((tag) => (
-            <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-bg text-brand-muted border border-brand-border">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cloud-bg text-cloud-muted border border-cloud-border">
               {tag}
             </span>
           ))}

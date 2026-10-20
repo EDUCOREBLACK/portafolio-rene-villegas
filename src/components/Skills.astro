@@ -31,25 +31,25 @@ const softSkills = [
 ];
 ---
 
-<section id="habilidades" class="max-w-5xl mx-auto px-6 py-16 border-t border-brand-border/60">
+<section id="habilidades" class="max-w-5xl mx-auto px-6 py-16 border-t border-cloud-border">
   <div class="mb-10">
-    <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Stack Tecnológico</p>
-    <h2 class="text-2xl sm:text-3xl font-bold text-brand-text mb-2">Habilidades Técnicas & Herramientas</h2>
-    <p class="text-xs sm:text-sm text-brand-muted">
+    <p class="text-xs font-mono uppercase tracking-widest text-cloud-azure mb-2">Stack Tecnológico</p>
+    <h2 class="text-2xl sm:text-3xl font-bold text-cloud-text mb-2">Habilidades Técnicas & Herramientas</h2>
+    <p class="text-xs sm:text-sm text-cloud-muted">
       Dominio en desarrollo, bases de datos, sistemas operativos y herramientas modernas de Inteligencia Artificial.
     </p>
   </div>
 
   <!-- Herramientas de IA Destacadas -->
   <div class="mb-12">
-    <h3 class="text-xs font-mono uppercase tracking-wider text-brand-muted mb-4 flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+    <h3 class="text-xs font-mono uppercase tracking-wider text-cloud-muted mb-4 flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-cloud-azure"></span>
       Ecosistema de Inteligencia Artificial & Herramientas Agénticas
     </h3>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {aiTools.map((tool) => (
-        <div class="bg-brand-card p-4 rounded-xl border border-brand-border hover:border-brand-accent/50 transition-colors group flex items-start gap-3.5">
-          <div class="w-9 h-9 rounded-lg bg-brand-bg border border-brand-border flex items-center justify-center text-brand-accent flex-shrink-0 group-hover:scale-105 transition-transform">
+        <div class="bg-cloud-card p-4 rounded-xl border border-cloud-border hover:border-cloud-azure/50 transition-colors group flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-lg bg-cloud-bg border border-cloud-border flex items-center justify-center text-cloud-azure flex-shrink-0 group-hover:scale-105 transition-transform">
             {tool.icon === 'antigravity' && (
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -80,14 +80,14 @@ const softSkills = [
           </div>
           <div>
             <div class="flex items-center gap-2 mb-0.5">
-              <h4 class="text-xs font-bold text-brand-text group-hover:text-brand-accent transition-colors">
+              <h4 class="text-xs font-bold text-cloud-text group-hover:text-cloud-azure transition-colors">
                 {tool.name}
               </h4>
-              <span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-brand-bg text-brand-muted border border-brand-border">
+              <span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-cloud-bg text-cloud-muted border border-cloud-border">
                 {tool.badge}
               </span>
             </div>
-            <p class="text-[11px] text-brand-muted leading-tight">
+            <p class="text-[11px] text-cloud-muted leading-tight">
               {tool.desc}
             </p>
           </div>
@@ -98,17 +98,17 @@ const softSkills = [
 
   <!-- Lenguajes & Frameworks -->
   <div class="mb-12">
-    <h3 class="text-xs font-mono uppercase tracking-wider text-brand-muted mb-4 flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+    <h3 class="text-xs font-mono uppercase tracking-wider text-cloud-muted mb-4 flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-cloud-azure"></span>
       Desarrollo, Frameworks & Infraestructura
     </h3>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
       {techSkills.map((tech) => (
-        <div class="bg-brand-card p-3 rounded-lg border border-brand-border hover:border-brand-borderHover transition-all flex flex-col items-center justify-center text-center group">
-          <span class="text-xs font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-1">
+        <div class="bg-cloud-card p-3 rounded-lg border border-cloud-border hover:border-cloud-borderLight transition-all flex flex-col items-center justify-center text-center group">
+          <span class="text-xs font-bold text-cloud-text group-hover:text-cloud-azure transition-colors mb-1">
             {tech.name}
           </span>
-          <span class="text-[10px] font-mono text-brand-muted">
+          <span class="text-[10px] font-mono text-cloud-muted">
             {tech.category}
           </span>
         </div>
@@ -116,15 +116,15 @@ const softSkills = [
     </div>
   </div>
 
-  <!-- Habilidades Blandas (Soft Skills) simples sin inundar -->
+  <!-- Habilidades Blandas (Soft Skills) -->
   <div>
-    <h3 class="text-xs font-mono uppercase tracking-wider text-brand-muted mb-4 flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+    <h3 class="text-xs font-mono uppercase tracking-wider text-cloud-muted mb-4 flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-cloud-azure"></span>
       Habilidades Personales & Gestión
     </h3>
     <div class="flex flex-wrap gap-2">
       {softSkills.map((skill) => (
-        <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-brand-card border border-brand-border text-brand-text/90 hover:border-brand-accent/50 transition-colors">
+        <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-cloud-card border border-cloud-border text-cloud-text/90 hover:border-cloud-azure/40 transition-colors">
           ✓ {skill}
         </span>
       ))}

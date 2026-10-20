@@ -1,65 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --bg-main: #09090b;
-    --card-main: #121215;
-    --card-hover: #18181b;
-    --border-main: #27272a;
-    --border-hover: #3f3f46;
-    --text-main: #fafafa;
-    --text-muted: #a1a1aa;
-    --accent-main: #10b981;
-    --accent-hover: #34d399;
+    --bg-main: #0b0f19;
+    --card-main: #111827;
+    --card-hover: #1e293b;
+    --border-main: #1f293d;
+    --border-light: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-cloud: #38bdf8;
+    --terminal-green: #10b981;
   }
 
+  /* Light Theme (Azure Cloud Light) */
   html:not(.dark) {
     --bg-main: #f8fafc;
     --card-main: #ffffff;
     --card-hover: #f1f5f9;
     --border-main: #e2e8f0;
-    --border-hover: #cbd5e1;
+    --border-light: #cbd5e1;
     --text-main: #0f172a;
-    --text-muted: #64748b;
-    --accent-main: #059669;
-    --accent-hover: #047857;
+    --text-muted: #475569;
+    --accent-cloud: #0284c7;
+    --terminal-green: #059669;
   }
 
   body {
     background-color: var(--bg-main);
     color: var(--text-main);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   .dark body {
-    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-image: 
+      radial-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
+      radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px, 16px 16px;
   }
 
   html:not(.dark) body {
-    background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-image: 
+      radial-gradient(rgba(2, 132, 199, 0.04) 1px, transparent 1px),
+      radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px, 16px 16px;
   }
 }
 
-::selection {
-  background-color: #10b981;
-  color: #09090b;
-}
-
+/* Custom CLI scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-main);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-main);
+  background: var(--border-light);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--border-hover);
+  background: var(--accent-cloud);
+}
+
+::selection {
+  background-color: #38bdf8;
+  color: #0b0f19;
 }
