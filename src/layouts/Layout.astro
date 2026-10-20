@@ -6,7 +6,7 @@ interface Props {
 
 const { 
   title, 
-  description = "Portal Profesional de René Villegas Carreño - Ingeniero en TI, Infraestructura Crítica y Automatización" 
+  description = "Portal Profesional de René Villegas Carreño - Ingeniero en TI, Infraestructura Crítica, Desarrollo y Automatización con IA" 
 } = Astro.props;
 
 import '../styles/global.css';
@@ -14,28 +14,50 @@ import Navbar from '../components/Navbar.astro';
 ---
 
 <!doctype html>
-<html lang="es" class="bg-brand-bg text-brand-text scroll-smooth">
+<html lang="es" class="dark scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="author" content="René Villegas Carreño" />
+		<meta name="theme-color" content="#09090b" />
+		<meta name="robots" content="index, follow" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
+
+		<!-- Theme Init Script (prevents flash) -->
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				return 'dark'; // Dark mode por defecto
+			})();
+
+			if (theme === 'light') {
+				document.documentElement.classList.remove('dark');
+			} else {
+				document.documentElement.classList.add('dark');
+			}
+		</script>
 	</head>
-	<body class="min-h-screen flex flex-col bg-brand-bg text-brand-text">
+	<body class="min-h-screen flex flex-col antialiased">
 		<Navbar />
 		<div class="flex-1">
 			<slot />
 		</div>
-		<footer class="border-t border-brand-border py-12 text-center text-xs text-brand-muted font-mono">
+		<footer class="border-t border-brand-border/60 py-12 text-center text-xs text-brand-muted font-mono">
 			<div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-				<p>© {new Date().getFullYear()} René Villegas Carreño. Todos los derechos reservados.</p>
+				<p>© {new Date().getFullYear()} René Villegas Carreño. Desplegado con CI/CD en Vercel.</p>
 				<div class="flex items-center gap-6">
 					<a href="https://github.com/EDUCOREBLACK" target="_blank" rel="noopener noreferrer" class="hover:text-brand-text transition-colors">
 						GitHub
 					</a>
 					<a href="https://www.linkedin.com/in/rene-eduardo-villegas-carreño-471a94140" target="_blank" rel="noopener noreferrer" class="hover:text-brand-text transition-colors">
 						LinkedIn
+					</a>
+					<a href="mailto:Duarapcsis@gmail.com" class="hover:text-brand-text transition-colors">
+						Duarapcsis@gmail.com
 					</a>
 					<a href="/cv-rene-villegas.pdf" download="Curriculum_Vitae_Rene_Villegas.pdf" class="hover:text-brand-accent transition-colors">
 						Descargar CV (PDF)

@@ -1,122 +1,80 @@
 ---
-const experiences = [
+const summaryPoints = [
   {
-    role: "Especialista de Infraestructura TI & Continuidad Operacional",
-    domain: "Centros de Datos de Misión Crítica",
-    period: "2024 — Presente",
-    description: "Supervisión técnica y resguardo de continuidad 24/7 en múltiples centros de datos estratégicos. Aseguramiento de alta disponibilidad en plataformas corporativas de gran escala (banca, retail y gobierno). Gestión operativa bajo marco ITIL, normas ISO 27001 y planes de contingencia DRP. Automatización de auditorías y conciliación de inventarios mediante scripts en Python y SQL relacional.",
-    technologies: ["Python", "SQL Avanzado", "Linux", "ITIL", "ISO 27001", "Planes DRP", "APIs", "Power BI"]
+    title: "Centros de Datos & Operaciones 24/7",
+    period: "15+ Años",
+    description: "Supervisión técnica y aseguramiento de continuidad en infraestructuras de misión crítica. Gestión de disponibilidad en plataformas corporativas resguardando SLAs de alta exigencia."
   },
   {
-    role: "Líder de Operaciones & Soporte de Infraestructura TI",
-    domain: "Entornos de Cómputo de Alta Densidad",
-    period: "2021 — 2024",
-    description: "Liderazgo de turnos de operación técnica 24/7. Diagnóstico avanzado y reemplazo de componentes de hardware crítico en servidores blade y modulares. Supervisión de tendidos de fibra óptica de alta densidad y peinado según normas de sala limpia. Coordinación de simulaciones de continuidad operacional y control riguroso de activos tecnológicos.",
-    technologies: ["Servidores Blade & Modulares", "Fibra Óptica (MPO/LC)", "ITIL", "Auditorías de Infraestructura", "Docker", "Gestión de Activos"]
+    title: "Gobernanza Operacional & Continuidad (DRP)",
+    period: "Marco ITIL & ISO 27001",
+    description: "Gestión sistemática de incidentes, procedimientos operativos estándar (SOPs), planes de contingencia DRP y preparación para auditorías de seguridad física y de datos."
   },
   {
-    role: "Ingeniero de Operaciones & Conectividad Crítica",
-    domain: "Operación de Sala Blanca & Telecomunicaciones",
-    period: "2017 — 2021",
-    description: "Operación técnica bajo estrictos acuerdos de nivel de servicio (SLA 99.999%). Instalación, rackeo y cableado estructurado de conmutadores y enrutadores corporativos. Monitoreo continuo de condiciones ambientales, consumo energético y temperatura para prevención de fallas térmicas.",
-    technologies: ["Equipamiento de Red", "Cubicación Eléctrica", "SLA 99.999%", "Monitoreo Ambiental", "Gestión de Incidentes"]
-  },
-  {
-    role: "Analista de Sistemas & Automatización Operativa",
-    domain: "Software Corporativo & Bases de Datos",
-    period: "2014 — 2017",
-    description: "Desarrollo y soporte de plataformas internas para gestión y control de inventarios. Optimización y estructuración de bases de datos relacionales. Implementación de esquemas de monitoreo proactivo para detección temprana de fallas en entornos Linux y Windows Server.",
-    technologies: ["SQL Server", "MySQL", "Linux / Windows Server", "Monitoreo Proactivo", "Scripts de Automatización"]
+    title: "Desarrollo de Software & Automatización",
+    period: "Python, SQL, APIs, IA",
+    description: "Desarrollo de aplicaciones empresariales, pipelines para conciliación de inventarios tecnológicos, auditorías de activos y herramientas asistidas por Inteligencia Artificial."
   }
 ];
 
 const education = [
-  {
-    degree: "Ingeniería en Tecnologías de la Información y Telecomunicaciones",
-    institution: "Universidad San Sebastián",
-    status: "Titulado"
-  },
-  {
-    degree: "Analista de Sistemas",
-    institution: "Instituto Tecnológico de Chile (ITC)",
-    status: "Titulado"
-  },
-  {
-    degree: "Técnico Nivel Medio en Electrónica",
-    institution: "Liceo Politécnico San Luis",
-    status: "Titulado"
-  }
+  { degree: "Ingeniería en Tecnologías de la Información y Telecomunicaciones", institution: "Universidad San Sebastián", status: "Titulado" },
+  { degree: "Analista de Sistemas", institution: "Instituto Tecnológico de Chile (ITC)", status: "Titulado" },
+  { degree: "Técnico Nivel Medio en Electrónica", institution: "Liceo Politécnico San Luis", status: "Titulado" }
 ];
 ---
 
-<section id="experiencia" class="max-w-5xl mx-auto px-6 py-20 border-t border-brand-border">
-  <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+<section id="experiencia" class="max-w-5xl mx-auto px-6 py-16 border-t border-brand-border/60">
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
     <div>
-      <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Trayectoria</p>
-      <h2 class="text-2xl sm:text-3xl font-bold text-brand-text">Experiencia & Tecnologías</h2>
+      <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Síntesis Profesional</p>
+      <h2 class="text-2xl sm:text-3xl font-bold text-brand-text">Trayectoria Resumida</h2>
     </div>
-    <div class="flex items-center gap-3">
-      <a 
-        href="/cv-rene-villegas.pdf" 
-        download="Curriculum_Vitae_Rene_Villegas.pdf"
-        class="inline-flex items-center gap-2 text-xs font-mono text-brand-accent hover:underline"
-      >
-        <span>Descargar CV completo (PDF)</span>
-        <span>→</span>
-      </a>
-    </div>
+    
+    <a 
+      href="/cv-rene-villegas.pdf" 
+      download="Curriculum_Vitae_Rene_Villegas.pdf"
+      class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:border-brand-accent hover:text-brand-accent text-brand-text transition-all self-start sm:self-auto"
+    >
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+      </svg>
+      <span>Ver Detalle en CV Completo (PDF)</span>
+    </a>
   </div>
 
-  <!-- Timeline Cards -->
-  <div class="space-y-6 mb-16">
-    {experiences.map((exp) => (
-      <div class="bg-brand-card p-6 sm:p-8 rounded-xl border border-brand-border hover:border-brand-borderHover transition-all duration-200">
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-3">
-          <div>
-            <h3 class="text-lg font-bold text-brand-text">
-              {exp.role}
-            </h3>
-            <p class="text-xs font-mono text-brand-muted">
-              {exp.domain}
-            </p>
-          </div>
-          <span class="text-xs font-mono px-2.5 py-1 rounded bg-brand-bg text-brand-muted border border-brand-border self-start sm:self-auto">
-            {exp.period}
+  <div class="grid md:grid-cols-3 gap-5 mb-10">
+    {summaryPoints.map((item) => (
+      <div class="bg-brand-card p-5 rounded-xl border border-brand-border flex flex-col justify-between">
+        <div>
+          <span class="text-[11px] font-mono text-brand-accent block mb-2">
+            {item.period}
           </span>
-        </div>
-
-        <p class="text-sm text-brand-muted leading-relaxed mb-5">
-          {exp.description}
-        </p>
-
-        <div class="flex flex-wrap gap-1.5">
-          {exp.technologies.map((tech) => (
-            <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-brand-bg text-brand-text/90 border border-brand-border">
-              {tech}
-            </span>
-          ))}
+          <h3 class="text-sm font-bold text-brand-text mb-2">
+            {item.title}
+          </h3>
+          <p class="text-xs text-brand-muted leading-relaxed">
+            {item.description}
+          </p>
         </div>
       </div>
     ))}
   </div>
 
-  <!-- Formación Académica -->
-  <div>
-    <h3 class="text-lg font-bold text-brand-text mb-6 flex items-center gap-2">
+  <!-- Educación Compacta -->
+  <div class="p-5 rounded-xl border border-brand-border bg-brand-card/60">
+    <h3 class="text-xs font-mono uppercase tracking-wider text-brand-muted mb-3 flex items-center gap-2">
       <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
-      Formación Académica
+      Formación Universitaria & Técnica
     </h3>
-    <div class="grid md:grid-cols-3 gap-4">
+    <div class="grid sm:grid-cols-3 gap-3">
       {education.map((item) => (
-        <div class="bg-brand-card p-5 rounded-xl border border-brand-border">
-          <span class="text-[11px] font-mono text-brand-accent block mb-1">
-            {item.status}
-          </span>
-          <h4 class="text-sm font-semibold text-brand-text mb-1">
+        <div>
+          <h4 class="text-xs font-semibold text-brand-text">
             {item.degree}
           </h4>
-          <p class="text-xs text-brand-muted">
-            {item.institution}
+          <p class="text-[11px] text-brand-muted">
+            {item.institution} • <span class="text-brand-accent">{item.status}</span>
           </p>
         </div>
       ))}

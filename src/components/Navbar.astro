@@ -1,15 +1,15 @@
 ---
 const navItems = [
   { label: 'Inicio', href: '/' },
+  { label: 'Habilidades', href: '/#habilidades' },
+  { label: 'Portafolio', href: '/#portafolio' },
   { label: 'Servicios', href: '/#servicios' },
   { label: 'Experiencia', href: '/#experiencia' },
-  { label: 'Noticias IA', href: '/#blog-ia' },
-  { label: 'GitHub', href: '/#github' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Blog', href: '/#blog-ia' },
 ];
 ---
 
-<header class="sticky top-0 z-50 backdrop-blur-md bg-brand-bg/85 border-b border-brand-border transition-colors">
+<header class="sticky top-0 z-50 backdrop-blur-md bg-brand-bg/85 border-b border-brand-border/60 transition-colors">
   <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
     <a href="/" class="flex items-center gap-2.5 group">
       <span class="w-8 h-8 rounded-lg bg-brand-card border border-brand-border flex items-center justify-center font-mono font-bold text-xs text-brand-text group-hover:border-brand-accent transition-colors">
@@ -20,6 +20,7 @@ const navItems = [
       </span>
     </a>
 
+    <!-- Navigation links -->
     <nav class="hidden md:flex items-center gap-6 text-xs font-mono uppercase tracking-wider">
       {navItems.map((item) => (
         <a 
@@ -31,16 +32,28 @@ const navItems = [
       ))}
     </nav>
 
+    <!-- Controls (Theme Toggle & CV) -->
     <div class="flex items-center gap-3">
-      <a 
-        href="/mantenedor"
-        class="hidden sm:inline-flex items-center gap-1 text-xs font-mono text-brand-muted hover:text-brand-accent transition-colors mr-1"
-        title="Mantenedor de Noticias & Artículos"
+      
+      <!-- Theme Toggle Button -->
+      <button 
+        id="theme-toggle" 
+        type="button" 
+        class="w-8 h-8 rounded-lg border border-brand-border bg-brand-card flex items-center justify-center text-brand-muted hover:text-brand-text transition-colors"
+        aria-label="Cambiar tema claro/oscuro"
+        title="Cambiar tema"
       >
-        <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
-        Mantenedor
-      </a>
+        <!-- Sun icon (shown in dark) -->
+        <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+        </svg>
+        <!-- Moon icon (shown in light) -->
+        <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+        </svg>
+      </button>
 
+      <!-- Download CV -->
       <a 
         href="/cv-rene-villegas.pdf" 
         download="Curriculum_Vitae_Rene_Villegas.pdf"
@@ -49,8 +62,39 @@ const navItems = [
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        Descargar CV
+        <span>CV (PDF)</span>
       </a>
     </div>
   </div>
 </header>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const lightIcon = document.getElementById('theme-toggle-light-icon');
+  const darkIcon = document.getElementById('theme-toggle-dark-icon');
+
+  function updateIcons() {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (isDark) {
+      lightIcon?.classList.remove('hidden');
+      darkIcon?.classList.add('hidden');
+    } else {
+      darkIcon?.classList.remove('hidden');
+      lightIcon?.classList.add('hidden');
+    }
+  }
+
+  updateIcons();
+
+  themeToggle?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.contains('dark');
+    if (isDark) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    updateIcons();
+  });
+</script>

@@ -6,203 +6,255 @@ const existingPosts = await getCollection('blog');
 existingPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
-<Layout title="Mantenedor de Artículos & Noticias | René Villegas Carreño">
+<Layout title="Mantenedor Privado | René Villegas Carreño">
   <main class="max-w-5xl mx-auto px-6 py-16">
     
-    <!-- Header -->
-    <div class="mb-10 pb-6 border-b border-brand-border">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Panel de Administración</p>
-          <h1 class="text-3xl font-bold text-brand-text">Mantenedor de Blog & Noticias de IA</h1>
+    <!-- Lock Screen / Security Gate -->
+    <div id="auth-gate" class="fixed inset-0 z-50 bg-brand-bg/95 backdrop-blur-md flex items-center justify-center p-6">
+      <div class="w-full max-w-sm bg-brand-card p-8 rounded-2xl border border-brand-border shadow-2xl text-center">
+        <div class="w-12 h-12 rounded-full bg-brand-bg border border-brand-border flex items-center justify-center mx-auto mb-4 text-brand-accent">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
         </div>
-        <a 
-          href="/" 
-          class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:bg-brand-cardHover text-brand-text self-start sm:self-auto"
-        >
-          ← Volver al Portal
-        </a>
-      </div>
-      <p class="text-sm text-brand-muted mt-2 max-w-2xl">
-        Crea, redacta y gestiona nuevos artículos o noticias tecnológicas sobre Inteligencia Artificial e infraestructura. Puedes usar plantillas automáticas, previsualizar en tiempo real y descargar el archivo Markdown listo.
-      </p>
-    </div>
+        <h2 class="text-xl font-bold text-brand-text mb-1">Acceso Privado</h2>
+        <p class="text-xs text-brand-muted mb-6 leading-relaxed">
+          Este mantenedor está reservado únicamente para René Villegas. Ingresa tu clave de acceso para continuar.
+        </p>
 
-    <!-- Quick Templates for AI News -->
-    <div class="mb-10 bg-brand-card p-6 rounded-xl border border-brand-border">
-      <h3 class="text-sm font-bold text-brand-text mb-3 flex items-center gap-2">
-        <span class="text-brand-accent font-mono">⚡</span>
-        Cargar Plantilla Rápida de Noticias de IA
-      </h3>
-      <div class="flex flex-wrap gap-2.5">
-        <button 
-          id="btn-template-ai-agent"
-          class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
-        >
-          + IA & Agentes Autónomos
-        </button>
-        <button 
-          id="btn-template-ai-security"
-          class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
-        >
-          + IA en Ciberseguridad & Infraestructura
-        </button>
-        <button 
-          id="btn-template-ai-hardware"
-          class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
-        >
-          + Servidores & Hardware para IA Local
-        </button>
-      </div>
-    </div>
-
-    <!-- Editor & Preview Grid -->
-    <div class="grid lg:grid-cols-12 gap-8">
-      
-      <!-- Editor Form -->
-      <div class="lg:col-span-7 space-y-4">
-        <div>
-          <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Título del Artículo o Noticia</label>
-          <input 
-            type="text" 
-            id="post-title" 
-            placeholder="Ej: Nuevas tendencias de Agentes de IA en la gestión de TI"
-            class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
-          />
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-4">
+        <form id="auth-form" class="space-y-4">
           <div>
-            <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Categoría / Etiqueta Principal</label>
+            <input 
+              type="password" 
+              id="auth-pin" 
+              placeholder="Ingresa tu clave PIN"
+              autofocus
+              class="w-full px-4 py-2.5 text-center text-sm tracking-widest rounded-lg bg-brand-bg border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors font-mono"
+            />
+          </div>
+          <button 
+            type="submit" 
+            class="w-full py-2.5 px-4 rounded-lg bg-brand-text text-brand-bg font-medium text-xs hover:bg-white/90 transition-colors"
+          >
+            Desbloquear Mantenedor
+          </button>
+          <p id="auth-error" class="text-xs font-mono text-red-400 hidden">
+            Clave incorrecta. Inténtalo de nuevo.
+          </p>
+        </form>
+
+        <div class="mt-6 pt-4 border-t border-brand-border/60">
+          <a href="/" class="text-xs font-mono text-brand-muted hover:text-brand-text transition-colors">
+            ← Regresar al portal principal
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Protected Mantenedor Content -->
+    <div id="mantenedor-content" class="hidden">
+      <!-- Header -->
+      <div class="mb-10 pb-6 border-b border-brand-border">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Panel Privado</p>
+            <h1 class="text-2xl sm:text-3xl font-bold text-brand-text">Mantenedor de Blog & Noticias de IA</h1>
+          </div>
+          <div class="flex items-center gap-3">
+            <button 
+              id="btn-logout"
+              class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:border-red-500/50 hover:text-red-400 text-brand-muted transition-colors"
+            >
+              Bloquear / Salir
+            </button>
+            <a 
+              href="/" 
+              class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:bg-brand-cardHover text-brand-text transition-colors"
+            >
+              ← Ir al Portal
+            </a>
+          </div>
+        </div>
+        <p class="text-xs sm:text-sm text-brand-muted mt-2 max-w-2xl">
+          Redacta noticias o artículos técnicos sobre Inteligencia Artificial e Infraestructura. Puedes usar plantillas rápidas, previsualizar en tiempo real y descargar el archivo Markdown listo para publicarse.
+        </p>
+      </div>
+
+      <!-- Quick Templates for AI News -->
+      <div class="mb-10 bg-brand-card p-6 rounded-xl border border-brand-border">
+        <h3 class="text-xs font-mono uppercase tracking-wider text-brand-text mb-3 flex items-center gap-2">
+          <span class="text-brand-accent">⚡</span>
+          Plantillas Rápidas para Noticias & Artículos de IA
+        </h3>
+        <div class="flex flex-wrap gap-2.5">
+          <button 
+            id="btn-template-ai-agent"
+            class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
+          >
+            + IA & Agentes Autónomos
+          </button>
+          <button 
+            id="btn-template-ai-security"
+            class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
+          >
+            + IA en Ciberseguridad & Redes
+          </button>
+          <button 
+            id="btn-template-ai-hardware"
+            class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
+          >
+            + Servidores & Hardware para IA Local
+          </button>
+        </div>
+      </div>
+
+      <!-- Editor & Preview Grid -->
+      <div class="grid lg:grid-cols-12 gap-8">
+        
+        <!-- Editor Form -->
+        <div class="lg:col-span-7 space-y-4">
+          <div>
+            <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Título del Artículo o Noticia</label>
             <input 
               type="text" 
-              id="post-category" 
-              value="Inteligencia Artificial"
-              class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+              id="post-title" 
+              placeholder="Ej: Nuevas tendencias de Agentes de IA en operaciones de TI"
+              class="w-full px-3.5 py-2 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
             />
           </div>
-          <div>
-            <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Fecha</label>
-            <input 
-              type="date" 
-              id="post-date" 
-              class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
-            />
-          </div>
-        </div>
 
-        <div>
-          <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Etiquetas (separadas por coma)</label>
-          <input 
-            type="text" 
-            id="post-tags" 
-            placeholder="Inteligencia Artificial, Automatización, Python, Data Center"
-            value="Inteligencia Artificial, Automatización, TI"
-            class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
-          />
-        </div>
-
-        <div>
-          <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Resumen / Descripción Corta</label>
-          <textarea 
-            id="post-description" 
-            rows="2" 
-            placeholder="Breve introducción que aparecerá en la tarjeta del blog..."
-            class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors leading-relaxed"
-          ></textarea>
-        </div>
-
-        <div>
-          <div class="flex items-center justify-between mb-1.5">
-            <label class="text-xs font-mono text-brand-muted uppercase">Contenido (Markdown)</label>
-            <span class="text-[11px] font-mono text-brand-muted">Soporta # Títulos, **Negritas**, - Listas</span>
-          </div>
-          <textarea 
-            id="post-content" 
-            rows="10" 
-            placeholder="Escribe el cuerpo de la noticia o artículo aquí..."
-            class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors font-mono leading-relaxed"
-          ></textarea>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="flex flex-wrap items-center gap-3 pt-2">
-          <button 
-            id="btn-download-md"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-brand-text text-brand-bg font-medium text-xs hover:bg-white/90 transition-colors"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-            </svg>
-            Descargar Archivo .md
-          </button>
-
-          <button 
-            id="btn-copy-md"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-brand-borderHover text-brand-text text-xs font-mono transition-colors"
-          >
-            <svg class="w-4 h-4 text-brand-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
-            </svg>
-            Copiar Markdown
-          </button>
-
-          <span id="copy-status" class="text-xs font-mono text-brand-accent opacity-0 transition-opacity">
-            ¡Copiado al portapapeles!
-          </span>
-        </div>
-      </div>
-
-      <!-- Live Preview -->
-      <div class="lg:col-span-5">
-        <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Vista Previa Generada</label>
-        <div class="bg-brand-card p-6 rounded-xl border border-brand-border sticky top-24 min-h-[400px]">
-          <div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-2">
-            <span id="prev-date">Fecha actual</span>
-            <span id="prev-category" class="text-brand-accent">Inteligencia Artificial</span>
-          </div>
-
-          <h2 id="prev-title" class="text-lg font-bold text-brand-text mb-3">
-            Título del artículo aparecerá aquí...
-          </h2>
-
-          <p id="prev-desc" class="text-xs text-brand-muted leading-relaxed mb-4 italic">
-            El resumen del artículo se mostrará en esta sección...
-          </p>
-
-          <div id="prev-tags" class="flex flex-wrap gap-1.5 mb-5 pb-4 border-b border-brand-border/60">
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-bg text-brand-muted border border-brand-border">#IA</span>
-          </div>
-
-          <div id="prev-body" class="text-xs text-brand-text/90 leading-relaxed font-mono whitespace-pre-wrap bg-brand-bg/50 p-4 rounded-lg border border-brand-border/40 max-h-60 overflow-y-auto">
-            El contenido redactado se previsualiza aquí en formato texto y markdown.
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Artículos Existentes -->
-    <div class="mt-16 pt-10 border-t border-brand-border">
-      <h3 class="text-lg font-bold text-brand-text mb-6">
-        Artículos Publicados Actualmente ({existingPosts.length})
-      </h3>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {existingPosts.map((post) => (
-          <div class="bg-brand-card p-4 rounded-lg border border-brand-border">
-            <div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-1.5">
-              <span>{post.data.pubDate.toLocaleDateString('es-ES')}</span>
-              <span class="text-brand-accent">{post.data.tags[0]}</span>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Categoría / Etiqueta Principal</label>
+              <input 
+                type="text" 
+                id="post-category" 
+                value="Inteligencia Artificial"
+                class="w-full px-3.5 py-2 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+              />
             </div>
-            <h4 class="text-xs font-bold text-brand-text line-clamp-1 mb-1">
-              {post.data.title}
-            </h4>
-            <p class="text-[11px] text-brand-muted line-clamp-2">
-              {post.data.description}
-            </p>
+            <div>
+              <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Fecha</label>
+              <input 
+                type="date" 
+                id="post-date" 
+                class="w-full px-3.5 py-2 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+              />
+            </div>
           </div>
-        ))}
+
+          <div>
+            <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Etiquetas (separadas por coma)</label>
+            <input 
+              type="text" 
+              id="post-tags" 
+              value="Inteligencia Artificial, Automatización, Python"
+              class="w-full px-3.5 py-2 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+            />
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Resumen Corto</label>
+            <textarea 
+              id="post-description" 
+              rows="2" 
+              placeholder="Breve introducción que aparecerá en la tarjeta del blog..."
+              class="w-full px-3.5 py-2 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors leading-relaxed"
+            ></textarea>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1.5">
+              <label class="text-xs font-mono text-brand-muted uppercase">Contenido (Markdown)</label>
+              <span class="text-[10px] font-mono text-brand-muted"># Títulos | **Negrita** | - Listas</span>
+            </div>
+            <textarea 
+              id="post-content" 
+              rows="10" 
+              placeholder="Escribe el cuerpo de la noticia o artículo aquí..."
+              class="w-full px-3.5 py-2 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors font-mono leading-relaxed"
+            ></textarea>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button 
+              id="btn-download-md"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-brand-text text-brand-bg font-medium text-xs hover:bg-white/90 transition-colors shadow-sm"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              Descargar Archivo .md
+            </button>
+
+            <button 
+              id="btn-copy-md"
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-brand-borderHover text-brand-text text-xs font-mono transition-colors"
+            >
+              <svg class="w-4 h-4 text-brand-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+              </svg>
+              Copiar Markdown
+            </button>
+
+            <span id="copy-status" class="text-xs font-mono text-brand-accent opacity-0 transition-opacity">
+              ¡Copiado al portapapeles!
+            </span>
+          </div>
+        </div>
+
+        <!-- Live Preview -->
+        <div class="lg:col-span-5">
+          <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Vista Previa Generada</label>
+          <div class="bg-brand-card p-6 rounded-xl border border-brand-border sticky top-24 min-h-[380px]">
+            <div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-2">
+              <span id="prev-date">Fecha actual</span>
+              <span id="prev-category" class="text-brand-accent">Inteligencia Artificial</span>
+            </div>
+
+            <h2 id="prev-title" class="text-base sm:text-lg font-bold text-brand-text mb-3">
+              Título del artículo aparecerá aquí...
+            </h2>
+
+            <p id="prev-desc" class="text-xs text-brand-muted leading-relaxed mb-4 italic">
+              El resumen del artículo se mostrará en esta sección...
+            </p>
+
+            <div id="prev-tags" class="flex flex-wrap gap-1.5 mb-5 pb-4 border-b border-brand-border/60">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-bg text-brand-muted border border-brand-border">#IA</span>
+            </div>
+
+            <div id="prev-body" class="text-xs text-brand-text/90 leading-relaxed font-mono whitespace-pre-wrap bg-brand-bg/50 p-4 rounded-lg border border-brand-border/40 max-h-60 overflow-y-auto">
+              El contenido redactado se previsualiza aquí en tiempo real.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Existing posts list -->
+      <div class="mt-16 pt-10 border-t border-brand-border">
+        <h3 class="text-base font-bold text-brand-text mb-6">
+          Artículos en el Repositorio ({existingPosts.length})
+        </h3>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {existingPosts.map((post) => (
+            <div class="bg-brand-card p-4 rounded-lg border border-brand-border">
+              <div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-1.5">
+                <span>{post.data.pubDate.toLocaleDateString('es-ES')}</span>
+                <span class="text-brand-accent">{post.data.tags[0]}</span>
+              </div>
+              <h4 class="text-xs font-bold text-brand-text line-clamp-1 mb-1">
+                {post.data.title}
+              </h4>
+              <p class="text-[11px] text-brand-muted line-clamp-2">
+                {post.data.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
 
@@ -210,7 +262,48 @@ existingPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
 </Layout>
 
 <script>
-  // Set default date to today
+  // Auth logic
+  const authGate = document.getElementById('auth-gate');
+  const mantenedorContent = document.getElementById('mantenedor-content');
+  const authForm = document.getElementById('auth-form');
+  const authPin = document.getElementById('auth-pin') as HTMLInputElement;
+  const authError = document.getElementById('auth-error');
+  const btnLogout = document.getElementById('btn-logout');
+
+  // Master key (can also be saved or customized in session)
+  const MASTER_PIN = "rene2026";
+
+  function checkAuth() {
+    const isAuthed = sessionStorage.getItem('mantenedor_auth') === 'true';
+    if (isAuthed) {
+      authGate?.classList.add('hidden');
+      mantenedorContent?.classList.remove('hidden');
+    } else {
+      authGate?.classList.remove('hidden');
+      mantenedorContent?.classList.add('hidden');
+    }
+  }
+
+  checkAuth();
+
+  authForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (authPin && authPin.value.trim() === MASTER_PIN) {
+      sessionStorage.setItem('mantenedor_auth', 'true');
+      authError?.classList.add('hidden');
+      checkAuth();
+    } else {
+      authError?.classList.remove('hidden');
+      if (authPin) authPin.value = '';
+    }
+  });
+
+  btnLogout?.addEventListener('click', () => {
+    sessionStorage.removeItem('mantenedor_auth');
+    checkAuth();
+  });
+
+  // Editor logic
   const dateInput = document.getElementById('post-date') as HTMLInputElement;
   if (dateInput) {
     const today = new Date().toISOString().split('T')[0];
@@ -236,7 +329,7 @@ existingPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
     if (prevCategory) prevCategory.textContent = categoryInput.value || 'Inteligencia Artificial';
     if (prevDate) prevDate.textContent = dateInput.value || new Date().toISOString().split('T')[0];
     if (prevDesc) prevDesc.textContent = descInput.value || 'El resumen del artículo se mostrará en esta sección...';
-    if (prevBody) prevBody.textContent = contentInput.value || 'El contenido redactado se previsualiza aquí...';
+    if (prevBody) prevBody.textContent = contentInput.value || 'El contenido redactado se previsualiza aquí en tiempo real.';
 
     if (prevTags && tagsInput) {
       const tags = tagsInput.value.split(',').map(t => t.trim()).filter(Boolean);
