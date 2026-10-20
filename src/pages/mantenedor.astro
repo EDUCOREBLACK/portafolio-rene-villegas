@@ -1,0 +1,342 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const existingPosts = await getCollection('blog');
+existingPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+---
+
+<Layout title="Mantenedor de Artículos & Noticias | René Villegas Carreño">
+  <main class="max-w-5xl mx-auto px-6 py-16">
+    
+    <!-- Header -->
+    <div class="mb-10 pb-6 border-b border-brand-border">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Panel de Administración</p>
+          <h1 class="text-3xl font-bold text-brand-text">Mantenedor de Blog & Noticias de IA</h1>
+        </div>
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:bg-brand-cardHover text-brand-text self-start sm:self-auto"
+        >
+          ← Volver al Portal
+        </a>
+      </div>
+      <p class="text-sm text-brand-muted mt-2 max-w-2xl">
+        Crea, redacta y gestiona nuevos artículos o noticias tecnológicas sobre Inteligencia Artificial e infraestructura. Puedes usar plantillas automáticas, previsualizar en tiempo real y descargar el archivo Markdown listo.
+      </p>
+    </div>
+
+    <!-- Quick Templates for AI News -->
+    <div class="mb-10 bg-brand-card p-6 rounded-xl border border-brand-border">
+      <h3 class="text-sm font-bold text-brand-text mb-3 flex items-center gap-2">
+        <span class="text-brand-accent font-mono">⚡</span>
+        Cargar Plantilla Rápida de Noticias de IA
+      </h3>
+      <div class="flex flex-wrap gap-2.5">
+        <button 
+          id="btn-template-ai-agent"
+          class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
+        >
+          + IA & Agentes Autónomos
+        </button>
+        <button 
+          id="btn-template-ai-security"
+          class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
+        >
+          + IA en Ciberseguridad & Infraestructura
+        </button>
+        <button 
+          id="btn-template-ai-hardware"
+          class="text-xs font-mono px-3 py-1.5 rounded-lg border border-brand-border bg-brand-bg hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
+        >
+          + Servidores & Hardware para IA Local
+        </button>
+      </div>
+    </div>
+
+    <!-- Editor & Preview Grid -->
+    <div class="grid lg:grid-cols-12 gap-8">
+      
+      <!-- Editor Form -->
+      <div class="lg:col-span-7 space-y-4">
+        <div>
+          <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Título del Artículo o Noticia</label>
+          <input 
+            type="text" 
+            id="post-title" 
+            placeholder="Ej: Nuevas tendencias de Agentes de IA en la gestión de TI"
+            class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+          />
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Categoría / Etiqueta Principal</label>
+            <input 
+              type="text" 
+              id="post-category" 
+              value="Inteligencia Artificial"
+              class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+            />
+          </div>
+          <div>
+            <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Fecha</label>
+            <input 
+              type="date" 
+              id="post-date" 
+              class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Etiquetas (separadas por coma)</label>
+          <input 
+            type="text" 
+            id="post-tags" 
+            placeholder="Inteligencia Artificial, Automatización, Python, Data Center"
+            value="Inteligencia Artificial, Automatización, TI"
+            class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Resumen / Descripción Corta</label>
+          <textarea 
+            id="post-description" 
+            rows="2" 
+            placeholder="Breve introducción que aparecerá en la tarjeta del blog..."
+            class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors leading-relaxed"
+          ></textarea>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between mb-1.5">
+            <label class="text-xs font-mono text-brand-muted uppercase">Contenido (Markdown)</label>
+            <span class="text-[11px] font-mono text-brand-muted">Soporta # Títulos, **Negritas**, - Listas</span>
+          </div>
+          <textarea 
+            id="post-content" 
+            rows="10" 
+            placeholder="Escribe el cuerpo de la noticia o artículo aquí..."
+            class="w-full px-3.5 py-2.5 text-sm rounded-lg bg-brand-card border border-brand-border text-brand-text focus:outline-none focus:border-brand-accent transition-colors font-mono leading-relaxed"
+          ></textarea>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button 
+            id="btn-download-md"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-brand-text text-brand-bg font-medium text-xs hover:bg-white/90 transition-colors"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Descargar Archivo .md
+          </button>
+
+          <button 
+            id="btn-copy-md"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-brand-borderHover text-brand-text text-xs font-mono transition-colors"
+          >
+            <svg class="w-4 h-4 text-brand-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+            </svg>
+            Copiar Markdown
+          </button>
+
+          <span id="copy-status" class="text-xs font-mono text-brand-accent opacity-0 transition-opacity">
+            ¡Copiado al portapapeles!
+          </span>
+        </div>
+      </div>
+
+      <!-- Live Preview -->
+      <div class="lg:col-span-5">
+        <label class="block text-xs font-mono text-brand-muted uppercase mb-1.5">Vista Previa Generada</label>
+        <div class="bg-brand-card p-6 rounded-xl border border-brand-border sticky top-24 min-h-[400px]">
+          <div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-2">
+            <span id="prev-date">Fecha actual</span>
+            <span id="prev-category" class="text-brand-accent">Inteligencia Artificial</span>
+          </div>
+
+          <h2 id="prev-title" class="text-lg font-bold text-brand-text mb-3">
+            Título del artículo aparecerá aquí...
+          </h2>
+
+          <p id="prev-desc" class="text-xs text-brand-muted leading-relaxed mb-4 italic">
+            El resumen del artículo se mostrará en esta sección...
+          </p>
+
+          <div id="prev-tags" class="flex flex-wrap gap-1.5 mb-5 pb-4 border-b border-brand-border/60">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-bg text-brand-muted border border-brand-border">#IA</span>
+          </div>
+
+          <div id="prev-body" class="text-xs text-brand-text/90 leading-relaxed font-mono whitespace-pre-wrap bg-brand-bg/50 p-4 rounded-lg border border-brand-border/40 max-h-60 overflow-y-auto">
+            El contenido redactado se previsualiza aquí en formato texto y markdown.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Artículos Existentes -->
+    <div class="mt-16 pt-10 border-t border-brand-border">
+      <h3 class="text-lg font-bold text-brand-text mb-6">
+        Artículos Publicados Actualmente ({existingPosts.length})
+      </h3>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {existingPosts.map((post) => (
+          <div class="bg-brand-card p-4 rounded-lg border border-brand-border">
+            <div class="flex items-center justify-between text-[11px] font-mono text-brand-muted mb-1.5">
+              <span>{post.data.pubDate.toLocaleDateString('es-ES')}</span>
+              <span class="text-brand-accent">{post.data.tags[0]}</span>
+            </div>
+            <h4 class="text-xs font-bold text-brand-text line-clamp-1 mb-1">
+              {post.data.title}
+            </h4>
+            <p class="text-[11px] text-brand-muted line-clamp-2">
+              {post.data.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </main>
+</Layout>
+
+<script>
+  // Set default date to today
+  const dateInput = document.getElementById('post-date') as HTMLInputElement;
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.value = today;
+  }
+
+  const titleInput = document.getElementById('post-title') as HTMLInputElement;
+  const categoryInput = document.getElementById('post-category') as HTMLInputElement;
+  const tagsInput = document.getElementById('post-tags') as HTMLInputElement;
+  const descInput = document.getElementById('post-description') as HTMLTextAreaElement;
+  const contentInput = document.getElementById('post-content') as HTMLTextAreaElement;
+
+  const prevTitle = document.getElementById('prev-title');
+  const prevCategory = document.getElementById('prev-category');
+  const prevDate = document.getElementById('prev-date');
+  const prevDesc = document.getElementById('prev-desc');
+  const prevTags = document.getElementById('prev-tags');
+  const prevBody = document.getElementById('prev-body');
+  const copyStatus = document.getElementById('copy-status');
+
+  function updatePreview() {
+    if (prevTitle) prevTitle.textContent = titleInput.value || 'Título del artículo aparecerá aquí...';
+    if (prevCategory) prevCategory.textContent = categoryInput.value || 'Inteligencia Artificial';
+    if (prevDate) prevDate.textContent = dateInput.value || new Date().toISOString().split('T')[0];
+    if (prevDesc) prevDesc.textContent = descInput.value || 'El resumen del artículo se mostrará en esta sección...';
+    if (prevBody) prevBody.textContent = contentInput.value || 'El contenido redactado se previsualiza aquí...';
+
+    if (prevTags && tagsInput) {
+      const tags = tagsInput.value.split(',').map(t => t.trim()).filter(Boolean);
+      prevTags.innerHTML = tags.map(t => `<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-bg text-brand-muted border border-brand-border">#${t}</span>`).join('');
+    }
+  }
+
+  [titleInput, categoryInput, dateInput, tagsInput, descInput, contentInput].forEach(el => {
+    el?.addEventListener('input', updatePreview);
+  });
+
+  function generateFullMarkdown() {
+    const title = titleInput.value || 'Nuevo Artículo';
+    const desc = descInput.value || '';
+    const date = dateInput.value || new Date().toISOString().split('T')[0];
+    const tags = tagsInput.value.split(',').map(t => `"${t.trim()}"`).filter(Boolean).join(', ');
+    const body = contentInput.value || '';
+
+    return `---
+title: "${title}"
+description: "${desc}"
+pubDate: ${date}
+author: "René Villegas Carreño"
+tags: [${tags}]
+draft: false
+---
+
+# ${title}
+
+${body}
+`;
+  }
+
+  // Templates
+  document.getElementById('btn-template-ai-agent')?.addEventListener('click', () => {
+    titleInput.value = "Agentes de IA en Centros de Datos: De la Monitorización a la Acción Autónoma";
+    categoryInput.value = "Inteligencia Artificial";
+    tagsInput.value = "Inteligencia Artificial, Agentes, Automatización, Data Centers";
+    descInput.value = "Análisis sobre el impacto de agentes de IA con capacidades de ejecución en la supervisión y resolución de fallas en infraestructuras de red.";
+    contentInput.value = `Los agentes autónomos impulsados por modelos de lenguaje están superando las limitaciones de los scripts tradicionales.
+
+## ¿Qué diferencia a un Agente de IA?
+
+A diferencia de un script rígido, un agente autónomo puede:
+1. **Razonar sobre logs complejos:** Identificar patrones cruzados entre anomalías térmicas y saturación de ancho de banda.
+2. **Consultar APIs de manera dinámica:** Acceder a inventarios y telemetría en tiempo real.
+3. **Formular planes de contingencia preliminares:** Acelerar el diagnóstico antes de la intervención física del ingeniero.`;
+    updatePreview();
+  });
+
+  document.getElementById('btn-template-ai-security')?.addEventListener('click', () => {
+    titleInput.value = "Ciberseguridad y LLMs: Blindando la Infraestructura ante Nuevas Amenazas";
+    categoryInput.value = "Ciberseguridad & IA";
+    tagsInput.value = "Ciberseguridad, ISO 27001, Inteligencia Artificial, Redes";
+    descInput.value = "Estrategias para proteger la infraestructura crítica y la privacidad de datos corporativos al integrar herramientas de IA.";
+    contentInput.value = `La adopción de IA en las organizaciones debe ir acompañada de un análisis exhaustivo de seguridad bajo estándares internacionales como ISO 27001.
+
+### Buenas Prácticas Clave:
+- **Aislamiento de redes:** Desplegar servidores de inferencia en VLANs dedicadas.
+- **Auditoría de accesos:** Registrar cada petición realizada a los modelos analíticos.
+- **Validación humana:** Mantener siempre la decisión de cambios críticos en manos del especialista.`;
+    updatePreview();
+  });
+
+  document.getElementById('btn-template-ai-hardware')?.addEventListener('click', () => {
+    titleInput.value = "Dimensionamiento de Servidores para Cargas de Trabajo de IA On-Premise";
+    categoryInput.value = "Infraestructura & Hardware";
+    tagsInput.value = "Hardware, Servidores, IA Local, Climatización, Energía";
+    descInput.value = "Guía técnica sobre requerimientos térmicos, consumo de energía y configuraciones de hardware para ejecutar modelos locales en salas de cómputo.";
+    contentInput.value = `El despliegue de modelos de IA locales exige consideraciones específicas de infraestructura física:
+
+1. **Refrigeración y Flujo de Aire:** La densidad térmica de los servidores con aceleración GPU requiere pasillos fríos optimizados.
+2. **Capacidad Eléctrica:** Monitoreo estricto de las fases y PDUs para evitar sobrecargas de corriente.
+3. **Almacenamiento de Alta Velocidad:** Unidades NVMe para carga ágil de pesos de modelos.`;
+    updatePreview();
+  });
+
+  // Copy Markdown
+  document.getElementById('btn-copy-md')?.addEventListener('click', () => {
+    const md = generateFullMarkdown();
+    navigator.clipboard.writeText(md).then(() => {
+      if (copyStatus) {
+        copyStatus.classList.remove('opacity-0');
+        setTimeout(() => copyStatus.classList.add('opacity-0'), 2500);
+      }
+    });
+  });
+
+  // Download Markdown file
+  document.getElementById('btn-download-md')?.addEventListener('click', () => {
+    const md = generateFullMarkdown();
+    const title = titleInput.value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') || 'nuevo-articulo';
+    const blob = new Blob([md], { type: 'text/markdown;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `${title}.md`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  });
+</script>
