@@ -1,55 +1,66 @@
 ---
 const techSkills = [
-  { name: "Python", category: "Lenguaje", icon: "python" },
-  { name: "PHP", category: "Lenguaje", icon: "php" },
-  { name: "JavaScript", category: "Lenguaje", icon: "javascript" },
-  { name: "CSS3", category: "Frontend", icon: "css" },
-  { name: "Laravel", category: "Framework", icon: "laravel" },
-  { name: "Django", category: "Framework", icon: "django" },
-  { name: "Yii2", category: "Framework", icon: "yii" },
-  { name: "MongoDB", category: "Base de Datos", icon: "mongodb" },
-  { name: "SQL Relacional", category: "Base de Datos", icon: "sql" },
-  { name: "Linux / Bash", category: "Sistemas", icon: "linux" },
-  { name: "Docker", category: "Contenedores", icon: "docker" },
+  { name: "Python", category: "Lenguaje / Automatización", icon: "🐍" },
+  { name: "PHP", category: "Backend / MVC", icon: "🐘" },
+  { name: "JavaScript", category: "Frontend / Node", icon: "⚡" },
+  { name: "CSS3 & Tailwind", category: "Diseño & UI", icon: "🎨" },
+  { name: "Laravel", category: "Framework PHP", icon: "🔥" },
+  { name: "Django", category: "Framework Python", icon: "🚀" },
+  { name: "Yii2", category: "Framework PHP", icon: "⚙️" },
+  { name: "MongoDB", category: "NoSQL Database", icon: "🍃" },
+  { name: "SQL Relacional", category: "MySQL / PostgreSQL", icon: "🗄️" },
+  { name: "Linux / Bash", category: "SysAdmin & Shell", icon: "🐧" },
+  { name: "Docker", category: "Contenedores & CI", icon: "🐳" },
+  { name: "WordPress", category: "CMS & E-commerce", icon: "🌐" },
 ];
 
 const aiTools = [
-  { name: "Antigravity", badge: "Google DeepMind", desc: "Desarrollo agéntico asistido por IA", icon: "antigravity" },
-  { name: "Claude Code", badge: "Anthropic", desc: "Codificación y terminal agentic CLI", icon: "claude" },
-  { name: "OpenAI / LLMs", badge: "Modelos Avanzados", desc: "Integración de APIs y razonamiento", icon: "openai" },
-  { name: "Ollama & Modelos Locales", badge: "On-Premise", desc: "Inferencia privada en servidores propios", icon: "ollama" },
-  { name: "Agentes & Workflows", badge: "Automatización", desc: "Flujos de decisión y auditoría autónoma", icon: "agent" },
+  { name: "Antigravity", badge: "Google DeepMind", desc: "Desarrollo agéntico avanzado y generación de código", icon: "antigravity" },
+  { name: "Claude Code", badge: "Anthropic", desc: "Codificación autónoma en terminal CLI y revisión de arquitectura", icon: "claude" },
+  { name: "OpenAI / LLMs", badge: "Modelos de Lenguaje", desc: "Integración de embeddings, razonamiento y APIs avanzadas", icon: "openai" },
+  { name: "Ollama & Modelos Locales", badge: "On-Premise", desc: "Inferencia privada local en infraestructura corporativa", icon: "ollama" },
+  { name: "Agentes & Workflows", badge: "Automatización", desc: "Orquestación de flujos de auditoría y análisis de datos", icon: "agent" },
 ];
 
 const softSkills = [
   "Liderazgo de Operaciones Críticas 24/7",
-  "Resolución de Problemas bajo Presión",
-  "Pensamiento Analítico & Análisis Causa Raíz",
+  "Resolución Rápida bajo Presión",
+  "Análisis de Causa Raíz (RCA)",
   "Comunicación Asertiva & Trabajo en Equipo",
-  "Compromiso con la Continuidad y SLAs",
-  "Adaptabilidad & Aprendizaje Continuo"
+  "Compromiso Irrestricto con SLAs",
+  "Adaptabilidad a Nuevos Marcos Tecnológicos"
 ];
 ---
 
-<section id="habilidades" class="max-w-5xl mx-auto px-6 py-16 border-t border-cloud-border">
-  <div class="mb-10">
-    <p class="text-xs font-mono uppercase tracking-widest text-cloud-azure mb-2">Stack Tecnológico</p>
-    <h2 class="text-2xl sm:text-3xl font-bold text-cloud-text mb-2">Habilidades Técnicas & Herramientas</h2>
-    <p class="text-xs sm:text-sm text-cloud-muted">
-      Dominio en desarrollo, bases de datos, sistemas operativos y herramientas modernas de Inteligencia Artificial.
+<section id="habilidades" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800/80">
+  <!-- Section Badge & Header -->
+  <div class="mb-12 text-center sm:text-left">
+    <div class="pro-badge mb-2">
+      <span class="bg-gradient-to-r from-indigo-400 to-indigo-200 bg-clip-text text-transparent text-xs font-mono font-semibold tracking-wider uppercase">
+        Competencias Técnicas & AI Stack
+      </span>
+    </div>
+    <h2 class="text-2xl sm:text-4xl font-bold text-gradient-pro mb-3">
+      Habilidades & Ecosistema Tecnológico
+    </h2>
+    <p class="text-xs sm:text-sm text-gray-400 max-w-2xl leading-relaxed">
+      Sólido dominio en infraestructura de centros de datos, lenguajes de desarrollo web, bases de datos y la vanguardia en herramientas de Inteligencia Artificial agéntica.
     </p>
   </div>
 
-  <!-- Herramientas de IA Destacadas -->
-  <div class="mb-12">
-    <h3 class="text-xs font-mono uppercase tracking-wider text-cloud-muted mb-4 flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-cloud-azure"></span>
-      Ecosistema de Inteligencia Artificial & Herramientas Agénticas
-    </h3>
+  <!-- AI Ecosystem (Cruip Open PRO Style) -->
+  <div class="mb-14">
+    <div class="flex items-center gap-2 mb-5">
+      <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+      <h3 class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">
+        Herramientas de Inteligencia Artificial & Agentes
+      </h3>
+    </div>
+
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {aiTools.map((tool) => (
-        <div class="bg-cloud-card p-4 rounded-xl border border-cloud-border hover:border-cloud-azure/50 transition-colors group flex items-start gap-3.5">
-          <div class="w-9 h-9 rounded-lg bg-cloud-bg border border-cloud-border flex items-center justify-center text-cloud-azure flex-shrink-0 group-hover:scale-105 transition-transform">
+        <div class="pro-card p-5 rounded-2xl border border-gray-800/80 hover:border-indigo-500/50 group flex items-start gap-4 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-indigo-950/60 border border-indigo-800/40 text-indigo-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:border-indigo-500 transition-all">
             {tool.icon === 'antigravity' && (
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -79,15 +90,15 @@ const softSkills = [
             )}
           </div>
           <div>
-            <div class="flex items-center gap-2 mb-0.5">
-              <h4 class="text-xs font-bold text-cloud-text group-hover:text-cloud-azure transition-colors">
+            <div class="flex items-center gap-2 mb-1">
+              <h4 class="text-xs sm:text-sm font-bold text-gray-100 group-hover:text-indigo-400 transition-colors">
                 {tool.name}
               </h4>
-              <span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-cloud-bg text-cloud-muted border border-cloud-border">
+              <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-gray-900 text-indigo-300 border border-gray-800">
                 {tool.badge}
               </span>
             </div>
-            <p class="text-[11px] text-cloud-muted leading-tight">
+            <p class="text-xs text-gray-400 leading-snug">
               {tool.desc}
             </p>
           </div>
@@ -96,19 +107,23 @@ const softSkills = [
     </div>
   </div>
 
-  <!-- Lenguajes & Frameworks -->
-  <div class="mb-12">
-    <h3 class="text-xs font-mono uppercase tracking-wider text-cloud-muted mb-4 flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-cloud-azure"></span>
-      Desarrollo, Frameworks & Infraestructura
-    </h3>
+  <!-- Languages, Frameworks & Infra -->
+  <div class="mb-14">
+    <div class="flex items-center gap-2 mb-5">
+      <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+      <h3 class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">
+        Desarrollo, Frameworks & Infraestructura
+      </h3>
+    </div>
+
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
       {techSkills.map((tech) => (
-        <div class="bg-cloud-card p-3 rounded-lg border border-cloud-border hover:border-cloud-borderLight transition-all flex flex-col items-center justify-center text-center group">
-          <span class="text-xs font-bold text-cloud-text group-hover:text-cloud-azure transition-colors mb-1">
+        <div class="pro-card p-3.5 rounded-xl border border-gray-800/80 hover:border-indigo-500/50 flex flex-col items-center justify-center text-center group transition-all">
+          <span class="text-lg mb-1.5">{tech.icon}</span>
+          <span class="text-xs font-bold text-gray-200 group-hover:text-indigo-400 transition-colors mb-0.5">
             {tech.name}
           </span>
-          <span class="text-[10px] font-mono text-cloud-muted">
+          <span class="text-[10px] font-mono text-gray-500">
             {tech.category}
           </span>
         </div>
@@ -116,18 +131,23 @@ const softSkills = [
     </div>
   </div>
 
-  <!-- Habilidades Blandas (Soft Skills) -->
+  <!-- Habilidades Blandas / Gestión -->
   <div>
-    <h3 class="text-xs font-mono uppercase tracking-wider text-cloud-muted mb-4 flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-cloud-azure"></span>
-      Habilidades Personales & Gestión
-    </h3>
-    <div class="flex flex-wrap gap-2">
+    <div class="flex items-center gap-2 mb-5">
+      <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+      <h3 class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold">
+        Habilidades Blandas & Gestión Operacional
+      </h3>
+    </div>
+
+    <div class="flex flex-wrap gap-2.5">
       {softSkills.map((skill) => (
-        <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-cloud-card border border-cloud-border text-cloud-text/90 hover:border-cloud-azure/40 transition-colors">
-          ✓ {skill}
+        <span class="text-xs font-mono px-3.5 py-1.5 rounded-xl pro-card border border-gray-800 text-gray-300 hover:border-indigo-500/50 hover:text-white transition-all flex items-center gap-2">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>{skill}</span>
         </span>
       ))}
     </div>
   </div>
+
 </section>
