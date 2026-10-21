@@ -18,18 +18,18 @@
     --accent-blue: #3b82f6; /* blue-500 */
   }
 
-  /* Light mode (Clean Executive Light) */
+  /* Light mode (Clean High-Contrast Light) */
   html:not(.dark) {
     --bg-main: #f8fafc; /* slate-50 */
     --card-main: #ffffff;
     --card-hover: #f1f5f9; /* slate-100 */
-    --border-main: #e2e8f0; /* slate-200 */
-    --border-hover: rgba(37, 99, 235, 0.4); /* blue-600 */
-    --text-main: #0f172a; /* slate-900 */
-    --text-muted: #475569; /* slate-600 */
-    --accent-cyan: #0891b2; /* cyan-600 */
+    --border-main: #cbd5e1; /* slate-300 */
+    --border-hover: rgba(37, 99, 235, 0.6); /* blue-600 */
+    --text-main: #020617; /* slate-950 - deep black/slate for maximum readability */
+    --text-muted: #334155; /* slate-700 */
+    --accent-cyan: #0284c7; /* sky-600 */
     --accent-emerald: #059669; /* emerald-600 */
-    --accent-blue: #2563eb; /* blue-600 */
+    --accent-blue: #1d4ed8; /* blue-700 */
   }
 
   body {
@@ -52,14 +52,14 @@
     background-attachment: fixed;
   }
 
-  /* Soft modern clean background in Light Mode */
+  /* Crisp modern clean background in Light Mode */
   html:not(.dark) body {
     background-color: #f8fafc;
     background-image: 
       radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.08), transparent 70%),
       radial-gradient(ellipse 60% 40% at 100% 60%, rgba(6, 182, 212, 0.05), transparent 60%),
-      linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
     background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
     background-attachment: fixed;
   }
@@ -81,11 +81,51 @@
 }
 
 html:not(.dark) .text-gradient-pro {
-  background: linear-gradient(to right, #0f172a, #1d4ed8, #0369a1, #1e293b, #0f172a);
+  background: linear-gradient(to right, #020617, #1d4ed8, #0369a1, #0f172a, #020617);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 6s linear infinite;
+}
+
+/* Continuous Infinite Horizontal Carousel (Marquee) */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 32s linear infinite;
+}
+
+.animate-marquee-left:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 35s linear infinite;
+}
+
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+/* Masked Gradient Edges for Marquees */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
 
 /* Signature Cyber / Corporate Buttons */
@@ -115,7 +155,7 @@ html:not(.dark) .btn-pro-primary {
 
 html:not(.dark) .btn-pro-secondary {
   background: #ffffff;
-  color: #0f172a;
+  color: #020617;
   border: 1px solid #cbd5e1;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
@@ -142,7 +182,7 @@ html:not(.dark) .btn-pro-secondary:hover {
 
 html:not(.dark) .pro-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cbd5e1;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
 }
 
@@ -153,7 +193,7 @@ html:not(.dark) .pro-card {
 }
 
 html:not(.dark) .pro-card:hover {
-  border-color: rgba(37, 99, 235, 0.4);
+  border-color: rgba(37, 99, 235, 0.5);
   box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.1), 0 8px 10px -6px rgba(37, 99, 235, 0.05);
 }
 
@@ -169,7 +209,7 @@ html:not(.dark) .pro-card:hover {
 
 html:not(.dark) .noc-kpi-card {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cbd5e1;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
 }
 
@@ -180,7 +220,7 @@ html:not(.dark) .noc-kpi-card {
 }
 
 html:not(.dark) .noc-kpi-card:hover {
-  border-color: rgba(37, 99, 235, 0.5);
+  border-color: rgba(37, 99, 235, 0.6);
   box-shadow: 0 12px 30px -8px rgba(37, 99, 235, 0.15);
 }
 
@@ -212,17 +252,6 @@ html:not(.dark) .pro-badge::before {
 
 html:not(.dark) .pro-badge::after {
   background: linear-gradient(to left, transparent, rgba(37, 99, 235, 0.8));
-}
-
-/* Pulse / Live dot */
-@keyframes pingSlow {
-  0% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 0.8; }
-}
-
-.ping-slow {
-  animation: pingSlow 2.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 /* Terminal Cursor Blink */
