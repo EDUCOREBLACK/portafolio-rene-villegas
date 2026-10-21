@@ -1,6 +1,7 @@
 ---
 const navItems = [
   { label: 'Habilidades', href: '/#habilidades' },
+  { label: 'Telemetría', href: '/#telemetria' },
   { label: 'Portafolio', href: '/#portafolio' },
   { label: 'Servicios', href: '/#servicios' },
   { label: 'Trayectoria', href: '/#experiencia' },
@@ -10,29 +11,29 @@ const navItems = [
 
 <header class="sticky top-2 z-40 w-full px-4 sm:px-6 transition-all duration-300">
   <div class="max-w-5xl mx-auto">
-    <div class="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-gray-900/80 dark:bg-gray-900/80 bg-white/90 backdrop-blur-md px-4 border border-gray-800/80 dark:border-gray-800/80 border-slate-200 shadow-xl">
+    <div class="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-slate-900/80 dark:bg-slate-900/80 bg-white/95 backdrop-blur-md px-4 border border-slate-800 dark:border-slate-800 border-slate-200 shadow-lg dark:shadow-2xl transition-colors">
       
       <!-- Brand Logo -->
       <a href="/" class="flex items-center gap-2.5 group">
-        <span class="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center font-mono font-bold text-xs text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+        <span class="w-8 h-8 rounded-xl bg-gradient-to-tr from-cyan-600 to-blue-500 dark:from-cyan-500 dark:to-emerald-400 flex items-center justify-center font-mono font-bold text-xs text-white shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
           RV
         </span>
         <div class="flex flex-col">
-          <span class="font-bold text-sm text-gray-100 dark:text-gray-100 text-slate-800 tracking-tight group-hover:text-indigo-400 transition-colors">
+          <span class="font-bold text-sm text-slate-900 dark:text-white tracking-tight group-hover:text-cyan-500 dark:group-hover:text-cyan-400 transition-colors">
             René Villegas
           </span>
-          <span class="text-[10px] font-mono text-gray-400 dark:text-gray-400 text-slate-500 -mt-0.5 hidden sm:inline-block">
-            datacenter.core.ops
+          <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-0.5 hidden sm:inline-block">
+            datacenter.soc.ops
           </span>
         </div>
       </a>
 
       <!-- Navigation links -->
-      <nav class="hidden md:flex items-center gap-6 text-xs font-mono uppercase tracking-wider">
+      <nav class="hidden md:flex items-center gap-5 text-xs font-mono uppercase tracking-wider">
         {navItems.map((item) => (
           <a 
             href={item.href} 
-            class="text-gray-400 dark:text-gray-400 text-slate-600 hover:text-indigo-400 transition-colors"
+            class="text-slate-600 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 font-medium transition-colors"
           >
             {item.label}
           </a>
@@ -46,16 +47,16 @@ const navItems = [
         <button 
           id="theme-toggle" 
           type="button" 
-          class="w-8 h-8 rounded-xl border border-gray-800 dark:border-gray-800 border-slate-300 bg-gray-950/50 dark:bg-gray-950/50 bg-slate-100 flex items-center justify-center text-gray-400 hover:text-indigo-400 hover:border-indigo-500/50 transition-colors"
-          aria-label="Cambiar tema claro/oscuro"
-          title="Cambiar tema día/noche"
+          class="w-9 h-9 rounded-xl border border-slate-300 dark:border-slate-800 bg-slate-100 dark:bg-slate-950/80 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-cyan-600 dark:hover:text-cyan-400 hover:border-cyan-500/50 transition-all cursor-pointer shadow-sm"
+          aria-label="Alternar entre modo día y modo noche"
+          title="Cambiar modo día/noche"
         >
-          <!-- Sun icon (shown in dark) -->
-          <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden text-amber-400 transform transition-transform hover:rotate-45" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
           </svg>
-          <!-- Moon icon (shown in light) -->
-          <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Moon icon (shown in light mode) -->
+          <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden text-slate-700 transform transition-transform hover:-rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
           </svg>
         </button>
@@ -64,10 +65,10 @@ const navItems = [
         <button 
           type="button"
           data-open-cli-download
-          class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-xl btn-pro-primary"
+          class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-2 rounded-xl btn-pro-primary cursor-pointer"
           title="Descargar CV con simulación CLI"
         >
-          <span class="text-emerald-300 font-bold">$_</span>
+          <span class="text-emerald-300 dark:text-emerald-300 font-bold">$_</span>
           <span>CV (PDF)</span>
         </button>
       </div>
