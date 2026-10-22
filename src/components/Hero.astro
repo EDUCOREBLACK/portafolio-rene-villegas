@@ -56,8 +56,8 @@
     <!-- Executive Bio & Actions Column (Right on desktop) -->
     <div class="lg:col-span-8 flex flex-col text-center sm:text-left">
       
-      <!-- Headline with Cyber Shimmer & High Contrast -->
-      <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 dark:text-white text-gradient-pro mb-3">
+      <!-- Headline with Bitter Serif Font & Editorial Contrast -->
+      <h1 class="text-3xl sm:text-5xl font-serif font-bold tracking-tight text-slate-900 dark:text-white text-gradient-pro mb-3">
         René Villegas Carreño
       </h1>
 
@@ -93,10 +93,11 @@
       <!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row items-center gap-3 justify-center sm:justify-start mb-6">
         
-        <!-- Primary Action: Descargar CV (triggers CLI terminal modal) -->
-        <button 
-          type="button"
-          data-open-cli-download
+        <!-- Primary Action: Descargar CV (Direct PDF Download) -->
+        <a 
+          href="/cv-rene-villegas.pdf"
+          download="cv-rene-villegas.pdf"
+          target="_blank"
           class="btn-pro-primary w-full sm:w-auto px-5 py-2.5 rounded-xl font-medium text-xs sm:text-sm flex items-center justify-center gap-2 group cursor-pointer"
         >
           <span class="font-mono text-emerald-300 font-bold">$_</span>
@@ -104,7 +105,7 @@
           <svg class="w-4 h-4 text-cyan-100 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
           </svg>
-        </button>
+        </a>
 
         <!-- Secondary Action: WhatsApp -->
         <a 

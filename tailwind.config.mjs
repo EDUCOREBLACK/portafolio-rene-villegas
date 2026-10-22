@@ -34,9 +34,17 @@ export default {
           green: '#10b981',
           red: '#ef4444',
           yellow: '#f59e0b',
+        },
+        robb: {
+          bg: '#f4f9fc',
+          line: '#7f00e0',
+          fill: '#aadcec',
+          text: '#0f1b61',
+          subtext: '#73bbc5',
         }
       },
       fontFamily: {
+        serif: ['Bitter', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Menlo', 'monospace']
       },
