@@ -1,33 +1,102 @@
 ---
 ---
-<section class="min-h-[75vh] flex items-center max-w-5xl mx-auto px-6 py-16 md:py-24">
-  <div class="grid md:grid-cols-12 gap-10 md:gap-14 items-center w-full">
+<section class="min-h-[75vh] flex items-center max-w-5xl mx-auto px-6 py-14 md:py-20">
+  <div class="grid md:grid-cols-12 gap-10 md:gap-12 items-center w-full">
     
     <!-- Text Column -->
     <div class="md:col-span-8 flex flex-col items-start order-2 md:order-1">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-card border border-brand-border text-xs font-mono text-brand-muted mb-6">
+      
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-card border border-brand-border text-xs font-mono text-brand-muted mb-5">
         <span class="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
-        Operaciones Críticas & Automatización TI
+        Disponible para Operaciones & Proyectos TI
       </div>
 
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-text mb-4">
+      <!-- Name -->
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-text mb-2">
         René Villegas Carreño
       </h1>
 
-      <p class="text-lg sm:text-xl text-brand-muted font-normal mb-6 leading-relaxed">
-        Ingeniero en Tecnologías de la Información con más de 15 años liderando operaciones de misión crítica 24/7, continuidad operacional y automatización en centros de datos de alta disponibilidad.
-      </p>
+      <!-- Typewriter Subtitle -->
+      <div class="h-8 flex items-center mb-5">
+        <span class="text-lg sm:text-xl font-mono text-brand-accent font-semibold tracking-tight">
+          <span id="typewriter-text"></span><span class="animate-pulse text-brand-text">|</span>
+        </span>
+      </div>
 
-      <p class="text-sm sm:text-base text-brand-muted/90 max-w-2xl mb-8 leading-relaxed">
-        Especialista en gobernanza técnica y gestión de servicios bajo marco <strong class="text-brand-text font-medium">ITIL</strong>, normas <strong class="text-brand-text font-medium">ISO 27001</strong> y planes de continuidad <strong class="text-brand-text font-medium">DRP</strong>. Desarrollo de flujos analíticos y optimización operativa mediante <strong class="text-brand-text font-medium">Python, SQL, Linux y herramientas de IA</strong>.
-      </p>
+      <!-- Social & Direct Contact Icons -->
+      <div class="flex flex-wrap items-center gap-2.5 mb-6">
+        <!-- LinkedIn -->
+        <a 
+          href="https://www.linkedin.com/in/rene-eduardo-villegas-carreño-471a94140" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="p-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
+          title="LinkedIn Profile"
+          aria-label="LinkedIn"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+
+        <!-- GitHub -->
+        <a 
+          href="https://github.com/EDUCOREBLACK" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="p-2 rounded-lg border border-brand-border bg-brand-card hover:border-brand-accent hover:text-brand-accent text-brand-muted transition-colors"
+          title="GitHub Profile"
+          aria-label="GitHub"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </a>
+
+        <!-- Email -->
+        <a 
+          href="mailto:Duarapcsis@gmail.com" 
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:border-brand-accent hover:text-brand-accent text-brand-muted text-xs font-mono transition-colors"
+          title="Enviar correo"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>Duarapcsis@gmail.com</span>
+        </a>
+
+        <!-- Phone / WhatsApp -->
+        <a 
+          href="https://wa.me/56965732414" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-brand-border bg-brand-card hover:border-brand-accent hover:text-brand-accent text-brand-muted text-xs font-mono transition-colors"
+          title="WhatsApp / Teléfono"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+          </svg>
+          <span>+56 9 65732414</span>
+        </a>
+      </div>
+
+      <!-- Compact Experience Description as requested -->
+      <div class="p-4 rounded-xl border border-brand-border bg-brand-card/60 text-xs sm:text-sm text-brand-muted leading-relaxed mb-6 space-y-2">
+        <p>
+          Con <strong class="text-brand-text font-medium">más de 15 años</strong> liderando operaciones de misión crítica 24/7, continuidad operacional y automatización en centros de datos de alta disponibilidad.
+        </p>
+        <p>
+          Especialista en gobernanza técnica y gestión de servicios bajo marco <strong class="text-brand-text font-medium">ITIL</strong>, normas <strong class="text-brand-text font-medium">ISO 27001</strong> y planes de continuidad <strong class="text-brand-text font-medium">DRP</strong>. Desarrollo de flujos analíticos y optimización operativa mediante <strong class="text-brand-text font-medium">Python, SQL, Linux y herramientas de IA</strong>.
+        </p>
+      </div>
 
       <!-- Action Buttons -->
-      <div class="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+      <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
         <a 
           href="/cv-rene-villegas.pdf" 
           download="Curriculum_Vitae_Rene_Villegas.pdf"
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-text text-brand-bg font-medium text-sm hover:bg-white/90 transition-all duration-200 shadow-sm"
+          class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-brand-text text-brand-bg font-medium text-xs hover:bg-white/90 transition-colors shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
@@ -36,13 +105,11 @@
         </a>
 
         <a 
-          href="#github" 
-          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-brand-borderHover text-brand-text font-medium text-sm transition-all duration-200"
+          href="#portafolio" 
+          class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-brand-borderHover text-brand-text font-medium text-xs font-mono transition-colors"
         >
-          <svg class="w-4 h-4 text-brand-muted" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-          </svg>
-          Portafolio GitHub
+          <span>Ver Portafolio</span>
+          <span>↓</span>
         </a>
       </div>
     </div>
@@ -50,10 +117,9 @@
     <!-- Photo Column -->
     <div class="md:col-span-4 flex justify-center order-1 md:order-2">
       <div class="relative group">
-        <!-- Subtle back glow -->
         <div class="absolute -inset-1 bg-gradient-to-r from-brand-border to-brand-borderHover rounded-2xl blur-sm opacity-50 group-hover:opacity-75 transition duration-500"></div>
         
-        <div class="relative w-52 h-64 sm:w-60 sm:h-72 rounded-2xl overflow-hidden border border-brand-border bg-brand-card shadow-2xl">
+        <div class="relative w-48 h-60 sm:w-56 sm:h-68 rounded-2xl overflow-hidden border border-brand-border bg-brand-card shadow-2xl">
           <img 
             src="/rene-villegas.jpg" 
             alt="René Villegas Carreño - Ingeniero TI" 
@@ -65,3 +131,50 @@
 
   </div>
 </section>
+
+<!-- Typewriter JS Animation -->
+<script>
+  const words = [
+    "Ingeniero en Tecnologías de la Información",
+    "Especialista en Infraestructura Crítica 24/7",
+    "Automatización & Modelos de IA",
+    "Continuidad Operacional & ITIL"
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const target = document.getElementById('typewriter-text');
+  const typeSpeed = 80;
+  const deleteSpeed = 40;
+  const delayBetweenWords = 1800;
+
+  function type() {
+    if (!target) return;
+    const currentWord = words[wordIndex];
+
+    if (isDeleting) {
+      target.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+    } else {
+      target.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+      isDeleting = true;
+      setTimeout(type, delayBetweenWords);
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(type, 400);
+    } else {
+      setTimeout(type, isDeleting ? deleteSpeed : typeSpeed);
+    }
+  }
+
+  // Start typing
+  if (target) {
+    type();
+  }
+</script>

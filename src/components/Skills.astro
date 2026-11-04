@@ -1,0 +1,133 @@
+---
+const techSkills = [
+  { name: "Python", category: "Lenguaje", icon: "python" },
+  { name: "PHP", category: "Lenguaje", icon: "php" },
+  { name: "JavaScript", category: "Lenguaje", icon: "javascript" },
+  { name: "CSS3", category: "Frontend", icon: "css" },
+  { name: "Laravel", category: "Framework", icon: "laravel" },
+  { name: "Django", category: "Framework", icon: "django" },
+  { name: "Yii2", category: "Framework", icon: "yii" },
+  { name: "MongoDB", category: "Base de Datos", icon: "mongodb" },
+  { name: "SQL Relacional", category: "Base de Datos", icon: "sql" },
+  { name: "Linux / Bash", category: "Sistemas", icon: "linux" },
+  { name: "Docker", category: "Contenedores", icon: "docker" },
+];
+
+const aiTools = [
+  { name: "Antigravity", badge: "Google DeepMind", desc: "Desarrollo agéntico asistido por IA", icon: "antigravity" },
+  { name: "Claude Code", badge: "Anthropic", desc: "Codificación y terminal agentic CLI", icon: "claude" },
+  { name: "OpenAI / LLMs", badge: "Modelos Avanzados", desc: "Integración de APIs y razonamiento", icon: "openai" },
+  { name: "Ollama & Modelos Locales", badge: "On-Premise", desc: "Inferencia privada en servidores propios", icon: "ollama" },
+  { name: "Agentes & Workflows", badge: "Automatización", desc: "Flujos de decisión y auditoría autónoma", icon: "agent" },
+];
+
+const softSkills = [
+  "Liderazgo de Operaciones Críticas 24/7",
+  "Resolución de Problemas bajo Presión",
+  "Pensamiento Analítico & Análisis Causa Raíz",
+  "Comunicación Asertiva & Trabajo en Equipo",
+  "Compromiso con la Continuidad y SLAs",
+  "Adaptabilidad & Aprendizaje Continuo"
+];
+---
+
+<section id="habilidades" class="max-w-5xl mx-auto px-6 py-16 border-t border-brand-border/60">
+  <div class="mb-10">
+    <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Stack Tecnológico</p>
+    <h2 class="text-2xl sm:text-3xl font-bold text-brand-text mb-2">Habilidades Técnicas & Herramientas</h2>
+    <p class="text-xs sm:text-sm text-brand-muted">
+      Dominio en desarrollo, bases de datos, sistemas operativos y herramientas modernas de Inteligencia Artificial.
+    </p>
+  </div>
+
+  <!-- Herramientas de IA Destacadas -->
+  <div class="mb-12">
+    <h3 class="text-xs font-mono uppercase tracking-wider text-brand-muted mb-4 flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+      Ecosistema de Inteligencia Artificial & Herramientas Agénticas
+    </h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {aiTools.map((tool) => (
+        <div class="bg-brand-card p-4 rounded-xl border border-brand-border hover:border-brand-accent/50 transition-colors group flex items-start gap-3.5">
+          <div class="w-9 h-9 rounded-lg bg-brand-bg border border-brand-border flex items-center justify-center text-brand-accent flex-shrink-0 group-hover:scale-105 transition-transform">
+            {tool.icon === 'antigravity' && (
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            )}
+            {tool.icon === 'claude' && (
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3a9 9 0 0 0-9 9c0 3.6 2.1 6.7 5.2 8.1.4.1.6-.2.6-.4v-1.5c-2.5.5-3-1.2-3-1.2-.4-1.1-1-1.4-1-1.4-.8-.6.1-.6.1-.6.9.1 1.4 1 1.4 1 .8 1.4 2.1 1 2.6.8.1-.6.3-1 .6-1.3-2-.2-4.1-1-4.1-4.5 0-1 .3-1.8.9-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1 .7-.2 1.5-.3 2.3-.3.8 0 1.6.1 2.3.3 1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7.9 1.5.9 2.5 0 3.5-2.1 4.3-4.1 4.5.3.3.6.8.6 1.7v2.5c0 .2.2.5.6.4A9 9 0 0 0 21 12a9 9 0 0 0-9-9z"/>
+              </svg>
+            )}
+            {tool.icon === 'openai' && (
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M7.757 16.243l-2.121 2.121m12.728 0l-2.121-2.121M7.757 7.757L5.636 5.636"/>
+              </svg>
+            )}
+            {tool.icon === 'ollama' && (
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="16" height="16" rx="3"/>
+                <path d="M9 9h6v6H9z"/>
+              </svg>
+            )}
+            {tool.icon === 'agent' && (
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            )}
+          </div>
+          <div>
+            <div class="flex items-center gap-2 mb-0.5">
+              <h4 class="text-xs font-bold text-brand-text group-hover:text-brand-accent transition-colors">
+                {tool.name}
+              </h4>
+              <span class="text-[9px] font-mono px-1.5 py-0.2 rounded bg-brand-bg text-brand-muted border border-brand-border">
+                {tool.badge}
+              </span>
+            </div>
+            <p class="text-[11px] text-brand-muted leading-tight">
+              {tool.desc}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Lenguajes & Frameworks -->
+  <div class="mb-12">
+    <h3 class="text-xs font-mono uppercase tracking-wider text-brand-muted mb-4 flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+      Desarrollo, Frameworks & Infraestructura
+    </h3>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+      {techSkills.map((tech) => (
+        <div class="bg-brand-card p-3 rounded-lg border border-brand-border hover:border-brand-borderHover transition-all flex flex-col items-center justify-center text-center group">
+          <span class="text-xs font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-1">
+            {tech.name}
+          </span>
+          <span class="text-[10px] font-mono text-brand-muted">
+            {tech.category}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Habilidades Blandas (Soft Skills) simples sin inundar -->
+  <div>
+    <h3 class="text-xs font-mono uppercase tracking-wider text-brand-muted mb-4 flex items-center gap-2">
+      <span class="w-1.5 h-1.5 rounded-full bg-brand-accent"></span>
+      Habilidades Personales & Gestión
+    </h3>
+    <div class="flex flex-wrap gap-2">
+      {softSkills.map((skill) => (
+        <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-brand-card border border-brand-border text-brand-text/90 hover:border-brand-accent/50 transition-colors">
+          ✓ {skill}
+        </span>
+      ))}
+    </div>
+  </div>
+</section>
