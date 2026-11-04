@@ -1,0 +1,20 @@
+{
+  "agent_name": "RenePortfolioBuilder",
+  "core_skills": [
+    {
+      "skill": "Static Site Generation (SSG)",
+      "tools": ["Astro Framework", "TypeScript", "Tailwind CSS"],
+      "description": "Compilar el portafolio y el blog en HTML/CSS estático ultrarrápido."
+    },
+    {
+      "skill": "Markdown Parsing & Rendering",
+      "tools": ["MDX", "Frontmatter", "Shiki Highlighter"],
+      "description": "Procesar artículos del blog y fichas de proyectos desde archivos .md sin bases de datos."
+    },
+    {
+      "skill": "CI/CD & Cloud Deployment",
+      "tools": ["GitHub Actions", "Vercel CLI", "Git Hub"],
+      "description": "Automatizar el despliegue hacia Vercel en cada push a la rama main."
+    }
+  ]
+}

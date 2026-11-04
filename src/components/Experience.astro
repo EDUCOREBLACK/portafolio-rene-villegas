@@ -1,0 +1,58 @@
+---
+const experiences = [
+  {
+    role: "Especialista Senior de Operaciones Data Center & Continuidad",
+    company: "Telefónica Tech",
+    period: "Trayectoria Destacada",
+    description: "Gestión y supervisión de infraestructuras críticas 24/7 en Data Centers Tier III/IV. Liderazgo en respuesta a incidentes de alta severidad, ejecución de RFCs bajo ITIL v4, cumplimiento de normativas ISO 27001 y planes de contingencia DRP.",
+    skills: ["Data Center Tier III/IV", "ITIL v4", "ISO 27001", "SLA 99.999%", "DRP", "Break-Fix Hardware"]
+  },
+  {
+    role: "Ingeniero de Infraestructura & Soporte Misión Crítica",
+    company: "NEC",
+    period: "Trayectoria Destacada",
+    description: "Atención especializada de soporte Break-Fix en servidores de alta densidad, almacenamiento SAN/NAS y equipamiento de telecomunicaciones. Ejecución de cubicación de energía, climatización y cableado estructurado.",
+    skills: ["Servidores Alta Densidad", "SAN / NAS", "Cubicación Eléctrica", "HVAC / Clima", "Incident Management"]
+  },
+  {
+    role: "Consultor TI & Automatización de Procesos",
+    company: "Proyectos Independientes & Consultoría",
+    period: "Continuo",
+    description: "Desarrollo e implementación de flujos automatizados para optimizar operaciones de TI. Creación de pipelines de datos y reportes analíticos para auditorías e inventarios automáticos.",
+    skills: ["Python", "SQL", "Bash Scripting", "Power BI", "AI Workflows", "API Integrations"]
+  }
+];
+---
+
+<section id="experiencia" class="max-w-5xl mx-auto px-6 py-20 border-t border-slate-800/80">
+  <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+    <span class="text-brand-accent font-mono text-xl">02.</span> Trayectoria & Experiencia Crítica
+  </h2>
+
+  <div class="space-y-8 relative before:absolute before:inset-0 before:left-4 md:before:left-1/2 before:w-0.5 before:bg-slate-800">
+    {experiences.map((exp) => (
+      <div class="relative flex flex-col md:flex-row gap-6 md:gap-12 items-start group">
+        <div class="w-full bg-brand-card p-6 md:p-8 rounded-xl border border-slate-800 hover:border-slate-700 transition-all shadow-md">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+            <h3 class="text-xl font-bold text-white group-hover:text-brand-accent transition-colors">
+              {exp.role} <span class="text-brand-accent font-normal">@ {exp.company}</span>
+            </h3>
+            <span class="text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-300 w-fit">
+              {exp.period}
+            </span>
+          </div>
+          <p class="text-slate-400 text-sm leading-relaxed mb-5">
+            {exp.description}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {exp.skills.map(skill => (
+              <span class="text-xs font-mono px-2 py-1 rounded bg-slate-900/80 text-brand-accent/90 border border-slate-800">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
