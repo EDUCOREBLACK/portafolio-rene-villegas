@@ -5,22 +5,34 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Cruip Open PRO Palette
-        pro: {
-          bg: '#030712',          // gray-950
-          surface: '#0f172a',     // slate-900
-          card: '#111827',        // gray-900
-          cardHover: '#1f2937',   // gray-800
-          border: 'rgba(55, 65, 81, 0.6)',  // gray-700/60
-          borderHover: 'rgba(99, 102, 241, 0.5)',
-          text: '#f3f4f6',        // gray-100
-          muted: '#9ca3af',       // gray-400
-          primary: '#6366f1',     // indigo-500
-          primaryHover: '#4f46e5', // indigo-600
-          primaryLight: '#818cf8', // indigo-400
-          violet: '#8b5cf6',      // violet-500
+        // Kitu Black & White Minimalist Scheme
+        brand: {
+          bg: '#07080a',         // Obsidiana profunda
+          card: '#0f1118',       // Superficie sutil
+          cardHover: '#151824',  // Hover refinado
+          border: 'rgba(255, 255, 255, 0.08)',
+          borderHover: 'rgba(255, 255, 255, 0.28)',
+          text: '#f8fafc',       // Blanco puro
+          muted: '#94a3b8',      // Gris neutro
+          accent: '#ffffff',     // Monocromo blanco
+          accentHover: '#e2e8f0',
+          accentMuted: 'rgba(255, 255, 255, 0.08)',
         },
-        // Backwards-compatible aliases mapping to Open PRO tokens
+        // Retrocompatibilidad con tokens de componentes existentes
+        pro: {
+          bg: '#07080a',
+          surface: '#0f1118',
+          card: '#0f1118',
+          cardHover: '#151824',
+          border: 'rgba(255, 255, 255, 0.08)',
+          borderHover: 'rgba(255, 255, 255, 0.25)',
+          text: '#f8fafc',
+          muted: '#94a3b8',
+          primary: '#ffffff',
+          primaryHover: '#e2e8f0',
+          primaryLight: '#ffffff',
+          violet: '#ffffff',
+        },
         cloud: {
           bg: 'var(--bg-main)',
           card: 'var(--card-main)',
@@ -29,23 +41,17 @@ export default {
           borderLight: 'var(--border-hover)',
           text: 'var(--text-main)',
           muted: 'var(--text-muted)',
-          azure: '#6366f1',       // Open PRO indigo
-          aws: '#f59e0b',
-          green: '#10b981',
+          azure: '#ffffff',
+          aws: '#ffffff',
+          green: '#ffffff',
           red: '#ef4444',
-          yellow: '#f59e0b',
-        },
-        robb: {
-          bg: '#f4f9fc',
-          line: '#7f00e0',
-          fill: '#aadcec',
-          text: '#0f1b61',
-          subtext: '#73bbc5',
+          yellow: '#facc15',
         }
       },
       fontFamily: {
-        serif: ['Bitter', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        heading: ['Outfit', 'sans-serif'],
+        serif: ['Outfit', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Menlo', 'monospace']
       },
       animation: {

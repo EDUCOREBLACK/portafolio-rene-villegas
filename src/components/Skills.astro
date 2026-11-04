@@ -10,7 +10,7 @@ const aiTools = [
 ];
 
 const techSkills = [
-  { symbol: "🐍", name: "Python", desc: "Automatización de procesos, scripts y data" },
+  { symbol: "⚡", name: "Python", desc: "Automatización de procesos, scripts y data" },
   { symbol: "🗄️", name: "SQL Relacional", desc: "MySQL, PostgreSQL y consultas analíticas" },
   { symbol: "🐧", name: "Linux / Bash", desc: "SysAdmin, gestión de servidores y shell" },
   { symbol: "📦", name: "NetBox DCIM", desc: "Mapeo de racks, IPAM y activos de red" },
@@ -32,31 +32,31 @@ const softSkills = [
 ];
 ---
 
-<section id="habilidades" class="max-w-5xl mx-auto px-6 py-14 border-t border-slate-200 dark:border-slate-800/80 transition-colors">
+<section id="habilidades" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-200 dark:border-white/10 transition-colors reveal">
   
-  <!-- Minimalist Section Header (Rob Bowen Digital style) -->
-  <div class="mb-8">
-    <div class="inline-flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-wider text-violet-700 dark:text-violet-400 font-semibold">
+  <!-- Minimalist Section Header -->
+  <div class="mb-10">
+    <div class="inline-flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 font-semibold">
       <span>●</span>
       <span>Stack Tecnológico & Metodologías</span>
     </div>
-    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white tracking-tight mb-2">
+    <h2 class="text-2xl sm:text-4xl font-heading font-bold text-zinc-950 dark:text-white tracking-tight mb-2">
       Herramientas Técnicas & Automatización
     </h2>
-    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-      Carrusel pausado de tecnologías activas aplicadas en ingeniería de operaciones de centros de datos, desarrollo a medida y automatizaciones con IA.
+    <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+      Carruseles continuos interactivos de tecnologías activas aplicadas en ingeniería de centros de datos, desarrollo a medida y flujos autónomos con IA.
     </p>
   </div>
 
-  <!-- Carousel Row 1: Herramientas de Inteligencia Artificial & Agentes (Solo Símbolo y Descripción) -->
+  <!-- Carousel Row 1: Herramientas de Inteligencia Artificial & Agentes -->
   <div class="mb-4">
     <div class="marquee-container py-1.5">
       <div class="animate-marquee-left gap-3 flex items-center">
         {[...aiTools, ...aiTools, ...aiTools, ...aiTools].map((tool) => (
-          <div class="flex-shrink-0 flex items-center gap-2.5 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800/90 bg-white/90 dark:bg-slate-900/60 shadow-sm hover:border-violet-500/50 transition-colors cursor-default">
-            <span class="text-xs font-mono text-violet-600 dark:text-violet-400 font-bold">{tool.symbol}</span>
-            <span class="text-xs font-mono text-slate-700 dark:text-slate-300 whitespace-nowrap">
-              <strong class="text-slate-900 dark:text-white font-semibold">{tool.name}</strong> — {tool.desc}
+          <div class="flex-shrink-0 flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm hover:border-zinc-500 dark:hover:border-white/30 transition-colors cursor-default">
+            <span class="text-xs font-mono text-zinc-900 dark:text-white font-bold">{tool.symbol}</span>
+            <span class="text-xs font-mono text-zinc-700 dark:text-zinc-300 whitespace-nowrap">
+              <strong class="text-zinc-950 dark:text-white font-semibold">{tool.name}</strong> — {tool.desc}
             </span>
           </div>
         ))}
@@ -64,15 +64,15 @@ const softSkills = [
     </div>
   </div>
 
-  <!-- Carousel Row 2: Desarrollo, Frameworks & Infraestructura (Solo Símbolo y Descripción) -->
-  <div class="mb-10">
+  <!-- Carousel Row 2: Desarrollo, Frameworks & Infraestructura -->
+  <div class="mb-12">
     <div class="marquee-container py-1.5">
       <div class="animate-marquee-right gap-3 flex items-center">
         {[...techSkills, ...techSkills, ...techSkills, ...techSkills].map((tech) => (
-          <div class="flex-shrink-0 flex items-center gap-2.5 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800/90 bg-white/90 dark:bg-slate-900/60 shadow-sm hover:border-sky-500/50 transition-colors cursor-default">
-            <span class="text-sm flex-shrink-0">{tech.symbol}</span>
-            <span class="text-xs font-mono text-slate-700 dark:text-slate-300 whitespace-nowrap">
-              <strong class="text-slate-900 dark:text-white font-semibold">{tech.name}</strong> — {tech.desc}
+          <div class="flex-shrink-0 flex items-center gap-2.5 px-4 py-2.5 rounded-full border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 shadow-sm hover:border-zinc-500 dark:hover:border-white/30 transition-colors cursor-default">
+            <span class="text-xs flex-shrink-0">{tech.symbol}</span>
+            <span class="text-xs font-mono text-zinc-700 dark:text-zinc-300 whitespace-nowrap">
+              <strong class="text-zinc-950 dark:text-white font-semibold">{tech.name}</strong> — {tech.desc}
             </span>
           </div>
         ))}
@@ -81,18 +81,18 @@ const softSkills = [
   </div>
 
   <!-- Habilidades Personales, Liderazgo & Metodología -->
-  <div class="pt-4 border-t border-slate-200/60 dark:border-slate-800/60">
+  <div class="pt-6 border-t border-zinc-200/80 dark:border-white/10">
     <div class="flex items-center gap-2 mb-4">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-      <h3 class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">
-        Habilidades Personales, Liderazgo & Metodología
+      <span class="w-1.5 h-1.5 rounded-full bg-zinc-900 dark:bg-white"></span>
+      <h3 class="text-xs font-mono uppercase tracking-[0.15em] text-zinc-700 dark:text-zinc-300 font-bold">
+        Habilidades Operativas, Liderazgo & Metodología
       </h3>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
       {softSkills.map((skill) => (
-        <div class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg border border-slate-200 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/40 text-slate-800 dark:text-slate-200 text-xs font-mono font-medium shadow-sm hover:border-emerald-500/40 transition-colors">
-          <span class="text-emerald-600 dark:text-emerald-400 font-bold flex-shrink-0 text-xs">✔</span>
+        <div class="flex items-center gap-2.5 px-4 py-3 rounded-xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-white/5 text-zinc-800 dark:text-zinc-200 text-xs font-mono font-medium shadow-sm hover:border-zinc-400 dark:hover:border-white/25 transition-colors">
+          <span class="text-zinc-900 dark:text-white font-bold flex-shrink-0 text-xs">✔</span>
           <span class="truncate">{skill}</span>
         </div>
       ))}

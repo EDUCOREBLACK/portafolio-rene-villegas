@@ -1,259 +1,279 @@
 ---
-const coreKpis = [
-  {
-    id: "sla",
-    metric: "99.999% SLA",
-    subtitle: "Cero Caídas Troncales",
-    detail: "Resguardo ininterrumpido de plataformas de cómputo, sistemas de respaldo de energía (UPS) y enlaces corporativos redundantes.",
-    badge: "Alta Disponibilidad",
-    telemetry: "DOWNTIME ANUAL: 0.00 seg",
-    barPercent: "100%",
-    barColor: "bg-emerald-500",
-  },
-  {
-    id: "mttr",
-    metric: "-40% MTTR",
-    subtitle: "< 15 min de Respuesta",
-    detail: "Reducción del tiempo medio de atención y resolución en fallas críticas mediante estandarización rigurosa de procedimientos (SOPs).",
-    badge: "Eficiencia N1/Senior",
-    telemetry: "ANTES: 25 min ➔ AHORA: < 15 min",
-    barPercent: "85%",
-    barColor: "bg-sky-500",
-  },
-  {
-    id: "rfc",
-    metric: "99.4% Éxito",
-    subtitle: "100+ Ventanas Nocturnas",
-    detail: "Cableados de fibra/cobre, migraciones de racks y puestas en marcha ejecutadas sin rollbacks ni afectación de servicios a clientes.",
-    badge: "Gestión de Cambios",
-    telemetry: "0 ROLLBACKS EN VENTANAS CRÍTICAS",
-    barPercent: "99.4%",
-    barColor: "bg-violet-500",
-  },
-  {
-    id: "ops",
-    metric: "24/7 Ops",
-    subtitle: "Supervisión de Turnos",
-    detail: "Coordinación técnica de 20 operadores en 3 Data Centers, control de bitácoras, traspasos sin puntos ciegos y auditoría de activos.",
-    badge: "Liderazgo de Cuadrilla",
-    telemetry: "ROTACIÓN CONTINUA 365 DÍAS",
-    barPercent: "100%",
-    barColor: "bg-indigo-500",
-  }
-];
-
 const dcBreakdown = [
   { name: "Data Center Alpha (Principal)", racks: 420, capacity: 72, temp: "19.5°C", pduLoad: "68%" },
   { name: "Data Center Beta (Corporativo)", racks: 360, capacity: 69, temp: "20.1°C", pduLoad: "71%" },
   { name: "Data Center Gamma (Misión Crítica)", racks: 200, capacity: 70, temp: "19.2°C", pduLoad: "67%" },
 ];
 
-const careerSummary = [
-  {
-    title: "Centros de Datos & Operaciones 24/7",
-    tagline: "15+ Años de Trayectoria // Senior Lead Ops",
-    description: "Supervisión técnica de infraestructura crítica en 3 Data Centers corporativos (~1.000 Racks a 70% de densidad). Coordinación de cuadrillas 24/7 (20 operadores técnicos), resguardo de SLA 99.999% y resolución N1/N2/N3."
-  },
-  {
-    title: "Gobernanza ITIL & Trazabilidad NetBox DCIM",
-    tagline: "Marco ITIL & Normativas ISO 27001",
-    description: "Estandarización de procedimientos (SOPs), planes de contingencia ante desastres (DRP) e integración de NetBox DCIM para inventario vivo, mapeo de cables, puertos y trazabilidad total de reservas y controles de cambio (RFCs)."
-  },
-  {
-    title: "Automatización con Power BI & Agentes IA",
-    tagline: "Power Automate, Power BI, Python & SQL",
-    description: "Creación de modelos de alerta temprana ante quiebres de SLA, reducción de tiempos de primera respuesta a < 10 minutos y dashboards analíticos en Power BI para control exhaustivo de desviaciones."
-  }
-];
-
-const education = [
-  { 
-    degree: "Ingeniería en Tecnologías de la Información y Telecomunicaciones", 
-    institution: "Universidad San Sebastián", 
-    status: "Titulado" 
-  },
-  { 
-    degree: "Analista de Sistemas", 
-    institution: "Instituto Tecnológico de Chile (ITC)", 
-    status: "Titulado" 
-  },
-  { 
-    degree: "Técnico Nivel Medio en Electrónica", 
-    institution: "Liceo Politécnico San Luis", 
-    status: "Titulado" 
-  }
+const ticketCategories = [
+  { name: "Hardware & Servidores", percent: 40, color: "#ffffff" },
+  { name: "Red, Fibra & Conectividad", percent: 25, color: "#cbd5e1" },
+  { name: "Climatización & PDU", percent: 20, color: "#94a3b8" },
+  { name: "Sistemas & Solicitudes RFC", percent: 15, color: "#64748b" }
 ];
 ---
 
-<section id="telemetria" class="max-w-5xl mx-auto px-6 py-14 border-t border-slate-200 dark:border-slate-800/80 transition-colors">
+<section id="telemetria" class="max-w-5xl mx-auto px-6 py-16 border-t border-zinc-200 dark:border-white/10 transition-colors reveal">
   
-  <!-- Minimalist Dashboard Header (Rob Bowen Digital aesthetic) -->
+  <!-- Header del Dashboard (Kitu Minimalist Style) -->
   <div class="mb-10">
-    <div class="inline-flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-wider text-violet-700 dark:text-violet-400 font-semibold">
-      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+    <div class="inline-flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400 font-semibold">
+      <span class="w-2 h-2 rounded-full bg-zinc-900 dark:bg-white animate-pulse"></span>
       <span>Dashboard de Control & Telemetría Operacional</span>
     </div>
     
-    <h2 class="text-2xl sm:text-4xl font-serif font-bold text-slate-900 dark:text-white tracking-tight mb-3">
-      Gestión de Continuidad & Eficiencia Operativa en Data Centers
+    <h2 class="text-2xl sm:text-4xl font-heading font-bold text-zinc-950 dark:text-white tracking-tight mb-3">
+      Logros Operacionales & Métricas de Eficiencia
     </h2>
     
-    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
-      Impacto cuantitativo liderando infraestructura de misión crítica, supervisión de cuadrillas 24/7 y mitigación sistemática de quiebres de servicio bajo marcos ITIL e ISO 27001.
+    <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-3xl leading-relaxed">
+      Indicadores cuantitativos de gestión de incidencias, reducción drástica de tiempos de atención, optimización de clasificación de tickets y continuidad en Data Centers 24/7.
     </p>
   </div>
 
-  <!-- 4 Core Operational Impact Cards (Minimalist Clean Cards) -->
-  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-    {coreKpis.map((kpi) => (
-      <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-slate-900/60 flex flex-col justify-between shadow-sm hover:border-violet-500/40 transition-colors">
-        <div>
-          <div class="flex items-center justify-between mb-3 text-[11px] font-mono">
-            <span class="font-semibold text-slate-500 dark:text-slate-400">{kpi.badge}</span>
-            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-          </div>
-
-          <div class="text-2xl sm:text-3xl font-mono font-bold text-slate-900 dark:text-white mb-1">
-            {kpi.metric}
-          </div>
-
-          <div class="text-xs font-semibold text-violet-700 dark:text-violet-400 mb-2">
-            {kpi.subtitle}
-          </div>
-
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-            {kpi.detail}
-          </p>
+  <!-- Historia del Caso de Éxito: Transformación Operacional -->
+  <div class="mb-12 p-6 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#0f1118] shadow-sm relative overflow-hidden reveal reveal-delay-1">
+    <div class="absolute top-0 left-0 w-1.5 h-full bg-zinc-900 dark:bg-white"></div>
+    
+    <div class="flex flex-col md:flex-row md:items-start justify-between gap-6">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-100 dark:bg-white/5 text-zinc-900 dark:text-white font-mono text-xs font-semibold mb-3 border border-zinc-300 dark:border-white/10 uppercase tracking-wider">
+          <span>★</span> Caso de Éxito: Estandarización & Reducción de Tiempos
         </div>
+        
+        <h3 class="text-lg sm:text-xl font-heading font-bold text-zinc-950 dark:text-white mb-3">
+          ¿Cómo logramos transformar la respuesta operativa ante contingencias?
+        </h3>
+        
+        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4">
+          Al asumir la supervisión técnica en salas de misión crítica, los tiempos iniciales de atención oscilaban entre los <strong>25 y 30 minutos</strong>, existía fricción en la tipificación de tickets y la información de activos se encontraba dispersa.
+        </p>
 
-        <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80">
-          <div class="flex items-center justify-between text-[10px] font-mono text-slate-500 dark:text-slate-400 mb-1.5">
-            <span class="truncate">{kpi.telemetry}</span>
-            <span class="font-bold text-slate-700 dark:text-slate-300">{kpi.barPercent}</span>
+        <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mb-4">
+          Implementamos una <strong>cultura de respuesta proactiva con SOPs rigurosos</strong>: apertura inmediata del ticket ante la primera alarma, escalamiento automatizado vía <span class="text-zinc-900 dark:text-white font-semibold font-mono">Power Automate</span>, centralización en <span class="text-zinc-900 dark:text-white font-semibold font-mono">NetBox DCIM</span> y el hábito en la cuadrilla de <strong>reportar avances con estado al cliente dentro de los primeros 10 minutos</strong>.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-zinc-100 dark:border-white/10 font-mono text-xs">
+          <div>
+            <span class="text-zinc-500 dark:text-zinc-400 block text-[10px] uppercase">Primera Respuesta</span>
+            <span class="text-zinc-950 dark:text-white font-bold text-sm sm:text-base">&lt; 10 min (-65%)</span>
           </div>
-          <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
-            <div class={`${kpi.barColor} h-1.5 rounded-full`} style={`width: ${kpi.barPercent}`}></div>
+          <div>
+            <span class="text-zinc-500 dark:text-zinc-400 block text-[10px] uppercase">MTTR Resolución</span>
+            <span class="text-zinc-950 dark:text-white font-bold text-sm sm:text-base">&lt; 15 min (-40%)</span>
+          </div>
+          <div>
+            <span class="text-zinc-500 dark:text-zinc-400 block text-[10px] uppercase">Tickets Recurrentes</span>
+            <span class="text-zinc-950 dark:text-white font-bold text-sm sm:text-base">-35% Mitigados</span>
+          </div>
+          <div>
+            <span class="text-zinc-500 dark:text-zinc-400 block text-[10px] uppercase">Clasificación Efectiva</span>
+            <span class="text-zinc-950 dark:text-white font-bold text-sm sm:text-base">96% 1er Contacto</span>
           </div>
         </div>
       </div>
-    ))}
+    </div>
   </div>
 
-  <!-- Panel de Logros Técnicos & Control de Gestión Operacional -->
-  <div class="mb-10">
-    <div class="flex items-center gap-2 mb-4">
-      <span class="text-sm font-mono text-violet-600 dark:text-violet-400">📊</span>
-      <h3 class="text-xs font-mono uppercase tracking-wider text-slate-800 dark:text-slate-200 font-bold">
-        Panel de Logros Técnicos & Control de Gestión Operacional
-      </h3>
-      <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 hidden sm:inline">
-        // Supervisión Activa & DCIM NetBox
-      </span>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-5">
-      
-      <!-- Panel 1: Tiempos de Primera Respuesta & Control de Desviaciones -->
-      <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-slate-900/60 flex flex-col justify-between shadow-sm">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <h4 class="text-sm font-bold text-slate-900 dark:text-white">
-              Tiempos de Primera Respuesta & Control de Desviaciones
+  <!-- Gráficos de Torta (Donut) & Bloques de Avance -->
+  <div class="grid lg:grid-cols-12 gap-6 mb-12">
+    
+    <!-- Gráfico Donut 1: Clasificación & Tipificación de Tickets -->
+    <div class="lg:col-span-6 p-6 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#0f1118] shadow-sm flex flex-col justify-between reveal">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h4 class="text-sm font-bold text-zinc-950 dark:text-white flex items-center gap-2">
+              <span>🎯</span> Clasificación de Tickets por Especialidad
             </h4>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-800/60 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 font-semibold">
-              Meta: &lt; 10 min
-            </span>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400">
+              Precisión de enrutamiento inmediato al especialista adecuado
+            </p>
           </div>
-
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
-            Creación de hábitos en el equipo con generación inmediata de ticket y respuesta con avances al cliente dentro de los <strong class="text-slate-900 dark:text-white font-semibold">10 minutos</strong>. Integración de seguimiento automatizado mediante <strong class="text-violet-700 dark:text-violet-400 font-semibold">Power Automate</strong>, alertas automáticas por correo y tableros en <strong class="text-violet-700 dark:text-violet-400 font-semibold">Power BI</strong> que anticipan quiebres de SLA.
-          </p>
-
-          <div class="space-y-3 bg-slate-50/70 dark:bg-slate-950/50 p-4 rounded-lg border border-slate-200/70 dark:border-slate-800/60 mb-5 font-mono text-xs">
-            <div>
-              <div class="flex justify-between text-slate-500 dark:text-slate-400 mb-1">
-                <span>Tiempo Anterior (Sin Estandarización):</span>
-                <span class="text-rose-600 dark:text-rose-400 font-semibold">25 - 30 min</span>
-              </div>
-              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2">
-                <div class="bg-rose-500 h-2 rounded-full w-[90%]"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-slate-700 dark:text-slate-200 mb-1 font-semibold">
-                <span class="text-emerald-700 dark:text-emerald-400 flex items-center gap-1">
-                  <span>✔</span> Tiempo Actual con SOPs & Automatizaciones:
-                </span>
-                <span class="text-emerald-600 dark:text-emerald-400">&lt; 10 min (Logrado)</span>
-              </div>
-              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2">
-                <div class="bg-emerald-500 h-2 rounded-full w-[33%]"></div>
-              </div>
-            </div>
-          </div>
+          <span class="text-xs font-mono font-bold text-zinc-950 dark:text-white px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-white/10 border border-zinc-300 dark:border-white/15">
+            96% Efectividad
+          </span>
         </div>
 
-        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] font-mono">
-          <div class="p-2.5 rounded-lg border border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-950/30">
-            <span class="text-slate-500 dark:text-slate-400 block text-[10px]">Trazabilidad</span>
-            <span class="font-semibold text-slate-900 dark:text-white">Power BI & Ticketing</span>
+        <!-- Donut SVG + Leyenda -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 my-4">
+          
+          <div class="relative w-36 h-36 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="currentColor" stroke-width="12" class="text-zinc-200 dark:text-zinc-800"></circle>
+              <!-- Segmento 1: Hardware 40% -->
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="#ffffff" stroke-width="12" stroke-dasharray="95.5 238.7" stroke-dashoffset="0" class="dark:stroke-white stroke-zinc-950"></circle>
+              <!-- Segmento 2: Red & Fibra 25% -->
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="#cbd5e1" stroke-width="12" stroke-dasharray="59.7 238.7" stroke-dashoffset="-95.5" class="dark:stroke-zinc-400 stroke-zinc-700"></circle>
+              <!-- Segmento 3: Clima & PDU 20% -->
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="#94a3b8" stroke-width="12" stroke-dasharray="47.7 238.7" stroke-dashoffset="-155.2" class="dark:stroke-zinc-600 stroke-zinc-500"></circle>
+              <!-- Segmento 4: Sistemas 15% -->
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="#64748b" stroke-width="12" stroke-dasharray="35.8 238.7" stroke-dashoffset="-202.9" class="dark:stroke-zinc-700 stroke-zinc-400"></circle>
+            </svg>
+            
+            <div class="absolute flex flex-col items-center justify-center text-center">
+              <span class="text-xl font-mono font-bold text-zinc-950 dark:text-white">96%</span>
+              <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">Precisión</span>
+            </div>
           </div>
-          <div class="p-2.5 rounded-lg border border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-950/30">
-            <span class="text-slate-500 dark:text-slate-400 block text-[10px]">Alertas Tempranas</span>
-            <span class="font-semibold text-emerald-600 dark:text-emerald-400">Cero Quiebres Críticos</span>
+
+          <div class="space-y-2 text-xs font-mono w-full">
+            {ticketCategories.map((cat) => (
+              <div class="flex items-center justify-between text-zinc-700 dark:text-zinc-300">
+                <span class="flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-zinc-900 dark:bg-white border border-zinc-400 dark:border-white/20"></span>
+                  <span class="text-[11px] truncate max-w-[170px]">{cat.name}</span>
+                </span>
+                <span class="font-bold text-zinc-950 dark:text-white text-xs">{cat.percent}%</span>
+              </div>
+            ))}
           </div>
+
         </div>
       </div>
 
-      <!-- Panel 2: Modelos de Factibilidad Técnica & Trazabilidad -->
-      <div class="p-6 rounded-xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-slate-900/60 flex flex-col justify-between shadow-sm">
-        <div>
-          <div class="flex items-center justify-between mb-3">
-            <h4 class="text-sm font-bold text-slate-900 dark:text-white">
-              Modelos de Factibilidad Técnica & Trazabilidad
+      <p class="text-[11px] text-zinc-500 dark:text-zinc-400 pt-3 border-t border-zinc-100 dark:border-white/10">
+        ✔ <strong>Cero rebotes entre cuadrillas:</strong> Tipificación estandarizada desde el ingreso del ticket, permitiendo derivación directa a sala o soporte especializado.
+      </p>
+    </div>
+
+    <!-- Gráfico Donut 2: Reducción de Incidentes & Mitigación Causa Raíz -->
+    <div class="lg:col-span-6 p-6 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#0f1118] shadow-sm flex flex-col justify-between reveal reveal-delay-1">
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h4 class="text-sm font-bold text-zinc-950 dark:text-white flex items-center gap-2">
+              <span>📉</span> Reducción de Quiebres & Tickets Recurrentes
             </h4>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded border border-sky-300 dark:border-sky-800/60 bg-sky-50 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400 font-semibold">
-              +90% Efectividad
-            </span>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400">
+              Análisis Causa Raíz (RCA) y eliminación de incidentes repetitivos
+            </p>
           </div>
-
-          <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-5">
-            Implementación de modelos estructurados para evaluación de factibilidades técnicas y tiempos de respuesta. Se logró un incremento del <strong class="text-slate-900 dark:text-white font-semibold">+90% en la efectividad operativa</strong>, manteniendo trazabilidad completa de reservas de clientes, stock de insumos y controles de cambio (RFCs).
-          </p>
-
-          <div class="space-y-3 bg-slate-50/70 dark:bg-slate-950/50 p-4 rounded-lg border border-slate-200/70 dark:border-slate-800/60 mb-5 font-mono text-xs">
-            <div>
-              <div class="flex justify-between text-slate-500 dark:text-slate-400 mb-1">
-                <span>Efectividad en Asignación & Reservas:</span>
-                <span class="text-sky-700 dark:text-sky-400 font-semibold">94%</span>
-              </div>
-              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2">
-                <div class="bg-sky-500 h-2 rounded-full w-[94%]"></div>
-              </div>
-            </div>
-
-            <div>
-              <div class="flex justify-between text-slate-500 dark:text-slate-400 mb-1">
-                <span>Precisión de Inventario Físico vs Sistema:</span>
-                <span class="text-emerald-700 dark:text-emerald-400 font-semibold">98.5%</span>
-              </div>
-              <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-2">
-                <div class="bg-emerald-500 h-2 rounded-full w-[98.5%]"></div>
-              </div>
-            </div>
-          </div>
+          <span class="text-xs font-mono font-bold text-zinc-950 dark:text-white px-2.5 py-0.5 rounded-full bg-zinc-100 dark:bg-white/10 border border-zinc-300 dark:border-white/15">
+            -35% Tickets
+          </span>
         </div>
 
-        <div class="grid grid-cols-2 gap-3 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] font-mono">
-          <div class="p-2.5 rounded-lg border border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-950/30">
-            <span class="text-slate-500 dark:text-slate-400 block text-[10px]">Control de Cambios</span>
-            <span class="font-semibold text-slate-900 dark:text-white">100% Trazable RFC</span>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 my-4">
+          
+          <div class="relative w-36 h-36 flex-shrink-0 flex items-center justify-center">
+            <svg class="w-full h-full -rotate-90" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="currentColor" stroke-width="12" class="text-zinc-200 dark:text-zinc-800"></circle>
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="#ffffff" stroke-width="12" stroke-dasharray="155.1 238.7" stroke-dashoffset="0" class="dark:stroke-white stroke-zinc-950"></circle>
+              <circle cx="50" cy="50" r="38" fill="transparent" stroke="#94a3b8" stroke-width="12" stroke-dasharray="83.5 238.7" stroke-dashoffset="-155.1" class="dark:stroke-zinc-600 stroke-zinc-400"></circle>
+            </svg>
+            
+            <div class="absolute flex flex-col items-center justify-center text-center">
+              <span class="text-xl font-mono font-bold text-zinc-950 dark:text-white">-35%</span>
+              <span class="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">Recurrentes</span>
+            </div>
           </div>
-          <div class="p-2.5 rounded-lg border border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-950/30">
-            <span class="text-slate-500 dark:text-slate-400 block text-[10px]">Reservas Clientes</span>
-            <span class="font-semibold text-sky-600 dark:text-sky-400">Stock Sin Solapamiento</span>
+
+          <div class="space-y-3 text-xs font-mono w-full">
+            <div class="p-2.5 rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5">
+              <span class="text-zinc-500 text-[10px] block uppercase">Acción Preventiva (RCA)</span>
+              <span class="text-zinc-950 dark:text-white font-bold text-xs">Procedimientos SOPs en Sala</span>
+            </div>
+            <div class="p-2.5 rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5">
+              <span class="text-zinc-500 text-[10px] block uppercase">Mitigación de Falsas Alarmas</span>
+              <span class="text-zinc-950 dark:text-white font-bold text-xs">Filtro Inteligente Power Automate</span>
+            </div>
           </div>
+
+        </div>
+      </div>
+
+      <p class="text-[11px] text-zinc-500 dark:text-zinc-400 pt-3 border-t border-zinc-100 dark:border-white/10">
+        ✔ <strong>Resolución de Fondo:</strong> Cada incidente mayor derivó en una actualización del manual de contingencia para que ninguna falla se repitiera en los turnos siguientes.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- Bloques de Avance y Comparativa Antes vs Ahora -->
+  <div class="p-6 sm:p-8 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#0f1118] shadow-sm mb-12 reveal">
+    <div class="flex items-center gap-2 mb-6">
+      <span class="text-sm font-mono text-zinc-900 dark:text-white">⚡</span>
+      <h3 class="text-xs font-mono uppercase tracking-[0.15em] text-zinc-800 dark:text-zinc-200 font-bold">
+        Bloques de Avance & Rendimiento Operacional
+      </h3>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      
+      <!-- Bloque 1: Tiempo de Primera Respuesta -->
+      <div class="space-y-2 p-4 rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-50/70 dark:bg-white/5 font-mono text-xs">
+        <div class="flex justify-between items-center text-zinc-800 dark:text-zinc-200 font-bold">
+          <span>Tiempo de Primera Respuesta (Ticket / Alerta)</span>
+          <span class="text-zinc-950 dark:text-white">-65% Tiempo</span>
+        </div>
+        
+        <div class="flex justify-between text-[11px] text-zinc-500 mb-1">
+          <span>Sin Estandarización: 25 - 30 min</span>
+          <span class="text-zinc-500">Lento</span>
+        </div>
+        <div class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-2">
+          <div class="bg-zinc-400 dark:bg-zinc-600 h-2 rounded-full w-[85%]"></div>
+        </div>
+
+        <div class="flex justify-between text-[11px] text-zinc-900 dark:text-white font-bold pt-1">
+          <span>Con SOPs & Hábitos de Respuesta: &lt; 10 min</span>
+          <span>Logrado ✔</span>
+        </div>
+        <div class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-2">
+          <div class="bg-zinc-950 dark:bg-white h-2 rounded-full w-[30%]"></div>
+        </div>
+      </div>
+
+      <!-- Bloque 2: MTTR Resolución en Fallas Críticas -->
+      <div class="space-y-2 p-4 rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-50/70 dark:bg-white/5 font-mono text-xs">
+        <div class="flex justify-between items-center text-zinc-800 dark:text-zinc-200 font-bold">
+          <span>MTTR (Tiempo Medio de Resolución de Incidentes)</span>
+          <span class="text-zinc-950 dark:text-white">-40% MTTR</span>
+        </div>
+        
+        <div class="flex justify-between text-[11px] text-zinc-500 mb-1">
+          <span>Tiempo Anterior: 25 min</span>
+          <span class="text-zinc-500">Elevado</span>
+        </div>
+        <div class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-2">
+          <div class="bg-zinc-400 dark:bg-zinc-600 h-2 rounded-full w-[80%]"></div>
+        </div>
+
+        <div class="flex justify-between text-[11px] text-zinc-900 dark:text-white font-bold pt-1">
+          <span>Tiempo Optimizado con DRP: &lt; 15 min</span>
+          <span>Logrado ✔</span>
+        </div>
+        <div class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-2">
+          <div class="bg-zinc-950 dark:bg-white h-2 rounded-full w-[45%]"></div>
+        </div>
+      </div>
+
+      <!-- Bloque 3: Éxito en Ventanas Nocturnas de Cambio (RFCs) -->
+      <div class="space-y-2 p-4 rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-50/70 dark:bg-white/5 font-mono text-xs">
+        <div class="flex justify-between items-center text-zinc-800 dark:text-zinc-200 font-bold">
+          <span>Éxito en Solicitudes de Cambio (RFCs ITIL v4)</span>
+          <span class="text-zinc-950 dark:text-white">99.4% Éxito</span>
+        </div>
+        <p class="text-[11px] text-zinc-500">
+          Más de 100 ventanas nocturnas de cambio (fibra, cobre, migración) ejecutadas con <strong>cero rollbacks</strong>.
+        </p>
+        <div class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-2">
+          <div class="bg-zinc-950 dark:bg-white h-2 rounded-full w-[99.4%]"></div>
+        </div>
+      </div>
+
+      <!-- Bloque 4: Disponibilidad de Misión Crítica (SLA) -->
+      <div class="space-y-2 p-4 rounded-xl border border-zinc-200 dark:border-white/10 bg-zinc-50/70 dark:bg-white/5 font-mono text-xs">
+        <div class="flex justify-between items-center text-zinc-800 dark:text-zinc-200 font-bold">
+          <span>Disponibilidad Contractual (SLA)</span>
+          <span class="text-zinc-950 dark:text-white">99.999% SLA</span>
+        </div>
+        <p class="text-[11px] text-zinc-500">
+          Resguardo continuo de plataformas de banca, retail y gobierno: <strong>0.00 segundos</strong> de caída troncal.
+        </p>
+        <div class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-2">
+          <div class="bg-zinc-950 dark:bg-white h-2 rounded-full w-[100%]"></div>
         </div>
       </div>
 
@@ -261,25 +281,25 @@ const education = [
   </div>
 
   <!-- Infraestructura a Gran Escala: ~1.000 Racks en 3 Data Centers Corporativos -->
-  <div class="p-6 sm:p-7 rounded-xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-slate-900/60 shadow-sm mb-12">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+  <div class="p-6 sm:p-7 rounded-2xl border border-zinc-200 dark:border-white/10 bg-white dark:bg-[#0f1118] shadow-sm reveal">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-zinc-100 dark:border-white/10">
       <div>
         <div class="flex items-center gap-2 mb-1">
           <span class="text-base">🏢</span>
-          <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
-            Infraestructura a Gran Escala: ~1.000 Racks en 3 Data Centers Corporativos
+          <h3 class="text-sm sm:text-base font-bold text-zinc-950 dark:text-white">
+            Infraestructura Gestionada: ~1.000 Racks en 3 Data Centers
           </h3>
         </div>
-        <p class="text-xs text-slate-600 dark:text-slate-400 max-w-2xl">
-          Supervisión integral de equipamiento con promedio del <strong class="text-slate-900 dark:text-white font-semibold">70% de capacidad operativa</strong> por rack, integración en sistema open-source <strong class="text-violet-700 dark:text-violet-400 font-semibold">NetBox DCIM</strong> y liderazgo sobre cuadrilla de 20 operadores técnicos en turnos 24/7.
+        <p class="text-xs text-zinc-600 dark:text-zinc-400 max-w-2xl">
+          Supervisión integral de equipamiento en salas de Apoquindo, San Martín y Paine con un promedio del <strong class="text-zinc-950 dark:text-white font-semibold">70% de capacidad</strong> por rack, inventario en <strong class="text-zinc-950 dark:text-white font-semibold">NetBox DCIM</strong> y liderazgo sobre 20 operadores técnicos en turnos 24/7.
         </p>
       </div>
 
       <div class="flex items-center gap-2 font-mono text-xs flex-shrink-0">
-        <span class="px-2.5 py-1 rounded border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 font-semibold text-violet-700 dark:text-violet-400">
+        <span class="px-3 py-1 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 font-semibold text-zinc-800 dark:text-zinc-200">
           980 Racks Totales
         </span>
-        <span class="px-2.5 py-1 rounded border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 font-semibold text-emerald-700 dark:text-emerald-400">
+        <span class="px-3 py-1 rounded-full border border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-white/5 font-semibold text-zinc-950 dark:text-white">
           70% Capacidad Media
         </span>
       </div>
@@ -288,119 +308,56 @@ const education = [
     <!-- 3 Data Centers Telemetry Grid -->
     <div class="grid md:grid-cols-3 gap-4 mb-5">
       {dcBreakdown.map((dc) => (
-        <div class="p-4 rounded-lg border border-slate-200/80 dark:border-slate-800/80 bg-slate-50/60 dark:bg-slate-950/40">
+        <div class="p-4 rounded-xl border border-zinc-200/80 dark:border-white/10 bg-zinc-50/60 dark:bg-white/5">
           <div class="flex items-center justify-between mb-3 text-xs font-mono">
-            <span class="font-bold text-slate-900 dark:text-white">
+            <span class="font-bold text-zinc-950 dark:text-white">
               {dc.name}
             </span>
-            <span class="text-[10px] text-emerald-600 dark:text-emerald-400 font-semibold">
-              ● Normal
+            <span class="text-[10px] text-zinc-900 dark:text-white font-semibold flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-zinc-900 dark:bg-white"></span>
+              Normal
             </span>
           </div>
 
           <div class="space-y-2 mb-4 font-mono text-xs">
-            <div class="flex justify-between text-slate-500 dark:text-slate-400">
+            <div class="flex justify-between text-zinc-500 dark:text-zinc-400">
               <span>Racks Operativos:</span>
-              <span class="font-semibold text-slate-900 dark:text-white">{dc.racks} Racks</span>
+              <span class="font-semibold text-zinc-950 dark:text-white">{dc.racks} Racks</span>
             </div>
             
-            <div class="flex justify-between text-slate-500 dark:text-slate-400">
+            <div class="flex justify-between text-zinc-500 dark:text-zinc-400">
               <span>Capacidad Promedio:</span>
-              <span class="font-semibold text-violet-700 dark:text-violet-400">{dc.capacity}%</span>
+              <span class="font-semibold text-zinc-950 dark:text-white">{dc.capacity}%</span>
             </div>
-            <div class="w-full bg-slate-200 dark:bg-slate-800 rounded-full h-1.5 overflow-hidden">
-              <div class="bg-violet-500 h-1.5 rounded-full" style={`width: ${dc.capacity}%`}></div>
+            <div class="w-full bg-zinc-200 dark:bg-zinc-800 rounded-full h-1.5 overflow-hidden">
+              <div class="bg-zinc-900 dark:bg-white h-1.5 rounded-full" style={`width: ${dc.capacity}%`}></div>
             </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-2 pt-2.5 border-t border-slate-200/60 dark:border-slate-800/60 text-[10px] font-mono text-slate-500 dark:text-slate-400">
+          <div class="grid grid-cols-2 gap-2 pt-2.5 border-t border-zinc-200/60 dark:border-white/10 text-[10px] font-mono text-zinc-500 dark:text-zinc-400">
             <div>
               <span>Temp Pasillo Frío:</span>
-              <span class="block font-semibold text-slate-800 dark:text-slate-200">{dc.temp}</span>
+              <span class="block font-semibold text-zinc-800 dark:text-zinc-200">{dc.temp}</span>
             </div>
             <div>
               <span>Carga Media PDU:</span>
-              <span class="block font-semibold text-slate-800 dark:text-slate-200">{dc.pduLoad}</span>
+              <span class="block font-semibold text-zinc-800 dark:text-zinc-200">{dc.pduLoad}</span>
             </div>
           </div>
         </div>
       ))}
     </div>
 
-    <!-- Telemetry Callout & 20 Operators -->
-    <div class="p-3.5 rounded-lg border border-slate-200/80 dark:border-slate-800/80 bg-slate-50/80 dark:bg-slate-950/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
-      <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-        <span class="text-violet-600 dark:text-violet-400">⚙️</span>
+    <!-- NetBox & Cuadrilla 24/7 -->
+    <div class="p-3.5 rounded-xl border border-zinc-200/80 dark:border-white/10 bg-zinc-50/80 dark:bg-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
+      <div class="flex items-center gap-2 text-zinc-700 dark:text-zinc-300">
+        <span class="text-zinc-950 dark:text-white">⚙️</span>
         <span>
           <strong>NetBox DCIM Integrado:</strong> Mapeo exacto de cables, puertos de switches, fibra óptica e inventario documentado en tiempo real.
         </span>
       </div>
-      <div class="flex items-center gap-1.5 text-emerald-700 dark:text-emerald-400 font-bold flex-shrink-0">
+      <div class="flex items-center gap-1.5 text-zinc-950 dark:text-white font-bold flex-shrink-0">
         <span>👥 Cuadrilla 24/7: 20 Operadores</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Trayectoria Resumida (Directamente unida al Dashboard de Operaciones) -->
-  <div id="experiencia" class="pt-10 border-t border-slate-200 dark:border-slate-800/80">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
-      <div>
-        <div class="inline-flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-wider text-violet-700 dark:text-violet-400 font-semibold">
-          <span>●</span>
-          <span>Resumen Curricular & Trayectoria</span>
-        </div>
-        <h3 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white tracking-tight">
-          Trayectoria Resumida
-        </h3>
-      </div>
-      
-      <a 
-        href="/cv-rene-villegas.pdf"
-        download="cv-rene-villegas.pdf"
-        target="_blank"
-        class="inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-violet-500 text-slate-800 dark:text-slate-200 shadow-sm cursor-pointer self-start sm:self-auto transition-colors"
-      >
-        <span class="text-emerald-600 dark:text-emerald-400 font-bold">$_</span>
-        <span>Ver Detalle en CV Completo (PDF)</span>
-      </a>
-    </div>
-
-    <!-- 3 Pillars of Experience -->
-    <div class="grid md:grid-cols-3 gap-4 mb-8">
-      {careerSummary.map((item) => (
-        <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-slate-900/60 shadow-sm flex flex-col justify-between hover:border-violet-500/40 transition-colors">
-          <div>
-            <span class="text-xs font-mono font-semibold text-violet-700 dark:text-violet-400 block mb-2">
-              {item.tagline}
-            </span>
-            <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2">
-              {item.title}
-            </h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              {item.description}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <!-- Formación Universitaria & Técnica -->
-    <div class="p-5 rounded-xl border border-slate-200 dark:border-slate-800/90 bg-white dark:bg-slate-900/60 shadow-sm">
-      <div class="flex items-center gap-2 mb-4 font-mono text-xs uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">
-        <span class="w-1.5 h-1.5 rounded-full bg-violet-500"></span>
-        <span>Formación Universitaria & Técnica</span>
-      </div>
-      <div class="grid sm:grid-cols-3 gap-4">
-        {education.map((item) => (
-          <div class="border-l-2 border-violet-500/50 pl-3">
-            <h5 class="text-xs font-bold text-slate-900 dark:text-white mb-0.5">
-              {item.degree}
-            </h5>
-            <p class="text-[11px] text-slate-600 dark:text-slate-400 font-mono">
-              {item.institution} • <span class="text-emerald-600 dark:text-emerald-400 font-semibold">{item.status}</span>
-            </p>
-          </div>
-        ))}
       </div>
     </div>
   </div>
