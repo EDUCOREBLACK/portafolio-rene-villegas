@@ -5,11 +5,21 @@ export default {
     extend: {
       colors: {
         brand: {
-          dark: '#0f172a',
-          card: '#1e293b',
-          accent: '#38bdf8', // Celeste tecnológico
-          text: '#f8fafc'
+          bg: '#09090b',         // Obsidiana profunda minimalista
+          card: '#121215',       // Superficie sutil
+          cardHover: '#18181b',  // Hover refinado
+          border: '#27272a',     // Borde milimétrico
+          borderHover: '#3f3f46',
+          text: '#fafafa',       // Blanco puro
+          muted: '#a1a1aa',      // Gris neutro legible
+          accent: '#10b981',     // Esmeralda técnico sobrio
+          accentHover: '#34d399',
+          accentMuted: 'rgba(16, 185, 129, 0.08)',
         }
+      },
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
       }
     },
   },
