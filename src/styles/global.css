@@ -134,7 +134,7 @@ html:not(.dark) #scroll-progress {
 .animate-marquee-left {
   display: flex;
   width: max-content;
-  animation: marqueeLeft 75s linear infinite;
+  animation: marqueeLeft 125s linear infinite;
 }
 
 .animate-marquee-left:hover {
@@ -144,7 +144,7 @@ html:not(.dark) #scroll-progress {
 .animate-marquee-right {
   display: flex;
   width: max-content;
-  animation: marqueeRight 80s linear infinite;
+  animation: marqueeRight 135s linear infinite;
 }
 
 .animate-marquee-right:hover {
