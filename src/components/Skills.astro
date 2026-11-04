@@ -1,8 +1,17 @@
 ---
+const aiTools = [
+  { name: "Antigravity", badge: "Google DeepMind", desc: "Desarrollo agéntico autónomo", icon: "antigravity" },
+  { name: "Claude Code", badge: "Anthropic", desc: "CLI & Terminal Agentic Coding", icon: "claude" },
+  { name: "OpenAI / LLMs", badge: "Modelos Avanzados", desc: "Embeddings, RAG & APIs", icon: "openai" },
+  { name: "Ollama & On-Premise", badge: "Privado", desc: "Inferencia local en servidores propios", icon: "ollama" },
+  { name: "Agentes & Workflows", badge: "Automatización", desc: "Flujos de decisión y auditoría", icon: "agent" },
+  { name: "Cursor & Copilot", badge: "IA Developer", desc: "Asistencia de código contextual", icon: "code" },
+];
+
 const techSkills = [
   { name: "Python", category: "Lenguaje / Automatización", icon: "🐍" },
   { name: "PHP", category: "Backend / MVC", icon: "🐘" },
-  { name: "JavaScript", category: "Frontend / Node", icon: "⚡" },
+  { name: "JavaScript / Node", category: "Frontend & APIs", icon: "⚡" },
   { name: "CSS3 & Tailwind", category: "Diseño & UI", icon: "🎨" },
   { name: "Laravel", category: "Framework PHP", icon: "🔥" },
   { name: "Django", category: "Framework Python", icon: "🚀" },
@@ -11,139 +20,124 @@ const techSkills = [
   { name: "SQL Relacional", category: "MySQL / PostgreSQL", icon: "🗄️" },
   { name: "Linux / Bash", category: "SysAdmin & Shell", icon: "🐧" },
   { name: "Docker", category: "Contenedores & CI", icon: "🐳" },
+  { name: "NetBox DCIM", category: "IPAM & Datacenter", icon: "📦" },
+  { name: "Power BI & Automate", category: "Data Analytics & Alertas", icon: "📊" },
   { name: "WordPress", category: "CMS & E-commerce", icon: "🌐" },
 ];
 
-const aiTools = [
-  { name: "Antigravity", badge: "Google DeepMind", desc: "Desarrollo agéntico avanzado y generación de código", icon: "antigravity" },
-  { name: "Claude Code", badge: "Anthropic", desc: "Codificación autónoma en terminal CLI y revisión de arquitectura", icon: "claude" },
-  { name: "OpenAI / LLMs", badge: "Modelos de Lenguaje", desc: "Integración de embeddings, razonamiento y APIs avanzadas", icon: "openai" },
-  { name: "Ollama & Modelos Locales", badge: "On-Premise", desc: "Inferencia privada local en infraestructura corporativa", icon: "ollama" },
-  { name: "Agentes & Workflows", badge: "Automatización", desc: "Orquestación de flujos de auditoría y análisis de datos", icon: "agent" },
-];
-
 const softSkills = [
-  "Liderazgo de Operaciones Críticas 24/7",
-  "Resolución Rápida bajo Presión",
-  "Análisis de Causa Raíz (RCA)",
-  "Comunicación Asertiva & Trabajo en Equipo",
-  "Compromiso Irrestricto con SLAs",
-  "Adaptabilidad a Nuevos Marcos Tecnológicos"
+  "Liderazgo de Cuadrillas 24/7 (20 Operadores)",
+  "Gestión de Quiebres & Análisis Causa Raíz (RCA)",
+  "Estandarización de Procedimientos (SOPs)",
+  "Resguardo Irrestricto de SLAs (99.999%)",
+  "Trazabilidad de Cambios & Auditorías ISO 27001",
+  "Comunicación Asertiva y Hábitos de Respuesta Rápida"
 ];
 ---
 
 <section id="habilidades" class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-800/80 dark:border-slate-800/80 border-slate-200 transition-colors">
+  
   <!-- Section Badge & Header -->
-  <div class="mb-12 text-center sm:text-left">
+  <div class="mb-10 text-center sm:text-left">
     <div class="pro-badge mb-2">
       <span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-emerald-400 dark:from-cyan-400 dark:to-emerald-400 from-blue-600 to-cyan-600 bg-clip-text text-transparent text-xs font-mono font-bold tracking-wider uppercase">
-        Competencias Técnicas & AI Stack
+        Stack Tecnológico & Agentes Autónomos
       </span>
     </div>
     <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white text-gradient-pro mb-3 tracking-tight">
-      Habilidades & Ecosistema Tecnológico
+      Habilidades Técnicas & Ecosistema de Herramientas
     </h2>
-    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed">
-      Sólido dominio en infraestructura de centros de datos, lenguajes de desarrollo web, bases de datos y la vanguardia en herramientas de Inteligencia Artificial agéntica.
+    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
+      Carrusel continuo de tecnologías activas aplicadas en ingeniería de operaciones, centros de datos corporativos, desarrollo a medida y automatizaciones con IA.
     </p>
   </div>
 
-  <!-- AI Ecosystem (Cyber SOC Style) -->
-  <div class="mb-14">
-    <div class="flex items-center gap-2 mb-5">
-      <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-      <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400 font-bold">
-        Herramientas de Inteligencia Artificial & Agentes
-      </h3>
+  <!-- Carousel Row 1: Herramientas de Inteligencia Artificial & Agentes -->
+  <div class="mb-8">
+    <div class="flex items-center justify-between mb-3 px-1">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-bold">
+          Carrusel 01 // Herramientas de Inteligencia Artificial & Agentes
+        </h3>
+      </div>
+      <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 hidden sm:inline">
+        ← Desplazamiento continuo interactivo →
+      </span>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {aiTools.map((tool) => (
-        <div class="pro-card p-5 rounded-2xl flex items-start gap-4 group">
-          <div class="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 border border-cyan-200 dark:border-cyan-800/50 text-cyan-600 dark:text-cyan-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:border-cyan-500 transition-all">
-            {tool.icon === 'antigravity' && (
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            )}
-            {tool.icon === 'claude' && (
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 3a9 9 0 0 0-9 9c0 3.6 2.1 6.7 5.2 8.1.4.1.6-.2.6-.4v-1.5c-2.5.5-3-1.2-3-1.2-.4-1.1-1-1.4-1-1.4-.8-.6.1-.6.1-.6.9.1 1.4 1 1.4 1 .8 1.4 2.1 1 2.6.8.1-.6.3-1 .6-1.3-2-.2-4.1-1-4.1-4.5 0-1 .3-1.8.9-2.5-.1-.2-.4-1.2.1-2.5 0 0 .8-.2 2.6 1 .7-.2 1.5-.3 2.3-.3.8 0 1.6.1 2.3.3 1.8-1.2 2.6-1 2.6-1 .5 1.3.2 2.3.1 2.5.6.7.9 1.5.9 2.5 0 3.5-2.1 4.3-4.1 4.5.3.3.6.8.6 1.7v2.5c0 .2.2.5.6.4A9 9 0 0 0 21 12a9 9 0 0 0-9-9z"/>
-              </svg>
-            )}
-            {tool.icon === 'openai' && (
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M12 3v3m0 12v3m9-9h-3M6 12H3m15.364-6.364l-2.121 2.121M7.757 16.243l-2.121 2.121m12.728 0l-2.121-2.121M7.757 7.757L5.636 5.636"/>
-              </svg>
-            )}
-            {tool.icon === 'ollama' && (
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="4" y="4" width="16" height="16" rx="3"/>
-                <path d="M9 9h6v6H9z"/>
-              </svg>
-            )}
-            {tool.icon === 'agent' && (
-              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-              </svg>
-            )}
-          </div>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <h4 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
+    <!-- Infinite Carousel Ribbon Left -->
+    <div class="marquee-container py-2">
+      <div class="animate-marquee-left gap-4 flex items-center">
+        <!-- Duplicate elements for continuous loop -->
+        {[...aiTools, ...aiTools, ...aiTools].map((tool) => (
+          <div class="flex-shrink-0 w-72 p-4 rounded-xl pro-card border border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-sm hover:scale-[1.02] transition-transform duration-200 cursor-default">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <span class="text-cyan-600 dark:text-cyan-400 font-mono">⌘</span>
                 {tool.name}
-              </h4>
-              <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-900 text-cyan-700 dark:text-cyan-300 border border-slate-200 dark:border-slate-800 font-semibold">
+              </span>
+              <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-cyan-700 dark:text-cyan-300 border border-slate-300 dark:border-slate-700 font-semibold">
                 {tool.badge}
               </span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-300 leading-snug">
+            <p class="text-[11px] text-slate-600 dark:text-slate-300 truncate">
               {tool.desc}
             </p>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </div>
 
-  <!-- Languages, Frameworks & Infra -->
-  <div class="mb-14">
-    <div class="flex items-center gap-2 mb-5">
-      <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-      <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400 font-bold">
-        Desarrollo, Frameworks & Infraestructura
-      </h3>
+  <!-- Carousel Row 2: Desarrollo, Frameworks & Infraestructura -->
+  <div class="mb-12">
+    <div class="flex items-center justify-between mb-3 px-1">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+        <h3 class="text-xs font-mono uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-bold">
+          Carrusel 02 // Desarrollo, Frameworks & Infraestructura
+        </h3>
+      </div>
+      <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 hidden sm:inline">
+        Pausa al pasar el cursor
+      </span>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-      {techSkills.map((tech) => (
-        <div class="pro-card p-3.5 rounded-xl flex flex-col items-center justify-center text-center group">
-          <span class="text-lg mb-1.5">{tech.icon}</span>
-          <span class="text-xs font-bold text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors mb-0.5">
-            {tech.name}
-          </span>
-          <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400">
-            {tech.category}
-          </span>
-        </div>
-      ))}
+    <!-- Infinite Carousel Ribbon Right -->
+    <div class="marquee-container py-2">
+      <div class="animate-marquee-right gap-4 flex items-center">
+        <!-- Duplicate elements for continuous loop -->
+        {[...techSkills, ...techSkills, ...techSkills].map((tech) => (
+          <div class="flex-shrink-0 w-56 p-3.5 rounded-xl pro-card border border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-sm flex items-center gap-3 hover:scale-[1.02] transition-transform duration-200 cursor-default">
+            <span class="text-xl flex-shrink-0">{tech.icon}</span>
+            <div class="truncate">
+              <div class="text-xs font-bold text-slate-900 dark:text-white truncate">
+                {tech.name}
+              </div>
+              <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 truncate">
+                {tech.category}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 
-  <!-- Habilidades Blandas / Gestión -->
+  <!-- Soft Skills & Leadership Badges -->
   <div>
-    <div class="flex items-center gap-2 mb-5">
+    <div class="flex items-center gap-2 mb-4">
       <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-      <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400 font-bold">
-        Habilidades Blandas & Gestión Operacional
+      <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-bold">
+        Habilidades Personales, Liderazgo & Metodología
       </h3>
     </div>
 
     <div class="flex flex-wrap gap-2.5">
       {softSkills.map((skill) => (
-        <span class="text-xs font-mono px-3.5 py-1.5 rounded-xl pro-card text-slate-800 dark:text-slate-200 hover:text-cyan-600 dark:hover:text-cyan-400 flex items-center gap-2 font-medium">
-          <span class="text-emerald-500 dark:text-emerald-400 font-bold">✓</span>
+        <span class="text-xs font-mono px-3.5 py-2 rounded-xl pro-card border border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900/80 text-slate-800 dark:text-slate-200 flex items-center gap-2 font-medium shadow-sm">
+          <span class="text-emerald-600 dark:text-emerald-400 font-bold">✔</span>
           <span>{skill}</span>
         </span>
       ))}
