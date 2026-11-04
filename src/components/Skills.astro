@@ -1,28 +1,25 @@
 ---
 const aiTools = [
-  { name: "Antigravity", badge: "Google DeepMind", desc: "Desarrollo agéntico autónomo", icon: "antigravity" },
-  { name: "Claude Code", badge: "Anthropic", desc: "CLI & Terminal Agentic Coding", icon: "claude" },
-  { name: "OpenAI / LLMs", badge: "Modelos Avanzados", desc: "Embeddings, RAG & APIs", icon: "openai" },
-  { name: "Ollama & On-Premise", badge: "Privado", desc: "Inferencia local en servidores propios", icon: "ollama" },
-  { name: "Agentes & Workflows", badge: "Automatización", desc: "Flujos de decisión y auditoría", icon: "agent" },
-  { name: "Cursor & Copilot", badge: "IA Developer", desc: "Asistencia de código contextual", icon: "code" },
+  { symbol: "⌘", name: "Antigravity", desc: "Desarrollo agéntico autónomo" },
+  { symbol: "⌘", name: "Claude Code", desc: "CLI & Terminal Agentic Coding" },
+  { symbol: "⌘", name: "OpenAI / LLMs", desc: "Modelos avanzados, embeddings & APIs" },
+  { symbol: "⌘", name: "Ollama", desc: "Inferencia local en servidores propios" },
+  { symbol: "⌘", name: "Agentes Autónomos", desc: "Flujos de decisión y auditoría técnica" },
+  { symbol: "⌘", name: "Cursor & Copilot", desc: "Programación contextual asistida por IA" },
+  { symbol: "⌘", name: "DeepSeek", desc: "Modelos abiertos y optimización de prompts" },
 ];
 
 const techSkills = [
-  { name: "Python", category: "Lenguaje / Automatización", icon: "🐍" },
-  { name: "PHP", category: "Backend / MVC", icon: "🐘" },
-  { name: "JavaScript / Node", category: "Frontend & APIs", icon: "⚡" },
-  { name: "CSS3 & Tailwind", category: "Diseño & UI", icon: "🎨" },
-  { name: "Laravel", category: "Framework PHP", icon: "🔥" },
-  { name: "Django", category: "Framework Python", icon: "🚀" },
-  { name: "Yii2", category: "Framework PHP", icon: "⚙️" },
-  { name: "MongoDB", category: "NoSQL Database", icon: "🍃" },
-  { name: "SQL Relacional", category: "MySQL / PostgreSQL", icon: "🗄️" },
-  { name: "Linux / Bash", category: "SysAdmin & Shell", icon: "🐧" },
-  { name: "Docker", category: "Contenedores & CI", icon: "🐳" },
-  { name: "NetBox DCIM", category: "IPAM & Datacenter", icon: "📦" },
-  { name: "Power BI & Automate", category: "Data Analytics & Alertas", icon: "📊" },
-  { name: "WordPress", category: "CMS & E-commerce", icon: "🌐" },
+  { symbol: "🐍", name: "Python", desc: "Automatización de procesos, scripts y data" },
+  { symbol: "🗄️", name: "SQL Relacional", desc: "MySQL, PostgreSQL y consultas analíticas" },
+  { symbol: "🐧", name: "Linux / Bash", desc: "SysAdmin, gestión de servidores y shell" },
+  { symbol: "📦", name: "NetBox DCIM", desc: "Mapeo de racks, IPAM y activos de red" },
+  { symbol: "📊", name: "Power BI & Automate", desc: "Telemetría de SLA y alertas tempranas" },
+  { symbol: "🐳", name: "Docker", desc: "Contenedores y despliegues reproducibles" },
+  { symbol: "⚡", name: "JavaScript / Node", desc: "Servicios web y desarrollo modular" },
+  { symbol: "🐘", name: "PHP / Laravel", desc: "Arquitectura backend estructurada MVC" },
+  { symbol: "🎨", name: "Tailwind CSS", desc: "Diseño minimalista y maquetación responsiva" },
+  { symbol: "🛡️", name: "ITIL & ISO 27001", desc: "Procedimientos SOPs, DRP y controles RFC" },
 ];
 
 const softSkills = [
@@ -35,111 +32,69 @@ const softSkills = [
 ];
 ---
 
-<section id="habilidades" class="max-w-5xl mx-auto px-6 py-16 border-t border-slate-800/80 dark:border-slate-800/80 border-slate-200 transition-colors">
+<section id="habilidades" class="max-w-5xl mx-auto px-6 py-14 border-t border-slate-200 dark:border-slate-800/80 transition-colors">
   
-  <!-- Section Badge & Header -->
-  <div class="mb-10 text-center sm:text-left">
-    <div class="pro-badge mb-2">
-      <span class="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-400 to-emerald-400 dark:from-cyan-400 dark:to-emerald-400 from-blue-600 to-cyan-600 bg-clip-text text-transparent text-xs font-mono font-bold tracking-wider uppercase">
-        Stack Tecnológico & Agentes Autónomos
-      </span>
+  <!-- Minimalist Section Header (Rob Bowen Digital style) -->
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 mb-2 font-mono text-xs uppercase tracking-wider text-violet-700 dark:text-violet-400 font-semibold">
+      <span>●</span>
+      <span>Stack Tecnológico & Metodologías</span>
     </div>
-    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white text-gradient-pro mb-3 tracking-tight">
-      Habilidades Técnicas & Ecosistema de Herramientas
+    <h2 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 dark:text-white tracking-tight mb-2">
+      Herramientas Técnicas & Automatización
     </h2>
-    <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
-      Carrusel continuo de tecnologías activas aplicadas en ingeniería de operaciones, centros de datos corporativos, desarrollo a medida y automatizaciones con IA.
+    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
+      Carrusel pausado de tecnologías activas aplicadas en ingeniería de operaciones de centros de datos, desarrollo a medida y automatizaciones con IA.
     </p>
   </div>
 
-  <!-- Carousel Row 1: Herramientas de Inteligencia Artificial & Agentes -->
-  <div class="mb-8">
-    <div class="flex items-center justify-between mb-3 px-1">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-        <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-bold">
-          Carrusel 01 // Herramientas de Inteligencia Artificial & Agentes
-        </h3>
-      </div>
-      <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 hidden sm:inline">
-        ← Desplazamiento continuo interactivo →
-      </span>
-    </div>
-
-    <!-- Infinite Carousel Ribbon Left -->
-    <div class="marquee-container py-2">
-      <div class="animate-marquee-left gap-4 flex items-center">
-        <!-- Duplicate elements for continuous loop -->
-        {[...aiTools, ...aiTools, ...aiTools].map((tool) => (
-          <div class="flex-shrink-0 w-72 p-4 rounded-xl pro-card border border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-sm hover:scale-[1.02] transition-transform duration-200 cursor-default">
-            <div class="flex items-center justify-between mb-1.5">
-              <span class="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                <span class="text-cyan-600 dark:text-cyan-400 font-mono">⌘</span>
-                {tool.name}
-              </span>
-              <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-cyan-700 dark:text-cyan-300 border border-slate-300 dark:border-slate-700 font-semibold">
-                {tool.badge}
-              </span>
-            </div>
-            <p class="text-[11px] text-slate-600 dark:text-slate-300 truncate">
-              {tool.desc}
-            </p>
+  <!-- Carousel Row 1: Herramientas de Inteligencia Artificial & Agentes (Solo Símbolo y Descripción) -->
+  <div class="mb-4">
+    <div class="marquee-container py-1.5">
+      <div class="animate-marquee-left gap-3 flex items-center">
+        {[...aiTools, ...aiTools, ...aiTools, ...aiTools].map((tool) => (
+          <div class="flex-shrink-0 flex items-center gap-2.5 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800/90 bg-white/90 dark:bg-slate-900/60 shadow-sm hover:border-violet-500/50 transition-colors cursor-default">
+            <span class="text-xs font-mono text-violet-600 dark:text-violet-400 font-bold">{tool.symbol}</span>
+            <span class="text-xs font-mono text-slate-700 dark:text-slate-300 whitespace-nowrap">
+              <strong class="text-slate-900 dark:text-white font-semibold">{tool.name}</strong> — {tool.desc}
+            </span>
           </div>
         ))}
       </div>
     </div>
   </div>
 
-  <!-- Carousel Row 2: Desarrollo, Frameworks & Infraestructura -->
-  <div class="mb-12">
-    <div class="flex items-center justify-between mb-3 px-1">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-        <h3 class="text-xs font-mono uppercase tracking-wider text-emerald-700 dark:text-emerald-400 font-bold">
-          Carrusel 02 // Desarrollo, Frameworks & Infraestructura
-        </h3>
-      </div>
-      <span class="text-[10px] font-mono text-slate-500 dark:text-slate-400 hidden sm:inline">
-        Pausa al pasar el cursor
-      </span>
-    </div>
-
-    <!-- Infinite Carousel Ribbon Right -->
-    <div class="marquee-container py-2">
-      <div class="animate-marquee-right gap-4 flex items-center">
-        <!-- Duplicate elements for continuous loop -->
-        {[...techSkills, ...techSkills, ...techSkills].map((tech) => (
-          <div class="flex-shrink-0 w-56 p-3.5 rounded-xl pro-card border border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900/90 shadow-sm flex items-center gap-3 hover:scale-[1.02] transition-transform duration-200 cursor-default">
-            <span class="text-xl flex-shrink-0">{tech.icon}</span>
-            <div class="truncate">
-              <div class="text-xs font-bold text-slate-900 dark:text-white truncate">
-                {tech.name}
-              </div>
-              <div class="text-[10px] font-mono text-slate-500 dark:text-slate-400 truncate">
-                {tech.category}
-              </div>
-            </div>
+  <!-- Carousel Row 2: Desarrollo, Frameworks & Infraestructura (Solo Símbolo y Descripción) -->
+  <div class="mb-10">
+    <div class="marquee-container py-1.5">
+      <div class="animate-marquee-right gap-3 flex items-center">
+        {[...techSkills, ...techSkills, ...techSkills, ...techSkills].map((tech) => (
+          <div class="flex-shrink-0 flex items-center gap-2.5 px-3.5 py-2 rounded-lg border border-slate-200 dark:border-slate-800/90 bg-white/90 dark:bg-slate-900/60 shadow-sm hover:border-sky-500/50 transition-colors cursor-default">
+            <span class="text-sm flex-shrink-0">{tech.symbol}</span>
+            <span class="text-xs font-mono text-slate-700 dark:text-slate-300 whitespace-nowrap">
+              <strong class="text-slate-900 dark:text-white font-semibold">{tech.name}</strong> — {tech.desc}
+            </span>
           </div>
         ))}
       </div>
     </div>
   </div>
 
-  <!-- Soft Skills & Leadership Badges -->
-  <div>
+  <!-- Habilidades Personales, Liderazgo & Metodología -->
+  <div class="pt-4 border-t border-slate-200/60 dark:border-slate-800/60">
     <div class="flex items-center gap-2 mb-4">
-      <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
-      <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-700 dark:text-cyan-400 font-bold">
+      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+      <h3 class="text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-300 font-bold">
         Habilidades Personales, Liderazgo & Metodología
       </h3>
     </div>
 
-    <div class="flex flex-wrap gap-2.5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
       {softSkills.map((skill) => (
-        <span class="text-xs font-mono px-3.5 py-2 rounded-xl pro-card border border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900/80 text-slate-800 dark:text-slate-200 flex items-center gap-2 font-medium shadow-sm">
-          <span class="text-emerald-600 dark:text-emerald-400 font-bold">✔</span>
-          <span>{skill}</span>
-        </span>
+        <div class="flex items-center gap-2.5 px-3.5 py-2.5 rounded-lg border border-slate-200 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/40 text-slate-800 dark:text-slate-200 text-xs font-mono font-medium shadow-sm hover:border-emerald-500/40 transition-colors">
+          <span class="text-emerald-600 dark:text-emerald-400 font-bold flex-shrink-0 text-xs">✔</span>
+          <span class="truncate">{skill}</span>
+        </div>
       ))}
     </div>
   </div>

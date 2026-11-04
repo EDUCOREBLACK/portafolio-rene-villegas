@@ -1,71 +1,87 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* Minimalist Robb Bowen Digital Theme - Dark Mode */
   :root {
-    --bg-main: #020617; /* slate-950 */
-    --card-main: rgba(15, 23, 42, 0.75); /* slate-900 */
-    --card-hover: rgba(30, 41, 59, 0.9); /* slate-800 */
-    --border-main: rgba(51, 65, 85, 0.7); /* slate-700/70 */
-    --border-hover: rgba(6, 182, 212, 0.5); /* cyan-500/50 */
-    --text-main: #ffffff;
-    --text-muted: #94a3b8; /* slate-400 */
-    --accent-cyan: #22d3ee; /* cyan-400 */
-    --accent-emerald: #34d399; /* emerald-400 */
-    --accent-blue: #3b82f6; /* blue-500 */
+    --bg-main: #070b14;
+    --card-main: rgba(13, 21, 39, 0.7);
+    --card-hover: rgba(19, 29, 53, 0.9);
+    --border-main: rgba(255, 255, 255, 0.08);
+    --border-hover: rgba(127, 0, 224, 0.4);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent-line: #7f00e0;
+    --accent-fill: #aadcec;
+    --accent-subtext: #73bbc5;
+    --accent-cyan: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-blue: #6366f1;
   }
 
-  /* Light mode (Clean High-Contrast Light) */
+  /* Minimalist Robb Bowen Digital Theme - Light Mode */
   html:not(.dark) {
-    --bg-main: #f8fafc; /* slate-50 */
+    --bg-main: #f4f9fc;
     --card-main: #ffffff;
-    --card-hover: #f1f5f9; /* slate-100 */
-    --border-main: #cbd5e1; /* slate-300 */
-    --border-hover: rgba(37, 99, 235, 0.6); /* blue-600 */
-    --text-main: #020617; /* slate-950 - deep black/slate for maximum readability */
-    --text-muted: #334155; /* slate-700 */
-    --accent-cyan: #0284c7; /* sky-600 */
-    --accent-emerald: #059669; /* emerald-600 */
-    --accent-blue: #1d4ed8; /* blue-700 */
+    --card-hover: #ffffff;
+    --border-main: #e2e8f0;
+    --border-hover: #7f00e0;
+    --text-main: #0f1b61;
+    --text-muted: #5a6e85;
+    --accent-line: #7f00e0;
+    --accent-fill: #aadcec;
+    --accent-subtext: #4a9ba8;
+    --accent-cyan: #0284c7;
+    --accent-emerald: #059669;
+    --accent-blue: #4f46e5;
   }
 
   body {
     background-color: var(--bg-main);
     color: var(--text-main);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: background-color 0.25s ease, color 0.25s ease;
     overflow-x: hidden;
   }
 
-  /* Cyber Data Center SOC ambient grid in Dark Mode */
+  /* Subtle minimal background grids */
   .dark body {
-    background-color: #020617;
+    background-color: #070b14;
     background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.15), transparent 70%),
-      radial-gradient(ellipse 60% 40% at 100% 60%, rgba(16, 185, 129, 0.08), transparent 60%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      radial-gradient(ellipse 70% 40% at 50% 0%, rgba(127, 0, 224, 0.08), transparent 70%),
+      radial-gradient(ellipse 50% 30% at 100% 50%, rgba(56, 189, 248, 0.05), transparent 60%);
+    background-size: 100% 100%, 100% 100%;
     background-attachment: fixed;
   }
 
-  /* Crisp modern clean background in Light Mode */
   html:not(.dark) body {
-    background-color: #f8fafc;
+    background-color: #f4f9fc;
     background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.08), transparent 70%),
-      radial-gradient(ellipse 60% 40% at 100% 60%, rgba(6, 182, 212, 0.05), transparent 60%),
-      linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      radial-gradient(ellipse 70% 40% at 50% 0%, rgba(170, 220, 236, 0.35), transparent 70%),
+      radial-gradient(ellipse 50% 30% at 100% 60%, rgba(127, 0, 224, 0.04), transparent 60%);
+    background-size: 100% 100%, 100% 100%;
     background-attachment: fixed;
+  }
+
+  /* Robb Bowen Digital Headings Typography */
+  h1, h2, h3, .font-serif, .font-editorial {
+    font-family: 'Bitter', Georgia, serif;
+    letter-spacing: -0.02em;
   }
 }
 
-/* Gradient Text Shimmer */
+/* Robb Bowen Digital Signature Headline Text */
+.text-editorial-title {
+  font-family: 'Bitter', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+/* Gradient Text Shimmer - Clean & Understated */
 @keyframes gradientAnimation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -73,22 +89,22 @@
 }
 
 .text-gradient-pro {
-  background: linear-gradient(to right, #ffffff, #67e8f9, #ffffff, #38bdf8, #ffffff);
+  background: linear-gradient(to right, #ffffff, #aadcec, #ffffff, #c084fc, #ffffff);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 6s linear infinite;
+  animation: gradientAnimation 8s linear infinite;
 }
 
 html:not(.dark) .text-gradient-pro {
-  background: linear-gradient(to right, #020617, #1d4ed8, #0369a1, #0f172a, #020617);
+  background: linear-gradient(to right, #0f1b61, #6000cb, #0f1b61, #0284c7, #0f1b61);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradientAnimation 6s linear infinite;
+  animation: gradientAnimation 8s linear infinite;
 }
 
-/* Continuous Infinite Horizontal Carousel (Marquee) */
+/* Continuous Infinite Horizontal Carousel (Marquee) - SLOW & SMOOTH */
 @keyframes marqueeLeft {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-50%); }
@@ -102,7 +118,7 @@ html:not(.dark) .text-gradient-pro {
 .animate-marquee-left {
   display: flex;
   width: max-content;
-  animation: marqueeLeft 32s linear infinite;
+  animation: marqueeLeft 75s linear infinite;
 }
 
 .animate-marquee-left:hover {
@@ -112,7 +128,7 @@ html:not(.dark) .text-gradient-pro {
 .animate-marquee-right {
   display: flex;
   width: max-content;
-  animation: marqueeRight 35s linear infinite;
+  animation: marqueeRight 80s linear infinite;
 }
 
 .animate-marquee-right:hover {
@@ -124,8 +140,8 @@ html:not(.dark) .text-gradient-pro {
   overflow: hidden;
   position: relative;
   width: 100%;
-  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
 /* Signature Cyber / Corporate Buttons */

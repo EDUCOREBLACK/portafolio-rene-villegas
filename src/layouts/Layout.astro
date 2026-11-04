@@ -11,7 +11,6 @@ const {
 
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
-import CliDownloadModal from '../components/CliDownloadModal.astro';
 ---
 
 <!doctype html>
@@ -66,9 +65,6 @@ import CliDownloadModal from '../components/CliDownloadModal.astro';
 			<slot />
 		</div>
 
-		<!-- CLI Download Modal (Square popup terminal window) -->
-		<CliDownloadModal />
-
 		<!-- Cyber SOC / Corporate Footer -->
 		<footer class="border-t border-slate-800 dark:border-slate-800/80 border-slate-200 py-12 text-center text-xs text-slate-400 dark:text-slate-400 font-mono mt-16 transition-colors">
 			<div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -83,13 +79,14 @@ import CliDownloadModal from '../components/CliDownloadModal.astro';
 					<a href="mailto:Duarapcsis@gmail.com" class="hover:text-cyan-400 dark:hover:text-cyan-400 hover:text-blue-600 transition-colors">
 						Duarapcsis@gmail.com
 					</a>
-					<button 
-						type="button"
-						data-open-cli-download
+					<a 
+						href="/cv-rene-villegas.pdf" 
+						download="cv-rene-villegas.pdf"
+						target="_blank"
 						class="text-cyan-400 dark:text-cyan-400 text-blue-600 hover:underline font-semibold cursor-pointer"
 					>
-						Descargar CV (CLI)
-					</button>
+						Descargar CV (PDF)
+					</a>
 				</div>
 			</div>
 		</footer>

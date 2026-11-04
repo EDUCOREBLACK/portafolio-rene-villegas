@@ -61,16 +61,17 @@ const navItems = [
           </svg>
         </button>
 
-        <!-- Download CV Button (opens CLI Modal) -->
-        <button 
-          type="button"
-          data-open-cli-download
+        <!-- Download CV Button (Direct PDF Download) -->
+        <a 
+          href="/cv-rene-villegas.pdf"
+          download="cv-rene-villegas.pdf"
+          target="_blank"
           class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-2 rounded-xl btn-pro-primary cursor-pointer"
-          title="Descargar CV con simulación CLI"
+          title="Descargar CV (PDF)"
         >
           <span class="text-emerald-300 dark:text-emerald-300 font-bold">$_</span>
           <span>CV (PDF)</span>
-        </button>
+        </a>
       </div>
 
     </div>
