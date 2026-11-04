@@ -6,33 +6,39 @@ const posts = await getCollection('blog', ({ data }) => !data.draft);
 posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
 
-<Layout title="Blog Técnico | René Villegas Carreño">
+<Layout title="Blog Técnico & Artículos de IA | René Villegas Carreño">
   <main class="max-w-5xl mx-auto px-6 py-16">
     <div class="mb-12">
-      <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Artículos & Análisis</p>
-      <h1 class="text-3xl sm:text-4xl font-bold text-brand-text mb-4">Blog Técnico</h1>
-      <p class="text-sm text-brand-muted max-w-2xl leading-relaxed">
-        Artículos, análisis y mejores prácticas sobre gobernanza técnica, gestión de operaciones bajo marco ITIL, resiliencia y automatización con Python y SQL.
+      <div class="pro-badge mb-2">
+        <span class="bg-gradient-to-r from-indigo-400 to-indigo-200 bg-clip-text text-transparent text-xs font-mono font-semibold tracking-wider uppercase">
+          Artículos & Análisis Especializados
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-bold text-gradient-pro mb-4">
+        Blog Técnico & Actualidad IA
+      </h1>
+      <p class="text-sm text-gray-400 max-w-2xl leading-relaxed">
+        Artículos, análisis y mejores prácticas sobre gobernanza técnica, gestión de operaciones bajo marco ITIL, resiliencia y automatización con Python, SQL y modelos avanzados de Inteligencia Artificial.
       </p>
     </div>
 
     <div class="grid gap-6">
       {posts.map((post) => (
-        <article class="bg-brand-card p-6 sm:p-8 rounded-xl border border-brand-border hover:border-brand-borderHover hover:bg-brand-cardHover transition-all duration-200 group">
-          <div class="flex items-center gap-3 text-xs font-mono text-brand-muted mb-3">
+        <article class="pro-card p-6 sm:p-8 rounded-2xl border border-gray-800/80 hover:border-indigo-500/50 transition-all duration-200 group">
+          <div class="flex items-center gap-3 text-xs font-mono text-gray-400 mb-3">
             <span>{post.data.pubDate.toLocaleDateString('es-ES', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
             <span>•</span>
-            <span class="text-brand-text">{post.data.author}</span>
+            <span class="text-indigo-400">{post.data.author}</span>
           </div>
-          <h2 class="text-xl font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-3">
+          <h2 class="text-xl sm:text-2xl font-bold text-gray-100 group-hover:text-indigo-400 transition-colors mb-3">
             {post.data.title}
           </h2>
-          <p class="text-sm text-brand-muted leading-relaxed mb-4">
+          <p class="text-sm text-gray-300 leading-relaxed mb-5">
             {post.data.description}
           </p>
-          <div class="flex flex-wrap gap-1.5">
+          <div class="flex flex-wrap gap-2">
             {post.data.tags.map((tag) => (
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-bg text-brand-muted border border-brand-border">
+              <span class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-gray-900 text-gray-400 border border-gray-800">
                 #{tag}
               </span>
             ))}

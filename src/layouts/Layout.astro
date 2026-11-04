@@ -6,11 +6,12 @@ interface Props {
 
 const { 
   title, 
-  description = "Portal Profesional de René Villegas Carreño - Ingeniero en TI, Infraestructura Crítica, Desarrollo y Automatización con IA" 
+  description = "Portal Profesional de René Villegas Carreño - Ingeniero en TI, Infraestructura Crítica 24/7, Desarrollo y Automatización con IA" 
 } = Astro.props;
 
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
+import CliDownloadModal from '../components/CliDownloadModal.astro';
 ---
 
 <!doctype html>
@@ -20,7 +21,7 @@ import Navbar from '../components/Navbar.astro';
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="author" content="René Villegas Carreño" />
-		<meta name="theme-color" content="#0b0f19" />
+		<meta name="theme-color" content="#030712" />
 		<meta name="robots" content="index, follow" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>{title}</title>
@@ -41,27 +42,37 @@ import Navbar from '../components/Navbar.astro';
 			}
 		</script>
 	</head>
-	<body class="min-h-screen flex flex-col antialiased font-sans">
+	<body class="min-h-screen flex flex-col antialiased font-sans bg-gray-950 text-gray-100">
 		<Navbar />
+		
 		<div class="flex-1">
 			<slot />
 		</div>
-		<footer class="border-t border-cloud-border py-12 text-center text-xs text-cloud-muted font-mono">
+
+		<!-- CLI Download Modal (Square popup terminal window) -->
+		<CliDownloadModal />
+
+		<!-- Cruip Open PRO Footer -->
+		<footer class="border-t border-gray-800/80 py-12 text-center text-xs text-gray-400 font-mono mt-16">
 			<div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
 				<p>© {new Date().getFullYear()} René Villegas Carreño. Desplegado con CI/CD en Vercel.</p>
-				<div class="flex items-center gap-5">
-					<a href="https://github.com/EDUCOREBLACK" target="_blank" rel="noopener noreferrer" class="hover:text-cloud-azure transition-colors">
+				<div class="flex flex-wrap items-center justify-center gap-5">
+					<a href="https://github.com/EDUCOREBLACK" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition-colors">
 						GitHub
 					</a>
-					<a href="https://www.linkedin.com/in/rene-eduardo-villegas-carreño-471a94140" target="_blank" rel="noopener noreferrer" class="hover:text-cloud-azure transition-colors">
+					<a href="https://www.linkedin.com/in/rene-eduardo-villegas-carreño-471a94140" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 transition-colors">
 						LinkedIn
 					</a>
-					<a href="mailto:Duarapcsis@gmail.com" class="hover:text-cloud-azure transition-colors">
+					<a href="mailto:Duarapcsis@gmail.com" class="hover:text-indigo-400 transition-colors">
 						Duarapcsis@gmail.com
 					</a>
-					<a href="/cv-rene-villegas.pdf" download="Curriculum_Vitae_Rene_Villegas.pdf" class="hover:text-cloud-azure transition-colors">
-						Descargar CV (PDF)
-					</a>
+					<button 
+						type="button"
+						data-open-cli-download
+						class="text-indigo-400 hover:text-indigo-300 font-semibold cursor-pointer underline decoration-indigo-500/40"
+					>
+						Descargar CV (CLI)
+					</button>
 				</div>
 			</div>
 		</footer>

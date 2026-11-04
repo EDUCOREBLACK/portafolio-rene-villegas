@@ -1,6 +1,5 @@
 ---
 const navItems = [
-  { label: 'Terminal', href: '/' },
   { label: 'Habilidades', href: '/#habilidades' },
   { label: 'Portafolio', href: '/#portafolio' },
   { label: 'Servicios', href: '/#servicios' },
@@ -9,67 +8,70 @@ const navItems = [
 ];
 ---
 
-<header class="sticky top-0 z-50 backdrop-blur-md bg-cloud-bg/85 border-b border-cloud-border transition-colors">
-  <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-    <!-- Brand / Logo -->
-    <a href="/" class="flex items-center gap-2.5 group">
-      <span class="w-8 h-8 rounded-lg bg-cloud-card border border-cloud-border flex items-center justify-center font-mono font-bold text-xs text-cloud-azure group-hover:border-cloud-azure transition-colors">
-        RV
-      </span>
-      <div class="flex flex-col">
-        <span class="font-bold text-sm text-cloud-text tracking-tight group-hover:text-cloud-azure transition-colors">
-          René Villegas
-        </span>
-        <span class="text-[10px] font-mono text-cloud-muted -mt-0.5 hidden sm:inline-block">
-          cloud.datacenter.core
-        </span>
-      </div>
-    </a>
-
-    <!-- Navigation links -->
-    <nav class="hidden md:flex items-center gap-6 text-xs font-mono uppercase tracking-wider">
-      {navItems.map((item) => (
-        <a 
-          href={item.href} 
-          class="text-cloud-muted hover:text-cloud-azure transition-colors"
-        >
-          {item.label}
-        </a>
-      ))}
-    </nav>
-
-    <!-- Controls (Theme Toggle & CV) -->
-    <div class="flex items-center gap-3">
+<header class="sticky top-2 z-40 w-full px-4 sm:px-6 transition-all duration-300">
+  <div class="max-w-5xl mx-auto">
+    <div class="relative flex h-14 items-center justify-between gap-3 rounded-2xl bg-gray-900/80 dark:bg-gray-900/80 bg-white/90 backdrop-blur-md px-4 border border-gray-800/80 dark:border-gray-800/80 border-slate-200 shadow-xl">
       
-      <!-- Day / Night Theme Toggle Button -->
-      <button 
-        id="theme-toggle" 
-        type="button" 
-        class="w-8 h-8 rounded-lg border border-cloud-border bg-cloud-card flex items-center justify-center text-cloud-muted hover:text-cloud-azure transition-colors"
-        aria-label="Cambiar tema claro/oscuro"
-        title="Cambiar tema día/noche"
-      >
-        <!-- Sun icon (shown in dark) -->
-        <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-        </svg>
-        <!-- Moon icon (shown in light) -->
-        <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-        </svg>
-      </button>
-
-      <!-- Download CV -->
-      <a 
-        href="/cv-rene-villegas.pdf" 
-        download="Curriculum_Vitae_Rene_Villegas.pdf"
-        class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-lg border border-cloud-azure/40 bg-cloud-card text-cloud-text hover:border-cloud-azure hover:text-cloud-azure transition-all duration-200"
-      >
-        <svg class="w-3.5 h-3.5 text-cloud-azure" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-        </svg>
-        <span>CV (PDF)</span>
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-2.5 group">
+        <span class="w-8 h-8 rounded-xl bg-gradient-to-tr from-indigo-600 to-indigo-400 flex items-center justify-center font-mono font-bold text-xs text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          RV
+        </span>
+        <div class="flex flex-col">
+          <span class="font-bold text-sm text-gray-100 dark:text-gray-100 text-slate-800 tracking-tight group-hover:text-indigo-400 transition-colors">
+            René Villegas
+          </span>
+          <span class="text-[10px] font-mono text-gray-400 dark:text-gray-400 text-slate-500 -mt-0.5 hidden sm:inline-block">
+            datacenter.core.ops
+          </span>
+        </div>
       </a>
+
+      <!-- Navigation links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-mono uppercase tracking-wider">
+        {navItems.map((item) => (
+          <a 
+            href={item.href} 
+            class="text-gray-400 dark:text-gray-400 text-slate-600 hover:text-indigo-400 transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Controls (Theme Toggle & CV Trigger) -->
+      <div class="flex items-center gap-2.5">
+        
+        <!-- Day / Night Theme Toggle Button -->
+        <button 
+          id="theme-toggle" 
+          type="button" 
+          class="w-8 h-8 rounded-xl border border-gray-800 dark:border-gray-800 border-slate-300 bg-gray-950/50 dark:bg-gray-950/50 bg-slate-100 flex items-center justify-center text-gray-400 hover:text-indigo-400 hover:border-indigo-500/50 transition-colors"
+          aria-label="Cambiar tema claro/oscuro"
+          title="Cambiar tema día/noche"
+        >
+          <!-- Sun icon (shown in dark) -->
+          <svg id="theme-toggle-light-icon" class="w-4 h-4 hidden text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <!-- Moon icon (shown in light) -->
+          <svg id="theme-toggle-dark-icon" class="w-4 h-4 hidden text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+
+        <!-- Download CV Button (opens CLI Modal) -->
+        <button 
+          type="button"
+          data-open-cli-download
+          class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-xl btn-pro-primary"
+          title="Descargar CV con simulación CLI"
+        >
+          <span class="text-emerald-300 font-bold">$_</span>
+          <span>CV (PDF)</span>
+        </button>
+      </div>
+
     </div>
   </div>
 </header>

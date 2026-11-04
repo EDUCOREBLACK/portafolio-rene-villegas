@@ -2,18 +2,18 @@
 const summaryPoints = [
   {
     title: "Centros de Datos & Operaciones 24/7",
-    period: "15+ Años",
-    description: "Supervisión técnica y aseguramiento de continuidad en infraestructuras de misión crítica. Gestión de disponibilidad en plataformas corporativas resguardando SLAs de alta exigencia."
+    period: "15+ Años de Trayectoria",
+    description: "Supervisión técnica directa y garantía de continuidad en infraestructuras de misión crítica. Gestión de incidentes y disponibilidad en plataformas corporativas resguardando estrictos SLAs (99.999%)."
   },
   {
     title: "Gobernanza Operacional & Continuidad (DRP)",
-    period: "Marco ITIL & ISO 27001",
-    description: "Gestión sistemática de incidentes, procedimientos operativos estándar (SOPs), planes de contingencia DRP y preparación para auditorías de seguridad física y de datos."
+    period: "Marco ITIL & Normativas ISO 27001",
+    description: "Diseño y aplicación sistemática de procedimientos operativos estándar (SOPs), planes de contingencia ante desastres (DRP) y preparación para auditorías de seguridad física y lógica."
   },
   {
     title: "Desarrollo de Software & Automatización",
-    period: "Python, SQL, APIs, IA",
-    description: "Desarrollo de aplicaciones empresariales, pipelines para conciliación de inventarios tecnológicos, auditorías de activos y herramientas asistidas por Inteligencia Artificial."
+    period: "Python, SQL, APIs & IA",
+    description: "Construcción de software a medida, conciliación de inventarios tecnológicos, automatizaciones de procesos con agentes inteligentes y dashboards de analítica de datos."
   }
 ];
 
@@ -24,36 +24,44 @@ const education = [
 ];
 ---
 
-<section id="experiencia" class="max-w-5xl mx-auto px-6 py-16 border-t border-cloud-border">
-  <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+<section id="experiencia" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800/80">
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
     <div>
-      <p class="text-xs font-mono uppercase tracking-widest text-cloud-azure mb-2">Síntesis Profesional</p>
-      <h2 class="text-2xl sm:text-3xl font-bold text-cloud-text">Trayectoria Resumida</h2>
+      <div class="pro-badge mb-2">
+        <span class="bg-gradient-to-r from-indigo-400 to-indigo-200 bg-clip-text text-transparent text-xs font-mono font-semibold tracking-wider uppercase">
+          Síntesis Profesional
+        </span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-bold text-gradient-pro">
+        Trayectoria Resumida
+      </h2>
     </div>
     
-    <a 
-      href="/cv-rene-villegas.pdf" 
-      download="Curriculum_Vitae_Rene_Villegas.pdf"
-      class="inline-flex items-center gap-1.5 text-xs font-mono px-3.5 py-1.5 rounded-lg border border-cloud-azure/40 bg-cloud-card hover:border-cloud-azure hover:text-cloud-azure text-cloud-text transition-all self-start sm:self-auto"
+    <button 
+      type="button"
+      data-open-cli-download
+      class="btn-pro-secondary inline-flex items-center gap-2 text-xs font-mono px-4 py-2 rounded-xl self-start sm:self-auto group"
     >
-      <svg class="w-3.5 h-3.5 text-cloud-azure" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-      </svg>
+      <span class="text-emerald-400 font-bold">$_</span>
       <span>Ver Detalle en CV Completo (PDF)</span>
-    </a>
+      <svg class="w-3.5 h-3.5 text-indigo-400 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+      </svg>
+    </button>
   </div>
 
-  <div class="grid md:grid-cols-3 gap-5 mb-8">
+  <!-- 3 Main Pillars -->
+  <div class="grid md:grid-cols-3 gap-5 mb-10">
     {summaryPoints.map((item) => (
-      <div class="bg-cloud-card p-5 rounded-xl border border-cloud-border flex flex-col justify-between">
+      <div class="pro-card p-6 rounded-2xl border border-gray-800/80 flex flex-col justify-between">
         <div>
-          <span class="text-[11px] font-mono text-cloud-azure block mb-2 font-semibold">
+          <span class="text-xs font-mono text-indigo-400 block mb-2 font-semibold">
             {item.period}
           </span>
-          <h3 class="text-sm font-bold text-cloud-text mb-2">
+          <h3 class="text-sm sm:text-base font-bold text-gray-100 mb-2.5">
             {item.title}
           </h3>
-          <p class="text-xs text-cloud-muted leading-relaxed">
+          <p class="text-xs text-gray-400 leading-relaxed">
             {item.description}
           </p>
         </div>
@@ -62,19 +70,19 @@ const education = [
   </div>
 
   <!-- Educación Compacta -->
-  <div class="p-5 rounded-xl border border-cloud-border bg-cloud-card/60">
-    <h3 class="text-xs font-mono uppercase tracking-wider text-cloud-muted mb-3 flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-cloud-azure"></span>
+  <div class="pro-card p-6 rounded-2xl border border-gray-800/80">
+    <h3 class="text-xs font-mono uppercase tracking-wider text-indigo-400 mb-4 flex items-center gap-2 font-semibold">
+      <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
       Formación Universitaria & Técnica
     </h3>
-    <div class="grid sm:grid-cols-3 gap-3">
+    <div class="grid sm:grid-cols-3 gap-4">
       {education.map((item) => (
-        <div>
-          <h4 class="text-xs font-semibold text-cloud-text">
+        <div class="border-l-2 border-indigo-500/40 pl-3">
+          <h4 class="text-xs font-bold text-gray-200 mb-0.5">
             {item.degree}
           </h4>
-          <p class="text-[11px] text-cloud-muted">
-            {item.institution} • <span class="text-cloud-azure font-mono">{item.status}</span>
+          <p class="text-[11px] text-gray-400">
+            {item.institution} • <span class="text-emerald-400 font-mono font-semibold">{item.status}</span>
           </p>
         </div>
       ))}

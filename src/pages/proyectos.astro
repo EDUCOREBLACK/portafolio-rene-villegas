@@ -8,36 +8,42 @@ const projects = await getCollection('projects');
 <Layout title="Proyectos & Casos de Éxito | René Villegas Carreño">
   <main class="max-w-5xl mx-auto px-6 py-16">
     <div class="mb-12">
-      <p class="text-xs font-mono uppercase tracking-widest text-brand-accent mb-2">Portafolio Técnico</p>
-      <h1 class="text-3xl sm:text-4xl font-bold text-brand-text mb-4">Proyectos & Implementaciones</h1>
-      <p class="text-sm text-brand-muted max-w-2xl leading-relaxed">
-        Soluciones implementadas en infraestructuras de alta disponibilidad, ingeniería de operaciones y pipelines de automatización.
+      <div class="pro-badge mb-2">
+        <span class="bg-gradient-to-r from-indigo-400 to-indigo-200 bg-clip-text text-transparent text-xs font-mono font-semibold tracking-wider uppercase">
+          Portafolio Técnico
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-bold text-gradient-pro mb-4">
+        Proyectos & Casos de Éxito
+      </h1>
+      <p class="text-sm text-gray-400 max-w-2xl leading-relaxed">
+        Soluciones implementadas en infraestructuras de alta disponibilidad, centros de datos corporativos, ingeniería de operaciones y pipelines de automatización con IA.
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6">
       {projects.map((project) => (
-        <div class="bg-brand-card p-6 sm:p-8 rounded-xl border border-brand-border hover:border-brand-borderHover hover:bg-brand-cardHover transition-all duration-200 flex flex-col justify-between group">
+        <div class="pro-card p-6 sm:p-8 rounded-2xl border border-gray-800/80 hover:border-indigo-500/50 flex flex-col justify-between group transition-all">
           <div>
             <div class="flex items-center justify-between gap-2 mb-3">
-              <span class="text-[11px] font-mono text-brand-accent px-2 py-0.5 rounded bg-brand-bg border border-brand-border">
+              <span class="text-[11px] font-mono text-indigo-400 px-2.5 py-0.5 rounded-full bg-indigo-950/60 border border-indigo-800/40">
                 {project.data.category}
               </span>
               {project.data.date && (
-                <span class="text-xs font-mono text-brand-muted">{project.data.date}</span>
+                <span class="text-xs font-mono text-gray-500">{project.data.date}</span>
               )}
             </div>
-            <h2 class="text-lg font-bold text-brand-text group-hover:text-brand-accent transition-colors mb-3">
+            <h2 class="text-lg font-bold text-gray-100 group-hover:text-indigo-400 transition-colors mb-3">
               {project.data.title}
             </h2>
-            <p class="text-xs text-brand-muted leading-relaxed mb-6">
+            <p class="text-xs text-gray-400 leading-relaxed mb-6">
               {project.data.description}
             </p>
           </div>
           
-          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-brand-border/60">
+          <div class="flex flex-wrap gap-1.5 pt-4 border-t border-gray-800/80">
             {project.data.tags.map((tag) => (
-              <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-brand-bg text-brand-muted border border-brand-border">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-gray-900 text-gray-400 border border-gray-800">
                 {tag}
               </span>
             ))}

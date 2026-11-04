@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,28 +6,28 @@
 
 @layer base {
   :root {
-    --bg-main: #0b0f19;
-    --card-main: #111827;
-    --card-hover: #1e293b;
-    --border-main: #1f293d;
-    --border-light: #334155;
-    --text-main: #f8fafc;
-    --text-muted: #94a3b8;
-    --accent-cloud: #38bdf8;
-    --terminal-green: #10b981;
+    --bg-main: #030712;
+    --card-main: rgba(17, 24, 39, 0.7);
+    --card-hover: rgba(31, 41, 55, 0.85);
+    --border-main: rgba(55, 65, 81, 0.6);
+    --border-hover: rgba(99, 102, 241, 0.5);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --primary: #6366f1;
+    --primary-light: #818cf8;
   }
 
-  /* Light Theme (Azure Cloud Light) */
+  /* Light mode (Cruip Open PRO Light) */
   html:not(.dark) {
     --bg-main: #f8fafc;
-    --card-main: #ffffff;
-    --card-hover: #f1f5f9;
+    --card-main: rgba(255, 255, 255, 0.85);
+    --card-hover: #ffffff;
     --border-main: #e2e8f0;
-    --border-light: #cbd5e1;
+    --border-hover: rgba(99, 102, 241, 0.4);
     --text-main: #0f172a;
-    --text-muted: #475569;
-    --accent-cloud: #0284c7;
-    --terminal-green: #059669;
+    --text-muted: #64748b;
+    --primary: #4f46e5;
+    --primary-light: #6366f1;
   }
 
   body {
@@ -35,41 +35,160 @@
     color: var(--text-main);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     transition: background-color 0.25s ease, color 0.25s ease;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-x: hidden;
   }
 
   .dark body {
+    background-color: #030712;
     background-image: 
-      radial-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
-      radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 32px 32px, 16px 16px;
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.2), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 100% 60%, rgba(139, 92, 246, 0.1), transparent 60%);
+    background-attachment: fixed;
   }
 
   html:not(.dark) body {
+    background-color: #f8fafc;
     background-image: 
-      radial-gradient(rgba(2, 132, 199, 0.04) 1px, transparent 1px),
-      radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-    background-size: 32px 32px, 16px 16px;
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.1), transparent 70%),
+      radial-gradient(ellipse 60% 40% at 100% 60%, rgba(139, 92, 246, 0.05), transparent 60%);
+    background-attachment: fixed;
   }
 }
 
-/* Custom CLI scrollbar */
+/* Cruip Gradient Text Animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.text-gradient-pro {
+  background: linear-gradient(to right, #f3f4f6, #c7d2fe, #ffffff, #a5b4fc, #f3f4f6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 6s linear infinite;
+}
+
+html:not(.dark) .text-gradient-pro {
+  background: linear-gradient(to right, #0f172a, #4338ca, #1e1b4b, #6366f1, #0f172a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 6s linear infinite;
+}
+
+/* Cruip Open PRO Signature Buttons */
+.btn-pro-primary {
+  background: linear-gradient(to top, #4f46e5, #6366f1);
+  color: #ffffff;
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-pro-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-pro-secondary {
+  background: linear-gradient(to bottom, rgba(31, 41, 55, 0.8), rgba(17, 24, 39, 0.8));
+  color: #e5e7eb;
+  border: 1px solid rgba(75, 85, 99, 0.4);
+  transition: all 0.2s ease;
+}
+
+html:not(.dark) .btn-pro-secondary {
+  background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.btn-pro-secondary:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+html:not(.dark) .btn-pro-secondary:hover {
+  color: #4f46e5;
+  border-color: #6366f1;
+}
+
+/* Cruip Open PRO Glassmorphism Cards */
+.pro-card {
+  background: linear-gradient(to bottom right, rgba(17, 24, 39, 0.65), rgba(31, 41, 55, 0.35));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(55, 65, 81, 0.6);
+  transition: all 0.3s ease;
+}
+
+html:not(.dark) .pro-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+}
+
+.pro-card:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -8px rgba(99, 102, 241, 0.15);
+}
+
+/* Cruip Open PRO Section Badge / Pill */
+.pro-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.pro-badge::before {
+  content: '';
+  height: 1px;
+  width: 2rem;
+  background: linear-gradient(to right, transparent, rgba(99, 102, 241, 0.6));
+}
+
+.pro-badge::after {
+  content: '';
+  height: 1px;
+  width: 2rem;
+  background: linear-gradient(to left, transparent, rgba(99, 102, 241, 0.6));
+}
+
+/* Terminal Cursor Blink */
+@keyframes cliBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cli-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background-color: #10b981;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: cliBlink 1s infinite;
+}
+
+/* Smooth scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
-  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg-main);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-light);
+  background: #374151;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-cloud);
+  background: #6366f1;
 }
 
 ::selection {
-  background-color: #38bdf8;
-  color: #0b0f19;
+  background-color: #6366f1;
+  color: #ffffff;
 }

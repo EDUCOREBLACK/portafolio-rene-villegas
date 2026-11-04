@@ -6,48 +6,51 @@ allPosts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 const recentPosts = allPosts.slice(0, 3);
 ---
 
-<section id="blog-ia" class="max-w-5xl mx-auto px-6 py-16 border-t border-cloud-border">
-  <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+<section id="blog-ia" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800/80">
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
     <div>
-      <div class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cloud-azure mb-2">
-        <span class="w-2 h-2 rounded-full bg-cloud-green animate-pulse"></span>
-        Actualidad, IA & Tecnología
+      <div class="pro-badge mb-2">
+        <span class="bg-gradient-to-r from-indigo-400 to-indigo-200 bg-clip-text text-transparent text-xs font-mono font-semibold tracking-wider uppercase">
+          Actualidad & Publicaciones
+        </span>
       </div>
-      <h2 class="text-2xl sm:text-3xl font-bold text-cloud-text">Blog & Noticias de IA</h2>
+      <h2 class="text-2xl sm:text-4xl font-bold text-gradient-pro">
+        Blog & Artículos Técnicos de IA
+      </h2>
     </div>
 
-    <div class="flex items-center gap-4">
-      <a 
-        href="/blog" 
-        class="text-xs font-mono text-cloud-azure hover:underline flex items-center gap-1"
-      >
-        <span>Ver todos los artículos</span>
-        <span>→</span>
-      </a>
-    </div>
+    <a 
+      href="/blog" 
+      class="text-xs font-mono text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 font-semibold group"
+    >
+      <span>Ver todos los artículos</span>
+      <span class="group-hover:translate-x-1 transition-transform">→</span>
+    </a>
   </div>
 
   <div class="grid md:grid-cols-3 gap-5">
     {recentPosts.map((post) => (
-      <article class="bg-cloud-card p-6 rounded-xl border border-cloud-border hover:border-cloud-azure/50 hover:bg-cloud-cardHover transition-all duration-200 flex flex-col justify-between group">
+      <article class="pro-card p-6 rounded-2xl border border-gray-800/80 hover:border-indigo-500/50 flex flex-col justify-between group transition-all">
         <div>
-          <div class="flex items-center justify-between text-[11px] font-mono text-cloud-muted mb-3">
+          <div class="flex items-center justify-between text-[11px] font-mono text-gray-400 mb-3">
             <span>{post.data.pubDate.toLocaleDateString('es-ES', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
-            <span class="text-cloud-azure">{post.data.tags[0] || 'Tecnología'}</span>
+            <span class="text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded-full border border-indigo-800/40">
+              {post.data.tags[0] || 'Tecnología'}
+            </span>
           </div>
 
-          <h3 class="text-base font-bold text-cloud-text group-hover:text-cloud-azure transition-colors mb-3 line-clamp-2">
+          <h3 class="text-base font-bold text-gray-100 group-hover:text-indigo-400 transition-colors mb-3 line-clamp-2">
             {post.data.title}
           </h3>
 
-          <p class="text-xs text-cloud-muted leading-relaxed line-clamp-3 mb-6">
+          <p class="text-xs text-gray-400 leading-relaxed line-clamp-3 mb-6">
             {post.data.description}
           </p>
         </div>
 
-        <div class="pt-4 border-t border-cloud-border/60 flex items-center justify-between text-xs font-mono">
-          <span class="text-cloud-muted text-[11px]">Por {post.data.author}</span>
-          <a href="/blog" class="text-cloud-azure group-hover:translate-x-1 transition-transform">
+        <div class="pt-4 border-t border-gray-800/80 flex items-center justify-between text-xs font-mono">
+          <span class="text-gray-400 text-[11px]">Por {post.data.author}</span>
+          <a href="/blog" class="text-indigo-400 group-hover:translate-x-1 transition-transform font-semibold">
             Leer →
           </a>
         </div>

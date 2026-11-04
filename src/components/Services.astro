@@ -3,69 +3,75 @@ const services = [
   {
     number: "01",
     title: "Infraestructura, Montaje & Configuración",
-    description: "Instalación física de servidores y equipamiento de red en racks. Cableado estructurado y canalizaciones de fibra óptica. Configuración inicial de switches, routers y sistemas de climatización y energía para salas de cómputo.",
-    tags: ["Instalación Física", "Montaje en Rack", "Fibra & Cobre", "Networking", "Climatización & Energía"]
+    description: "Instalación física de servidores y switches en racks corporativos. Cableado estructurado categoría 6A/7 y canalizaciones de fibra óptica. Puesta en marcha de equipamiento de networking, energía ininterrumpida (UPS) y climatización.",
+    tags: ["Instalación Física", "Montaje en Rack", "Fibra & Cobre", "Networking", "Energía & Climatización"]
   },
   {
     number: "02",
-    title: "Desarrollo de Aplicaciones a Medida",
-    description: "Diseño y construcción de software empresarial adaptado a las necesidades específicas de la organización: sistemas de inventario, plataformas de gestión interna, APIs REST seguras y paneles de control con bases de datos relacionales.",
-    tags: ["Desarrollo Web", "APIs REST", "SQL / Bases de Datos", "Python", "TypeScript"]
+    title: "Desarrollo de Software & Aplicaciones a Medida",
+    description: "Diseño y desarrollo de sistemas empresariales adaptados a las necesidades operativas de la compañía: inventarios de activos, plataformas web con PHP/Python/JS, APIs RESTful seguras y bases de datos optimizadas.",
+    tags: ["Desarrollo Web", "APIs REST", "SQL / NoSQL", "Python & Django", "Laravel & Yii2"]
   },
   {
     number: "03",
     title: "Automatización de Procesos con IA",
-    description: "Implementación de flujos de trabajo inteligentes con agentes de Inteligencia Artificial para procesamiento automático de datos, conciliación de registros, reportes ejecutivos en Power BI y reducción de tareas manuales repetitivas.",
-    tags: ["Agentes de IA", "Automatización de Flujos", "Power BI", "Python Scripting", "Integración de Modelos"]
+    description: "Implementación de flujos de trabajo inteligentes con agentes de Inteligencia Artificial para procesamiento automático de datos, conciliación de registros, reportes analíticos y reducción de fricción operativa.",
+    tags: ["Agentes de IA", "Automatización de Flujos", "Power BI", "Python Scripting", "Integración LLM"]
   },
   {
     number: "04",
     title: "Landing Pages, WordPress & E-Commerce",
-    description: "Creación de sitios web y páginas de aterrizaje de alta conversión. Implementación y personalización de soluciones en WordPress y plataformas de comercio electrónico (E-commerce) seguras, rápidas y optimizadas para móviles.",
-    tags: ["Landing Pages", "WordPress", "E-Commerce", "Diseño Responsivo", "SEO & Rendimiento"]
+    description: "Construcción de sitios web corporativos y páginas de aterrizaje de alta conversión. Implementación, personalización y soporte continuo en WordPress y plataformas de comercio electrónico seguras y rápidas.",
+    tags: ["Landing Pages", "WordPress", "E-Commerce", "Diseño Responsivo", "Rendimiento & SEO"]
   },
   {
     number: "05",
     title: "Soporte TI & Mantenimiento Computacional",
-    description: "Servicio integral de mantención preventiva y correctiva para parques computacionales de empresas. Diagnóstico de hardware, optimización de sistemas operativos Windows/Linux, seguridad y asistencia técnica continua.",
-    tags: ["Soporte Empresas", "Mantención Preventiva", "Hardware PC & Laptops", "Windows / Linux", "Respaldo & Seguridad"]
+    description: "Servicio integral de mantención preventiva y correctiva para parques computacionales de empresas. Diagnóstico de fallas de hardware, soporte N1/N2/N3 en Windows/Linux, respaldos y ciberseguridad perimetral.",
+    tags: ["Soporte Corporativo", "Mantención Preventiva", "Hardware PC & Laptops", "Windows / Linux", "Seguridad"]
   }
 ];
 ---
 
-<section id="servicios" class="max-w-5xl mx-auto px-6 py-16 border-t border-cloud-border">
-  <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+<section id="servicios" class="max-w-5xl mx-auto px-6 py-16 border-t border-gray-800/80">
+  <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
     <div>
-      <p class="text-xs font-mono uppercase tracking-widest text-cloud-azure mb-2">Servicios Técnicos & Consultoría</p>
-      <h2 class="text-2xl sm:text-3xl font-bold text-cloud-text">Soluciones TI Integrales</h2>
+      <div class="pro-badge mb-2">
+        <span class="bg-gradient-to-r from-indigo-400 to-indigo-200 bg-clip-text text-transparent text-xs font-mono font-semibold tracking-wider uppercase">
+          Servicios Técnicos & Consultoría
+        </span>
+      </div>
+      <h2 class="text-2xl sm:text-4xl font-bold text-gradient-pro">
+        Soluciones TI Integrales
+      </h2>
     </div>
-    <p class="text-xs sm:text-sm text-cloud-muted max-w-md">
-      Servicios especializados orientados a infraestructura física de misión crítica, desarrollo de software, automatización con IA y soporte corporativo.
+    <p class="text-xs sm:text-sm text-gray-400 max-w-md leading-relaxed">
+      Especialización en continuidad operacional de centros de datos, desarrollo a medida, automatizaciones con IA y soporte corporativo 24/7.
     </p>
   </div>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
     {services.map((service, index) => (
-      <div class={`bg-cloud-card p-6 rounded-xl border border-cloud-border hover:border-cloud-azure/50 hover:bg-cloud-cardHover transition-all duration-200 flex flex-col justify-between group ${index === 0 ? 'lg:col-span-1' : ''}`}>
+      <div class={`pro-card p-6 rounded-2xl border border-gray-800/80 hover:border-indigo-500/50 flex flex-col justify-between group transition-all ${index === 0 ? 'lg:col-span-1' : ''}`}>
         <div>
-          <div class="flex items-center justify-between mb-4">
-            <span class="text-xs font-mono text-cloud-azure font-semibold">
+          <div class="flex items-center justify-between mb-5">
+            <span class="text-xs font-mono font-bold text-indigo-400 bg-indigo-950/60 px-2.5 py-1 rounded-lg border border-indigo-800/50">
               /{service.number}
             </span>
-            <span class="w-1.5 h-1.5 rounded-full bg-cloud-border group-hover:bg-cloud-azure transition-colors"></span>
+            <span class="w-2 h-2 rounded-full bg-gray-800 group-hover:bg-indigo-400 transition-colors"></span>
           </div>
           
-          <h3 class="text-base font-bold text-cloud-text mb-2.5 group-hover:text-cloud-azure transition-colors">
+          <h3 class="text-base font-bold text-gray-100 mb-2.5 group-hover:text-indigo-400 transition-colors">
             {service.title}
           </h3>
-          <p class="text-xs text-cloud-muted leading-relaxed mb-5">
+          <p class="text-xs text-gray-400 leading-relaxed mb-6">
             {service.description}
           </p>
         </div>
 
-        <div class="flex flex-wrap gap-1.5 pt-3.5 border-t border-cloud-border/60">
+        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-gray-800/80">
           {service.tags.map((tag) => (
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-cloud-bg text-cloud-muted border border-cloud-border">
+            <span class="text-[10px] font-mono px-2 py-0.5 rounded-md bg-gray-900 text-gray-400 border border-gray-800">
               {tag}
             </span>
           ))}
